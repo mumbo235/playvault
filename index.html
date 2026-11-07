@@ -1213,7 +1213,11 @@ function openGame(name) {
 }
 
 function closeGame() {
-  document.getElementById('gameFrame').src = '';
+  const old = document.getElementById('gameFrame');
+  const fresh = old.cloneNode(false);
+  fresh.removeAttribute('src');
+  fresh.style.opacity = '0';
+  old.parentNode.replaceChild(fresh, old);
   document.getElementById('gameModal').classList.remove('active');
   document.body.style.overflow = '';
 }
