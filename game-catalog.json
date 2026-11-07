@@ -3870,5 +3870,693 @@
     "hot": false,
     "type": "single",
     "icon": "icons/zrist.webp"
+  },
+  {
+    "name": "Dominoes",
+    "file": "play/dominoes/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Greedy Shark",
+    "file": "play/greedy-shark/index.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Minecraft Classic",
+    "file": "play/minecraft-classic/index.html",
+    "cat": "Sandbox",
+    "hot": true,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Solitaire",
+    "file": "play/solitaire/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Chrome Dino 3D",
+    "file": "play/chromedino-3d/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Cut the Rope Vivid",
+    "file": "play/cut-the-rope-vivid-edition/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "3 Foot Ninja Ii",
+    "file": "flash-games/3-foot-ninja-ii/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "3 Foot Ninja",
+    "file": "flash-games/3-foot-ninja/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "3D Reversi",
+    "file": "flash-games/3d-reversi/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "3D Tanks",
+    "file": "flash-games/3d-tanks/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "625 Sandwich Stacker",
+    "file": "flash-games/625-sandwich-stacker/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "7 Days Without Rain",
+    "file": "flash-games/7-days-without-rain/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Abobos Big Adventure",
+    "file": "flash-games/abobos-big-adventure/index.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Ace Of Space",
+    "file": "flash-games/ace-of-space/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Achievement Unlocked 2",
+    "file": "flash-games/achievement-unlocked-2/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Achievement Unlocked 3",
+    "file": "flash-games/achievement-unlocked-3/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Action Driving Game",
+    "file": "flash-games/action-driving-game/index.html",
+    "cat": "Racing",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Addiction Solitaire",
+    "file": "flash-games/addiction-solitaire/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Amorphous Plus",
+    "file": "flash-games/amorphous-plus/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Apple Shooter",
+    "file": "flash-games/apple-shooter/index.html",
+    "cat": "Shooter",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Asteroids",
+    "file": "flash-games/asteroids/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Astroflash",
+    "file": "flash-games/astroflash/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Atari Breakout",
+    "file": "flash-games/atari-breakout/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Battle Pong",
+    "file": "flash-games/battle-pong/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Battleships",
+    "file": "flash-games/battleships/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Bloons Player Pack 2",
+    "file": "flash-games/bloons-player-pack-2/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Bloons Player Pack 3",
+    "file": "flash-games/bloons-player-pack-3/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Bloons Player Pack 4",
+    "file": "flash-games/bloons-player-pack-4/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Bloons Player Pack 5",
+    "file": "flash-games/bloons-player-pack-5/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Bloons Tower Defense 2",
+    "file": "flash-games/bloons-tower-defense-2/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Bloons Tower Defense 3",
+    "file": "flash-games/bloons-tower-defense-3/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Bloons Tower Defense",
+    "file": "flash-games/bloons-tower-defense/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Bowman",
+    "file": "flash-games/bowman/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Boxhead 2 Play",
+    "file": "flash-games/boxhead-2-play/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Bubble Tanks 2",
+    "file": "flash-games/bubble-tanks-2/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Bubble Trouble",
+    "file": "flash-games/bubble-trouble/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Bullet Bill",
+    "file": "flash-games/bullet-bill/index.html",
+    "cat": "Shooter",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Castle Wars",
+    "file": "flash-games/castle-wars/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Causality",
+    "file": "flash-games/causality/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Champion Archer",
+    "file": "flash-games/champion-archer/index.html",
+    "cat": "Shooter",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Chasm",
+    "file": "flash-games/chasm/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Choose Your Weapon 2",
+    "file": "flash-games/choose-your-weapon-2/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Choose Your Weapon 3",
+    "file": "flash-games/choose-your-weapon-3/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Choose Your Weapon 4",
+    "file": "flash-games/choose-your-weapon-4/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Choose Your Weapon",
+    "file": "flash-games/choose-your-weapon/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Color Combat",
+    "file": "flash-games/color-combat/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Color Switch",
+    "file": "flash-games/color-switch/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Commando",
+    "file": "flash-games/commando/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Connect 4",
+    "file": "flash-games/connect-4/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Connect The World",
+    "file": "flash-games/connect-the-world/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Conquer Antarctica",
+    "file": "flash-games/conquer-antarctica/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Crimson Room",
+    "file": "flash-games/crimson-room/index.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Cubefield",
+    "file": "flash-games/cubefield/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Cursor 10",
+    "file": "flash-games/cursor-10/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Cursor Invisible",
+    "file": "flash-games/cursor-invisible/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Curveball",
+    "file": "flash-games/curveball/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Dad N Me",
+    "file": "flash-games/dad-n-me/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Dr Carter And The Cave Of Despair",
+    "file": "flash-games/dr-carter-and-the-cave-of-despair/index.html",
+    "cat": "Racing",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Effing Worms",
+    "file": "flash-games/effing-worms/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Eggtastic",
+    "file": "flash-games/eggtastic/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Electric Box",
+    "file": "flash-games/electric-box/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Electric Man 2",
+    "file": "flash-games/electric-man-2/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Extinct",
+    "file": "flash-games/extinct/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Factory Balls 2",
+    "file": "flash-games/factory-balls-2/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Factory Balls 3",
+    "file": "flash-games/factory-balls-3/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Factory Balls 4",
+    "file": "flash-games/factory-balls-4/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Factory Balls",
+    "file": "flash-games/factory-balls/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Falldown",
+    "file": "flash-games/falldown/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Falldown2",
+    "file": "flash-games/falldown2/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Family Crisis",
+    "file": "flash-games/family-crisis/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Fat Ninja",
+    "file": "flash-games/fat-ninja/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Feed Us",
+    "file": "flash-games/feed-us/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Feudalism",
+    "file": "flash-games/feudalism/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Frogger",
+    "file": "flash-games/frogger/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Galaga",
+    "file": "flash-games/galaga/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Gold_Miner_Special_Edition",
+    "file": "flash-games/gold_miner_special_edition/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Gold_Miner_Xploit_Machine_Edition_2009",
+    "file": "flash-games/gold_miner_xploit_machine_edition_2009/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Gridlock",
+    "file": "flash-games/gridlock/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Gun Mayhem 2",
+    "file": "flash-games/gun-mayhem-2/index.html",
+    "cat": "Shooter",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Gun Mayhem 3",
+    "file": "flash-games/gun-mayhem-3/index.html",
+    "cat": "Shooter",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Hobo 2",
+    "file": "flash-games/hobo-2/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Hobo 3",
+    "file": "flash-games/hobo-3/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Hobo 4",
+    "file": "flash-games/hobo-4/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Hobo 5",
+    "file": "flash-games/hobo-5/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Hobo 6",
+    "file": "flash-games/hobo-6/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
+  },
+  {
+    "name": "Hobo 7",
+    "file": "flash-games/hobo-7/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "flash",
+    "icon": ""
   }
 ]
