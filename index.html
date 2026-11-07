@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PlayVault - Unblocked Games</title>
-<link id="cloakFavicon" rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+<link id="cloakFavicon" rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%237c6cf0'/><path d='M30 65 L30 45 Q30 35 40 35 L42 35 L42 42 L40 42 Q38 42 38 45 L38 65 Z M62 65 L62 45 Q62 35 72 35 L74 35 L74 42 L72 42 Q70 42 70 45 L70 65 Z' fill='white'/><circle cx='42' cy='55' r='5' fill='white'/><circle cx='66' cy='55' r='5' fill='white'/><rect x='42' y='62' width='24' height='6' rx='3' fill='white'/></svg>">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -415,7 +415,9 @@ body{
   display:flex;align-items:flex-start;gap:14px;
 }
 .tool-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
-.tool-card .tool-icon{font-size:28px;flex-shrink:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);border-radius:10px}
+.tool-card .tool-icon{flex-shrink:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);border-radius:10px}
+.tool-card .tool-icon svg{width:24px;height:24px}
+.tool-emoji svg{width:22px;height:22px;vertical-align:middle}
 .tool-card .tool-name{font-size:14px;font-weight:600;color:var(--text)}
 .tool-card .tool-desc{font-size:11px;color:var(--text3);margin-top:3px}
 .tool-panel{
@@ -642,18 +644,18 @@ body{
 let GAMES = [];
 let sortedGames = [];
 const ORIGINAL_TITLE = 'PlayVault - Unblocked Games';
-const ORIGINAL_FAVICON = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>";
+const ORIGINAL_FAVICON = "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%237c6cf0'/><path d='M30 65 L30 45 Q30 35 40 35 L42 35 L42 42 L40 42 Q38 42 38 45 L38 65 Z M62 65 L62 45 Q62 35 72 35 L74 35 L74 42 L72 42 Q70 42 70 45 L70 65 Z' fill='white'/><circle cx='42' cy='55' r='5' fill='white'/><circle cx='66' cy='55' r='5' fill='white'/><rect x='42' y='62' width='24' height='6' rx='3' fill='white'/></svg>";
 
 const CLOAK_PRESETS = [
-  {id:'none', name:'None (Default)', desc:'PlayVault branding', icon:'🎮', title:'PlayVault - Unblocked Games', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>"},
-  {id:'gdocs', name:'Google Docs', desc:'Untitled document', icon:'📝', title:'Untitled document - Google Docs', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%234285f4'/><rect x='25' y='20' width='50' height='60' rx='4' fill='white'/><rect x='33' y='32' width='34' height='3' fill='%234285f4'/><rect x='33' y='40' width='28' height='3' fill='%23aaa'/><rect x='33' y='48' width='32' height='3' fill='%23aaa'/><rect x='33' y='56' width='20' height='3' fill='%23aaa'/></svg>"},
-  {id:'gclass', name:'Google Classroom', desc:'Home - Classroom', icon:'📚', title:'Home - Google Classroom', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230f9d58'/><circle cx='50' cy='40' r='14' fill='white'/><ellipse cx='50' cy='72' rx='24' ry='14' fill='white'/></svg>"},
-  {id:'gdrive', name:'Google Drive', desc:'My Drive', icon:'📁', title:'My Drive - Google Drive', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,10 90,70 75,90 35,90 20,70' fill='%23ffd04b'/><polygon points='50,10 20,70 35,90 65,35' fill='%234285f4'/><polygon points='65,35 90,70 75,90 35,90' fill='%230f9d58'/></svg>"},
-  {id:'canvas', name:'Canvas LMS', desc:'Dashboard', icon:'🎓', title:'Dashboard | Canvas LMS', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23e03d29'/><text x='50' y='62' text-anchor='middle' fill='white' font-size='40' font-weight='bold'>C</text></svg>"},
-  {id:'khan', name:'Khan Academy', desc:'Courses', icon:'🧮', title:'Courses | Khan Academy', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%2314bf96'/><circle cx='50' cy='38' r='16' fill='white'/><polygon points='38,65 50,50 62,65 62,85 38,85' fill='white'/></svg>"},
-  {id:'wiki', name:'Wikipedia', desc:'Main Page', icon:'🌐', title:'Wikipedia, the free encyclopedia', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='white' stroke='%23333' stroke-width='3'/><text x='50' y='62' text-anchor='middle' fill='%23333' font-size='36' font-weight='bold'>W</text></svg>"},
-  {id:'outlook', name:'Outlook', desc:'Mail - Inbox', icon:'📧', title:'Mail - Outlook', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230078d4'/><rect x='15' y='25' width='70' height='50' rx='4' fill='white'/><polygon points='50,55 15,25 85,25' fill='%230078d4'/></svg>"},
-  {id:'custom', name:'Custom', desc:'Set your own', icon:'⚙️', title:'', favicon:''}
+  {id:'none', name:'None (Default)', desc:'PlayVault branding', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#7c6cf0" stroke-width="2" style="width:20px;height:20px;vertical-align:middle"><rect x="2" y="6" width="20" height="12" rx="3"/><circle cx="9" cy="12" r="2"/><circle cx="15" cy="12" r="2"/><line x1="2" y1="10" x2="5" y2="7"/><line x1="22" y1="10" x2="19" y2="7"/></svg>', title:'PlayVault - Unblocked Games', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%237c6cf0'/><path d='M30 65 L30 45 Q30 35 40 35 L42 35 L42 42 L40 42 Q38 42 38 45 L38 65 Z M62 65 L62 45 Q62 35 72 35 L74 35 L74 42 L72 42 Q70 42 70 45 L70 65 Z' fill='white'/><circle cx='42' cy='55' r='5' fill='white'/><circle cx='66' cy='55' r='5' fill='white'/><rect x='42' y='62' width='24' height='6' rx='3' fill='white'/></svg>"},
+  {id:'gdocs', name:'Google Docs', desc:'Untitled document', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#4285f4" stroke-width="2" style="width:20px;height:20px;vertical-align:middle"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>', title:'Untitled document - Google Docs', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%234285f4'/><rect x='25' y='20' width='50' height='60' rx='4' fill='white'/><rect x='33' y='32' width='34' height='3' fill='%234285f4'/><rect x='33' y='40' width='28' height='3' fill='%23aaa'/><rect x='33' y='48' width='32' height='3' fill='%23aaa'/><rect x='33' y='56' width='20' height='3' fill='%23aaa'/></svg>"},
+  {id:'gclass', name:'Google Classroom', desc:'Home - Classroom', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#0f9d58" stroke-width="2" style="width:20px;height:20px;vertical-align:middle"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>', title:'Home - Google Classroom', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230f9d58'/><circle cx='50' cy='40' r='14' fill='white'/><ellipse cx='50' cy='72' rx='24' ry='14' fill='white'/></svg>"},
+  {id:'gdrive', name:'Google Drive', desc:'My Drive', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#ffd04b" stroke-width="2" style="width:20px;height:20px;vertical-align:middle"><polygon points="12,2 22,14 17,22 7,22 2,14" fill="none"/></svg>', title:'My Drive - Google Drive', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='50,10 90,70 75,90 35,90 20,70' fill='%23ffd04b'/><polygon points='50,10 20,70 35,90 65,35' fill='%234285f4'/><polygon points='65,35 90,70 75,90 35,90' fill='%230f9d58'/></svg>"},
+  {id:'canvas', name:'Canvas LMS', desc:'Dashboard', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#e03d29" stroke-width="2" style="width:20px;height:20px;vertical-align:middle"><rect x="3" y="3" width="18" height="18" rx="3"/><text x="12" y="16" text-anchor="middle" fill="#e03d29" font-size="12" font-weight="bold" stroke="none">C</text></svg>', title:'Dashboard | Canvas LMS', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23e03d29'/><text x='50' y='62' text-anchor='middle' fill='white' font-size='40' font-weight='bold'>C</text></svg>"},
+  {id:'khan', name:'Khan Academy', desc:'Courses', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#14bf96" stroke-width="2" style="width:20px;height:20px;vertical-align:middle"><circle cx="12" cy="8" r="5"/><polygon points="9,15 12,12 15,15 15,22 9,22" fill="none"/></svg>', title:'Courses | Khan Academy', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%2314bf96'/><circle cx='50' cy='38' r='16' fill='white'/><polygon points='38,65 50,50 62,65 62,85 38,85' fill='white'/></svg>"},
+  {id:'wiki', name:'Wikipedia', desc:'Main Page', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" style="width:20px;height:20px;vertical-align:middle"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" fill="#888" font-size="12" font-weight="bold" stroke="none">W</text></svg>', title:'Wikipedia, the free encyclopedia', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='white' stroke='%23333' stroke-width='3'/><text x='50' y='62' text-anchor='middle' fill='%23333' font-size='36' font-weight='bold'>W</text></svg>"},
+  {id:'outlook', name:'Outlook', desc:'Mail - Inbox', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#0078d4" stroke-width="2" style="width:20px;height:20px;vertical-align:middle"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3,5 12,13 21,5"/></svg>', title:'Mail - Outlook', favicon:"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230078d4'/><rect x='15' y='25' width='70' height='50' rx='4' fill='white'/><polygon points='50,55 15,25 85,25' fill='%230078d4'/></svg>"},
+  {id:'custom', name:'Custom', desc:'Set your own', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" style="width:20px;height:20px;vertical-align:middle"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>', title:'', favicon:''}
 ];
 
 const ACCENT_COLORS = [
@@ -1360,14 +1362,14 @@ function clearAllReports() {
 
 // ===== TOOLS =====
 const TOOLS_LIST = [
-  {id:'calc', name:'Calculator', desc:'Basic & scientific math', icon:'🧮'},
-  {id:'notes', name:'Notes', desc:'Quick notepad with auto-save', icon:'📝'},
-  {id:'stopwatch', name:'Stopwatch', desc:'Timer with lap tracking', icon:'⏱️'},
-  {id:'timer', name:'Countdown Timer', desc:'Set a countdown alarm', icon:'⏰'},
-  {id:'coinflip', name:'Coin & Dice', desc:'Flip coins and roll dice', icon:'🎲'},
-  {id:'password', name:'Password Generator', desc:'Create strong passwords', icon:'🔐'},
-  {id:'drawing', name:'Drawing Pad', desc:'Sketch and doodle', icon:'🎨'},
-  {id:'converter', name:'Unit Converter', desc:'Length, weight, temp & more', icon:'📐'},
+  {id:'calc', name:'Calculator', desc:'Basic & scientific math', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#a29bfe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="16" y2="18"/></svg>'},
+  {id:'notes', name:'Notes', desc:'Quick notepad with auto-save', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#ffeaa7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>'},
+  {id:'stopwatch', name:'Stopwatch', desc:'Timer with lap tracking', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#74b9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3L2 6"/><path d="M22 6l-3-3"/><line x1="10" y1="2" x2="14" y2="2"/><line x1="12" y1="2" x2="12" y2="5"/></svg>'},
+  {id:'timer', name:'Countdown Timer', desc:'Set a countdown alarm', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fd79a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'},
+  {id:'coinflip', name:'Coin & Dice', desc:'Flip coins and roll dice', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5" fill="#00cec9"/><circle cx="15.5" cy="8.5" r="1.5" fill="#00cec9"/><circle cx="8.5" cy="15.5" r="1.5" fill="#00cec9"/><circle cx="15.5" cy="15.5" r="1.5" fill="#00cec9"/><circle cx="12" cy="12" r="1.5" fill="#00cec9"/></svg>'},
+  {id:'password', name:'Password Generator', desc:'Create strong passwords', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#e17055" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1" fill="#e17055"/><line x1="12" y1="17" x2="12" y2="19"/></svg>'},
+  {id:'drawing', name:'Drawing Pad', desc:'Sketch and doodle', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#e84393" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17" cy="12.5" r="2" stroke="#a29bfe"/><circle cx="8" cy="8" r="2" stroke="#00cec9"/><circle cx="6.5" cy="14.5" r="2.5" stroke="#ffeaa7"/><circle cx="12" cy="18" r="2" stroke="#fd79a8"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="#e84393"/></svg>'},
+  {id:'converter', name:'Unit Converter', desc:'Length, weight, temp & more', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>'},
 ];
 
 let currentTool = null;
@@ -1376,7 +1378,7 @@ function renderTools(area) {
   if (currentTool) { renderToolPanel(area, currentTool); return; }
   area.innerHTML = `
   <div class="tools-page">
-    <h2>&#128295; Tools</h2>
+    <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px;vertical-align:middle;margin-right:6px"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Tools</h2>
     <div class="tools-grid">
       ${TOOLS_LIST.map(t => `
         <div class="tool-card" onclick="openTool('${t.id}')">
@@ -1675,12 +1677,12 @@ let flipHistory = [];
 
 function renderCoinFlip() {
   return `
-    <div class="flip-result" id="flipResult">🪙</div>
+    <div class="flip-result" id="flipResult"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2" style="width:48px;height:48px"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" fill="#ffd700" font-size="10" font-weight="bold" stroke="none">$</text></svg></div>
     <div class="flip-buttons">
-      <button class="flip-btn" onclick="flipCoin()">&#127754; Flip Coin</button>
-      <button class="flip-btn" onclick="rollDice(6)">&#127922; Roll d6</button>
-      <button class="flip-btn" onclick="rollDice(20)">&#127922; Roll d20</button>
-      <button class="flip-btn" onclick="rollDice(100)">&#127922; Roll d100</button>
+      <button class="flip-btn" onclick="flipCoin()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/></svg>Flip Coin</button>
+      <button class="flip-btn" onclick="rollDice(6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1" fill="currentColor"/></svg>Roll d6</button>
+      <button class="flip-btn" onclick="rollDice(20)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><polygon points="12,2 22,18 2,18"/></svg>Roll d20</button>
+      <button class="flip-btn" onclick="rollDice(100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>Roll d100</button>
       <button class="flip-btn" onclick="flipHistory=[];document.getElementById('flipHist').innerHTML=''">Clear</button>
     </div>
     <div class="flip-history" id="flipHist">${flipHistory.map(h => `<span>${h}</span>`).join('')}</div>`;
@@ -1692,7 +1694,7 @@ function flipCoin() {
   void el.offsetWidth;
   el.classList.add('flipping');
   const heads = Math.random() < .5;
-  el.textContent = heads ? '🟡' : '⚪';
+  el.innerHTML = heads ? '<svg viewBox="0 0 24 24" style="width:48px;height:48px"><circle cx="12" cy="12" r="10" fill="#ffd700"/><text x="12" y="16" text-anchor="middle" fill="#b8860b" font-size="10" font-weight="bold">H</text></svg>' : '<svg viewBox="0 0 24 24" style="width:48px;height:48px"><circle cx="12" cy="12" r="10" fill="#c0c0c0"/><text x="12" y="16" text-anchor="middle" fill="#666" font-size="10" font-weight="bold">T</text></svg>';
   const label = heads ? 'H' : 'T';
   flipHistory.push(label);
   document.getElementById('flipHist').innerHTML += `<span>${label}</span>`;
@@ -1704,7 +1706,7 @@ function rollDice(sides) {
   void el.offsetWidth;
   el.classList.add('flipping');
   const val = Math.floor(Math.random() * sides) + 1;
-  el.textContent = '🎲 ' + val;
+  el.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2" style="width:48px;height:48px"><rect x="3" y="3" width="18" height="18" rx="3"/></svg><span style="font-size:32px;font-weight:700;margin-left:8px">' + val + '</span>';
   flipHistory.push('d' + sides + ':' + val);
   document.getElementById('flipHist').innerHTML += `<span>${val}</span>`;
 }
