@@ -3909,7 +3909,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/chrome-dino-3d.webp"
   },
   {
     "name": "Cut the Rope Vivid",
@@ -3917,7 +3917,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/cut-the-rope-vivid.webp"
   },
   {
     "name": "3 Foot Ninja Ii",
@@ -4197,7 +4197,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/chasm.webp"
   },
   {
     "name": "Choose Your Weapon 2",
@@ -4421,7 +4421,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/falldown2.webp"
   },
   {
     "name": "Family Crisis",
@@ -4429,7 +4429,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/family-crisis.webp"
   },
   {
     "name": "Fat Ninja",
@@ -4477,7 +4477,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/gold-miner-special-edition.webp"
   },
   {
     "name": "Gold_Miner_Xploit_Machine_Edition_2009",
@@ -4485,7 +4485,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/gold-miner-xploit-machine-edition-2009.webp"
   },
   {
     "name": "Gridlock",
@@ -4685,7 +4685,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/plant-vs-zombies-2.webp"
   },
   {
     "name": "Playing With Fire 2",
@@ -5261,7 +5261,7 @@
     "cat": "Platformer",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/t-rex-run.webp"
   },
   {
     "name": "Color Run",
@@ -5269,7 +5269,7 @@
     "cat": "Platformer",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/color-run.webp"
   },
   {
     "name": "CS:GO 2D",
@@ -5277,7 +5277,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/csgo-2d.webp"
   },
   {
     "name": "Developer Game",
@@ -5285,7 +5285,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/developer-game.webp"
   },
   {
     "name": "Game Stash",
@@ -5293,7 +5293,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/game-stash.webp"
   },
   {
     "name": "Gorillas",
@@ -5301,7 +5301,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/gorillas.webp"
   },
   {
     "name": "Hangman",
@@ -5309,7 +5309,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/hangman.webp"
   },
   {
     "name": "Hazard House",
@@ -5317,7 +5317,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/hazard-house.webp"
   },
   {
     "name": "Lighthouse",
@@ -5325,7 +5325,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/lighthouse.webp"
   },
   {
     "name": "Long Road",
@@ -5333,7 +5333,7 @@
     "cat": "Racing",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/long-road.webp"
   },
   {
     "name": "Maze Runner",
@@ -5341,7 +5341,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/maze-runner.webp"
   },
   {
     "name": "Memory Game Pretty",
@@ -5349,7 +5349,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/memory-game-pretty.webp"
   },
   {
     "name": "Memory Game",
@@ -5357,7 +5357,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/memory-game.webp"
   },
   {
     "name": "Memory Timed",
@@ -5365,7 +5365,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/memory-timed.webp"
   },
   {
     "name": "N-Gon",
@@ -5373,7 +5373,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/n-gon.webp"
   },
   {
     "name": "Platform Engine",
@@ -5381,7 +5381,7 @@
     "cat": "Platformer",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/platform-engine.webp"
   },
   {
     "name": "Platformer",
@@ -5389,7 +5389,7 @@
     "cat": "Platformer",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/platformer.webp"
   },
   {
     "name": "Rubik's Cube",
@@ -5397,7 +5397,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/rubiks-cube.webp"
   },
   {
     "name": "Sandboxels",
@@ -5405,7 +5405,7 @@
     "cat": "Sandbox",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/sandboxels.webp"
   },
   {
     "name": "Spell Cast",
@@ -5413,7 +5413,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/spell-cast.webp"
   },
   {
     "name": "Stick Hero",
@@ -5421,7 +5421,7 @@
     "cat": "Platformer",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/stick-hero.webp"
   },
   {
     "name": "Tic Tac Toe 2P",
@@ -5429,7 +5429,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/tic-tac-toe-2p.webp"
   },
   {
     "name": "Tilting Maze",
@@ -5437,7 +5437,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/tilting-maze.webp"
   },
   {
     "name": "Traffic Run",
@@ -5445,7 +5445,7 @@
     "cat": "Racing",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/traffic-run.webp"
   },
   {
     "name": "Ultrakill",
@@ -5453,7 +5453,7 @@
     "cat": "Shooter",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/ultrakill.webp"
   },
   {
     "name": "Word Guessing",
@@ -5461,6 +5461,6 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/word-guessing.webp"
   }
 ]
