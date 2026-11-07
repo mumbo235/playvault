@@ -178,7 +178,7 @@ body{
 }
 .mbtn:hover{background:rgba(255,255,255,.1);color:var(--text)}
 .mbtn.close:hover{background:var(--hot);border-color:var(--hot);color:#fff}
-.modal iframe{flex:1;border:none;width:100%;background:#000}
+.modal iframe{flex:1;border:none;width:100%;background:#000;transition:opacity .15s ease}
 
 .explore-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .explore-tag{
@@ -1203,7 +1203,11 @@ function openGame(name) {
   try { localStorage.setItem('pv_recent', JSON.stringify(recentlyPlayed)); } catch(e) {}
   document.getElementById('modalIcon').src = game.icon || '';
   document.getElementById('modalTitle').textContent = game.name;
-  document.getElementById('gameFrame').src = game.file;
+  const frame = document.getElementById('gameFrame');
+  frame.style.opacity = '0';
+  frame.src = '';
+  frame.onload = () => { frame.style.opacity = '1'; };
+  requestAnimationFrame(() => { frame.src = game.file; });
   document.getElementById('gameModal').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
