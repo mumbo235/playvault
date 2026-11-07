@@ -1,0 +1,3874 @@
+[
+  {
+    "name": "1 On 1 Soccer",
+    "file": "games/1-on-1-soccer.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/one.webp"
+  },
+  {
+    "name": "1 On 1 Tennis",
+    "file": "games/1-on-1-tennis.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/1-on-1-tennis.webp"
+  },
+  {
+    "name": "10 Minutes Till Dawn",
+    "file": "games/10-minutes-till-dawn.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/10m.webp"
+  },
+  {
+    "name": "100 Player Pong",
+    "file": "play/100-player-pong/index.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/100pong.webp"
+  },
+  {
+    "name": "12 Mini Battles",
+    "file": "games/12-mini-battles.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/12-mini-battles.webp"
+  },
+  {
+    "name": "123movies",
+    "file": "play/123movies/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/123movies.webp"
+  },
+  {
+    "name": "1v1",
+    "file": "play/1v1/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/1v1.webp"
+  },
+  {
+    "name": "1v1.LOL",
+    "file": "games/1v1.lol.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/1v1.webp"
+  },
+  {
+    "name": "1v1space",
+    "file": "play/1v1space/index.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/1v1space.webp"
+  },
+  {
+    "name": "2048",
+    "file": "games/2048.html",
+    "cat": "Puzzle",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/2048.webp"
+  },
+  {
+    "name": "2048 Cupcakes",
+    "file": "games/2048-cupcakes.html",
+    "cat": "Puzzle",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/cupcakes.webp"
+  },
+  {
+    "name": "2048 Multitask",
+    "file": "play/2048-multitask/index.html",
+    "cat": "Puzzle",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/multit.webp"
+  },
+  {
+    "name": "3D Flight Simulator",
+    "file": "games/3D-flight-simulator.html",
+    "cat": "Simulation",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/3d-flight-simulator.webp"
+  },
+  {
+    "name": "3d Free Kick",
+    "file": "games/3d-free-kick.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/3d-free-kick.webp"
+  },
+  {
+    "name": "8 Ball Classic",
+    "file": "games/8-ball-classic.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/8-ball-classic.webp"
+  },
+  {
+    "name": "9007199254740992",
+    "file": "games/9007199254740992.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/900.webp"
+  },
+  {
+    "name": "Achievementunlocked",
+    "file": "play/achievementunlocked/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/ache.webp"
+  },
+  {
+    "name": "Adarkroom",
+    "file": "play/adarkroom/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/adarkroom.webp"
+  },
+  {
+    "name": "Agar.io Lite",
+    "file": "games/agar-io-lite.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/agar-io-lite.webp"
+  },
+  {
+    "name": "Age Of War",
+    "file": "games/age-of-war.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/age-of-war.webp"
+  },
+  {
+    "name": "Age Of War 2",
+    "file": "games/age-of-war-2.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/age-of-war-2.webp"
+  },
+  {
+    "name": "Ages Of Conflict",
+    "file": "games/ages-of-conflict.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ages-of-conflict.webp"
+  },
+  {
+    "name": "Alienhominid",
+    "file": "play/alienhominid/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/alienhominid.webp"
+  },
+  {
+    "name": "Amidst The Clouds",
+    "file": "play/amidst-the-clouds/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/amidst-the-clouds.webp"
+  },
+  {
+    "name": "Among Us",
+    "file": "games/among-us.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/sus.webp"
+  },
+  {
+    "name": "Angry Birds",
+    "file": "games/angry-birds.html",
+    "cat": "Casual",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/angry-birds.webp"
+  },
+  {
+    "name": "Angry Birds Showdown",
+    "file": "games/angry-birds-showdown.html",
+    "cat": "Casual",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/angry-birds-showdown.webp"
+  },
+  {
+    "name": "Angry Birds Space",
+    "file": "games/angry-birds-space.html",
+    "cat": "Classic",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/angry-birds-space.webp"
+  },
+  {
+    "name": "Avalanche",
+    "file": "play/avalanche/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/avalanche.webp"
+  },
+  {
+    "name": "Awesome Tanks",
+    "file": "games/awesome-tanks.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/awesome-tanks.webp"
+  },
+  {
+    "name": "Awesome Tanks 2",
+    "file": "games/awesome-tanks-2.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/awesome-tanks-2.webp"
+  },
+  {
+    "name": "Backrooms",
+    "file": "games/backrooms.html",
+    "cat": "Horror",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/backrooms.webp"
+  },
+  {
+    "name": "Bacon May Die",
+    "file": "games/bacon-may-die.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bacon-may-die.webp"
+  },
+  {
+    "name": "Bad Ice Cream",
+    "file": "games/bad-ice-cream.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/bad-ice-cream.webp"
+  },
+  {
+    "name": "Bad Ice Cream 2",
+    "file": "games/bad-ice-cream-2.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/bad-ice-cream-2.webp"
+  },
+  {
+    "name": "Bad Ice Cream 3",
+    "file": "games/bad-ice-cream-3.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/bad-ice-cream-3.webp"
+  },
+  {
+    "name": "Bad Parenting",
+    "file": "games/bad-parenting.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bad-parenting.webp"
+  },
+  {
+    "name": "Bad Piggies",
+    "file": "games/bad-piggies.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bad-piggies.webp"
+  },
+  {
+    "name": "Bad Time Simulator",
+    "file": "games/bad-time-simulator.html",
+    "cat": "Simulation",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/sans.webp"
+  },
+  {
+    "name": "Baldi's Basics",
+    "file": "games/baldis-basics.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/baldis-basics.webp"
+  },
+  {
+    "name": "Ball Hop",
+    "file": "play/ball-hop/index.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/ballhop.webp"
+  },
+  {
+    "name": "Ballistic Chickens",
+    "file": "play/ballistic-chickens/index.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/ballistic-chickens.webp"
+  },
+  {
+    "name": "Bank Robbery 2",
+    "file": "games/bank-robbery-2.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bank-robbery-2.webp"
+  },
+  {
+    "name": "Bank Robbery 3",
+    "file": "games/bank-robbery-3.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bank-robbery-3.webp"
+  },
+  {
+    "name": "Baseball Bros",
+    "file": "games/baseball-bros.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/BAS.webp"
+  },
+  {
+    "name": "Basket Bros",
+    "file": "games/basket-bros.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/BAS.webp"
+  },
+  {
+    "name": "Basket Random",
+    "file": "games/basket-random.html",
+    "cat": "Multiplayer",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/BAS.webp"
+  },
+  {
+    "name": "Basketball Legends",
+    "file": "games/basketball-legends.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/BAS.webp"
+  },
+  {
+    "name": "Basketball Stars",
+    "file": "games/basketball-stars.html",
+    "cat": "Sports",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/basketball.webp"
+  },
+  {
+    "name": "Big Ice Tower Tiny Square",
+    "file": "games/big-ice-tower-tiny-square.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/big-ice-tower-tiny-square.webp"
+  },
+  {
+    "name": "Big Neon Tower Tiny Square",
+    "file": "games/big-neon-tower-tiny-square.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/big-neon-tower-tiny-square.webp"
+  },
+  {
+    "name": "Big Tower Tiny Square",
+    "file": "games/big-tower-tiny-square.html",
+    "cat": "Platformer",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/btts.webp"
+  },
+  {
+    "name": "Big Tower Tiny Square 2",
+    "file": "games/big-tower-tiny-square-2.html",
+    "cat": "Platformer",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/big-tower-tiny-square-2.webp"
+  },
+  {
+    "name": "Bit Planes",
+    "file": "games/bit-planes.htm",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bit-planes.webp"
+  },
+  {
+    "name": "Biters Io",
+    "file": "play/biters-io/index.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/biters.webp"
+  },
+  {
+    "name": "BitLife",
+    "file": "games/bitlife.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/bitlife.webp"
+  },
+  {
+    "name": "Blocky Snakes",
+    "file": "games/blocky-snakes.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/blocky.webp"
+  },
+  {
+    "name": "Blocky Tower",
+    "file": "play/blocky-tower/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/blocky.webp"
+  },
+  {
+    "name": "Bloons TD 1",
+    "file": "games/bloons-TD.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bloonstd.webp"
+  },
+  {
+    "name": "Bloons TD 1",
+    "file": "play/bloonstd/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/bloonstd.webp"
+  },
+  {
+    "name": "Bloons TD 2",
+    "file": "games/bloons-TD-2.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bloonstd2.webp"
+  },
+  {
+    "name": "Bloons TD 2",
+    "file": "play/bloonstd2/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/bloonstd2.webp"
+  },
+  {
+    "name": "Bloons TD 3",
+    "file": "games/bloons-TD-3.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bloonstd.webp"
+  },
+  {
+    "name": "Bloons TD 4",
+    "file": "games/bloons-TD-4.html",
+    "cat": "Strategy",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/bloonstd4.webp"
+  },
+  {
+    "name": "Bloons TD 4",
+    "file": "play/bloonstd4/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/bloonstd4.webp"
+  },
+  {
+    "name": "Bloons TD 5",
+    "file": "games/bloons-TD-5.html",
+    "cat": "Strategy",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/bloonstd.webp"
+  },
+  {
+    "name": "Bloxorz",
+    "file": "games/bloxorz.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bloxorz.webp"
+  },
+  {
+    "name": "Blumgi Racers",
+    "file": "games/blumgi-racers.html",
+    "cat": "Launcher",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/blumgi-racers.webp"
+  },
+  {
+    "name": "Blumgi Rocket",
+    "file": "games/blumgi-rocket.html",
+    "cat": "Launcher",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/blumgi-rocket.webp"
+  },
+  {
+    "name": "Bob The Robber",
+    "file": "games/bob-the-robber.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bob-the-robber.webp"
+  },
+  {
+    "name": "Bob The Robber 2",
+    "file": "games/bob-the-robber-2.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bob-the-robber-2.webp"
+  },
+  {
+    "name": "Bob The Robber 5",
+    "file": "games/bob-the-robber-5.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bob-the-robber-5.webp"
+  },
+  {
+    "name": "Bouncy Motors",
+    "file": "games/bouncy-motors.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bouncy-motors.webp"
+  },
+  {
+    "name": "Bouncybasketball",
+    "file": "play/bouncybasketball/index.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "multi",
+    "icon": "play/bouncybasketball/screenshots1-small.jpg"
+  },
+  {
+    "name": "Bow Masters",
+    "file": "games/bow-masters.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bow-masters.webp"
+  },
+  {
+    "name": "Boxel Rebound",
+    "file": "games/boxel-rebound.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/box.webp"
+  },
+  {
+    "name": "Boxing Physics",
+    "file": "play/boxing-physics/index.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/box.webp"
+  },
+  {
+    "name": "Boxing Random",
+    "file": "games/boxing-random.htm",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/box.webp"
+  },
+  {
+    "name": "Breaking The Bank",
+    "file": "games/breaking-the-bank.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/breaking-the-bank.webp"
+  },
+  {
+    "name": "Breaklock",
+    "file": "play/breaklock/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/breaklock.webp"
+  },
+  {
+    "name": "Breakout",
+    "file": "play/breakout/index.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/breakout.webp"
+  },
+  {
+    "name": "Browserquest",
+    "file": "play/browserquest/index.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/BrowserQuest.webp"
+  },
+  {
+    "name": "Bubble Shooter",
+    "file": "games/bubble-shooter.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/bubble-shooter.webp"
+  },
+  {
+    "name": "Burrito Bison Launcha Libre",
+    "file": "games/burrito-bison-launcha-libre.html",
+    "cat": "Launcher",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/burrito-bison-launcha-libre.webp"
+  },
+  {
+    "name": "Candy Crush",
+    "file": "games/candy-crush.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/candy-crush.webp"
+  },
+  {
+    "name": "Capybara Clicker",
+    "file": "games/capybara-clicker.html",
+    "cat": "Idle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/capybara-clicker.webp"
+  },
+  {
+    "name": "Car Drawing",
+    "file": "games/car-drawing.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/car-drawing.webp"
+  },
+  {
+    "name": "Car King Arena",
+    "file": "games/car-king-arena.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/car-king-arena.webp"
+  },
+  {
+    "name": "Chaos Faction 2",
+    "file": "games/chaos-faction-2.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/chaos-faction-2.webp"
+  },
+  {
+    "name": "Chess",
+    "file": "games/chess.html",
+    "cat": "Puzzle",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/chess.webp"
+  },
+  {
+    "name": "Choppy Orc",
+    "file": "games/choppy-orc.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/choppy-orc.webp"
+  },
+  {
+    "name": "Chrome Dino",
+    "file": "play/chrome-dino/index.html",
+    "cat": "Classic",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/chrom.webp"
+  },
+  {
+    "name": "Chrome Dino",
+    "file": "games/google-dino.html",
+    "cat": "Classic",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/chrom.webp"
+  },
+  {
+    "name": "Circlo",
+    "file": "play/circlo/index.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/circlo.webp"
+  },
+  {
+    "name": "CircloO",
+    "file": "games/circloO.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/circlo.webp"
+  },
+  {
+    "name": "CircloO 2",
+    "file": "games/circloO-2.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/circlo.webp"
+  },
+  {
+    "name": "Clash Of Vikings",
+    "file": "games/clash-of-vikings.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/clash-of-vikings.webp"
+  },
+  {
+    "name": "Cleanup.io",
+    "file": "games/cleanup-io.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/cleanup-io.webp"
+  },
+  {
+    "name": "Cluster Rush",
+    "file": "games/cluster-rush.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/cluster.webp"
+  },
+  {
+    "name": "Connect3",
+    "file": "play/connect3/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/con3.webp"
+  },
+  {
+    "name": "Cookie",
+    "file": "play/cookie/index.html",
+    "cat": "Idle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/cookie.webp"
+  },
+  {
+    "name": "Cookie Clicker",
+    "file": "games/cookie-clicker.htm",
+    "cat": "Idle",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/cookie.webp"
+  },
+  {
+    "name": "Core Ball",
+    "file": "play/core-ball/index.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/coreball.webp"
+  },
+  {
+    "name": "Coreball",
+    "file": "games/coreball.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/coreball.webp"
+  },
+  {
+    "name": "Crazy Cars",
+    "file": "games/crazy-cars.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/crazy-cars.webp"
+  },
+  {
+    "name": "Crazy Cattle 3D",
+    "file": "games/crazy-cattle-3D.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/crazy-cattle-3d.webp"
+  },
+  {
+    "name": "Crazy Crash Landing",
+    "file": "games/crazy-crash-landing.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/crazy-crash-landing.webp"
+  },
+  {
+    "name": "Crazy Motorcycle",
+    "file": "games/crazy-motorcycle.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/crazy-motorcycle.webp"
+  },
+  {
+    "name": "Crossy Road",
+    "file": "games/crossy-road.htm",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/crossyroad.webp"
+  },
+  {
+    "name": "Crossyroad",
+    "file": "play/crossyroad/index.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/crossyroad.webp"
+  },
+  {
+    "name": "Csgo Clicker",
+    "file": "play/csgo-clicker/index.html",
+    "cat": "Idle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/CSGO.webp"
+  },
+  {
+    "name": "Cupcakes",
+    "file": "play/cupcakes/index.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/cupcakes.webp"
+  },
+  {
+    "name": "Cut The Rope",
+    "file": "games/cut-the-rope.html",
+    "cat": "Casual",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/ctr.webp"
+  },
+  {
+    "name": "Cut The Rope 2",
+    "file": "games/cut-the-rope-2.html",
+    "cat": "Casual",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/cut-the-rope-2.webp"
+  },
+  {
+    "name": "Cut The Rope Holiday Gift",
+    "file": "games/cut-the-rope-holiday-gift.html",
+    "cat": "Casual",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/cut-the-rope-holiday-gift.webp"
+  },
+  {
+    "name": "Cut The Rope Time Travel",
+    "file": "games/cut-the-rope-time-travel.html",
+    "cat": "Casual",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/cut-the-rope-time-travel.webp"
+  },
+  {
+    "name": "Cuttherope",
+    "file": "play/cuttherope/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "play/cuttherope/logo.png"
+  },
+  {
+    "name": "Cyber City Driver",
+    "file": "play/cyber-city-driver/index.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/cyber.webp"
+  },
+  {
+    "name": "Dadish",
+    "file": "games/dadish.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/dadish.webp"
+  },
+  {
+    "name": "Dadish 2",
+    "file": "games/dadish-2.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/dadish-2.webp"
+  },
+  {
+    "name": "Dadish 3",
+    "file": "games/dadish-3.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/dadish-3.webp"
+  },
+  {
+    "name": "Deadly Descent",
+    "file": "games/deadly-descent.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/deadly-descent.webp"
+  },
+  {
+    "name": "Death Chase",
+    "file": "games/death-chase.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/death-chase.webp"
+  },
+  {
+    "name": "Death Run 3D",
+    "file": "games/death-run-3D.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/death-run-3d.webp"
+  },
+  {
+    "name": "Demolition Derby Crash Racing",
+    "file": "games/demolition-derby-crash-racing.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/demolition-derby-crash-racing.webp"
+  },
+  {
+    "name": "Discus",
+    "file": "play/discus/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/discus.webp"
+  },
+  {
+    "name": "Dogeminer",
+    "file": "play/dogeminer/index.html",
+    "cat": "Idle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/dogeminer.webp"
+  },
+  {
+    "name": "Doodle Jump",
+    "file": "games/doodle-jump.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/doodle.webp"
+  },
+  {
+    "name": "Doodlejump",
+    "file": "play/doodlejump/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/doodle.webp"
+  },
+  {
+    "name": "Draw Climber",
+    "file": "games/draw-climber.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/draw-climber.webp"
+  },
+  {
+    "name": "Dreadhead Parkour",
+    "file": "games/dreadhead-parkour.htm",
+    "cat": "Runner",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/dreadhead-parkour.webp"
+  },
+  {
+    "name": "Drift Boss",
+    "file": "games/drift-boss.htm",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/drift-boss.webp"
+  },
+  {
+    "name": "Drift City",
+    "file": "play/drift-city/index.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/driftc.webp"
+  },
+  {
+    "name": "Drift Hunters Pro",
+    "file": "games/drift-hunters-pro.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/drift-hunters-pro.webp"
+  },
+  {
+    "name": "Driftking",
+    "file": "play/driftking/index.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/driftking.webp"
+  },
+  {
+    "name": "Drive Mad",
+    "file": "games/drive-mad.htm",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/drive-mad.webp"
+  },
+  {
+    "name": "Duck Life",
+    "file": "games/duck-life.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ducklife.webp"
+  },
+  {
+    "name": "Duck Life 2",
+    "file": "games/duck-life-2.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ducklife2.webp"
+  },
+  {
+    "name": "Duck Life 3",
+    "file": "games/duck-life-3.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ducklife3.webp"
+  },
+  {
+    "name": "Duck Life 4",
+    "file": "games/duck-life-4.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ducklife4.webp"
+  },
+  {
+    "name": "Duck Life 5",
+    "file": "games/duck-life-5.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ducklife.webp"
+  },
+  {
+    "name": "Ducklife1",
+    "file": "play/ducklife1/index.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/ducklife.webp"
+  },
+  {
+    "name": "Ducklife2",
+    "file": "play/ducklife2/index.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/ducklife2.webp"
+  },
+  {
+    "name": "Ducklife3",
+    "file": "play/ducklife3/index.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/ducklife3.webp"
+  },
+  {
+    "name": "Ducklife4",
+    "file": "play/ducklife4/index.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/ducklife4.webp"
+  },
+  {
+    "name": "Ducklings.io",
+    "file": "games/ducklings-io.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ducklings-io.webp"
+  },
+  {
+    "name": "Dune",
+    "file": "play/dune/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/dune.webp"
+  },
+  {
+    "name": "Dunkers Fight",
+    "file": "play/dunkers-fight/index.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/dunk.webp"
+  },
+  {
+    "name": "Eagle Ride",
+    "file": "games/eagle-ride.html",
+    "cat": "Launcher",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/eagle-ride.webp"
+  },
+  {
+    "name": "Earn To Die",
+    "file": "games/earn-to-die.html",
+    "cat": "Launcher",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/earn-to-die.webp"
+  },
+  {
+    "name": "Earn To Die 2",
+    "file": "games/earn-to-die-2.html",
+    "cat": "Launcher",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/earn-to-die-2.webp"
+  },
+  {
+    "name": "Eatio",
+    "file": "play/eatio/index.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/eatio.webp"
+  },
+  {
+    "name": "Edge Surf",
+    "file": "play/edge-surf/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/edge-surf.webp"
+  },
+  {
+    "name": "Edgenotfound",
+    "file": "play/edgenotfound/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/edgenotfound.webp"
+  },
+  {
+    "name": "Eel Slap",
+    "file": "play/eel-slap/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/eel-slap.webp"
+  },
+  {
+    "name": "Eggy Car",
+    "file": "games/eggy-car.html",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/eggy-car.webp"
+  },
+  {
+    "name": "Elastic Face",
+    "file": "games/elastic-face.htm",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/elastic-face.webp"
+  },
+  {
+    "name": "Elasticman",
+    "file": "play/elasticman/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/elasticman.webp"
+  },
+  {
+    "name": "Elsasnapchat",
+    "file": "play/elsasnapchat/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/elsasnapchat.webp"
+  },
+  {
+    "name": "Endlesswar3",
+    "file": "play/endlesswar3/index.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/endlesswar3.webp"
+  },
+  {
+    "name": "Escape Road",
+    "file": "games/escape-road.html",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/escape-road.webp"
+  },
+  {
+    "name": "Escape Road 2",
+    "file": "games/escape-road-2.html",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/escape-road-2.webp"
+  },
+  {
+    "name": "Escape Road 3",
+    "file": "games/escape-road-3.html",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/escape-road-3.webp"
+  },
+  {
+    "name": "Escaping The Prison",
+    "file": "games/escaping-the-prison.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/excapingtheprison.webp"
+  },
+  {
+    "name": "Escapingtheprison",
+    "file": "play/escapingtheprison/index.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "multi",
+    "icon": "play/escapingtheprison/escapingtheprison.jpg"
+  },
+  {
+    "name": "Eugene's Life",
+    "file": "games/eugenes-life.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/eugenes-life.webp"
+  },
+  {
+    "name": "Evil Glitch",
+    "file": "games/evil-glitch.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/evil-glitch.webp"
+  },
+  {
+    "name": "Evolution",
+    "file": "play/evolution/index.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/evolution.webp"
+  },
+  {
+    "name": "Exo",
+    "file": "play/exo/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/exo.webp"
+  },
+  {
+    "name": "Fallboys",
+    "file": "play/fallboys/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/fall-boys.webp"
+  },
+  {
+    "name": "Fancy Pants Adventure",
+    "file": "games/fancy-pants-adventure.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/fancy-pants-adventure.webp"
+  },
+  {
+    "name": "Fancy Pants Adventure 2",
+    "file": "games/fancy-pants-adventure-2.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/fancy-pants-adventure-2.webp"
+  },
+  {
+    "name": "Ferge",
+    "file": "play/ferge/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/ferge.webp"
+  },
+  {
+    "name": "Fireblob",
+    "file": "games/fireblob.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/fireblob.webp"
+  },
+  {
+    "name": "Fireboy And Watergirl",
+    "file": "games/fireboy-and-watergirl.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/fireboy-and-watergirl.webp"
+  },
+  {
+    "name": "Fireboy And Watergirl 2",
+    "file": "games/fireboy-and-watergirl-2.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/fireboy-and-watergirl-2.webp"
+  },
+  {
+    "name": "Fireboy And Watergirl 3",
+    "file": "games/fireboy-and-watergirl-3.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/fireboy-and-watergirl-3.webp"
+  },
+  {
+    "name": "Fireboy And Watergirl 4",
+    "file": "games/fireboy-and-watergirl-4.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/fireboy-and-watergirl-4.webp"
+  },
+  {
+    "name": "Five Nights at Freddy's",
+    "file": "games/fnaf.html",
+    "cat": "Horror",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/fnaf.webp"
+  },
+  {
+    "name": "Flappy",
+    "file": "play/flappy/index.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/flappy.webp"
+  },
+  {
+    "name": "Flappy Bird",
+    "file": "games/flappy-bird.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/flappy.webp"
+  },
+  {
+    "name": "Fleeing The Complex",
+    "file": "games/fleeing-the-complex.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/fleeing-the-complex.webp"
+  },
+  {
+    "name": "Fliphero",
+    "file": "play/fliphero/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/fliphero.webp"
+  },
+  {
+    "name": "Flood Runner 2",
+    "file": "games/flood-runner-2.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/flood-runner-2.webp"
+  },
+  {
+    "name": "Flood Runner 3",
+    "file": "games/flood-runner-3.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/flood-runner-3.webp"
+  },
+  {
+    "name": "Flood Runner 4",
+    "file": "games/flood-runner-4.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/flood-runner-4.webp"
+  },
+  {
+    "name": "Floyd",
+    "file": "play/floyd/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/floyd.webp"
+  },
+  {
+    "name": "FNAF 2",
+    "file": "games/fnaf-2.html",
+    "cat": "Horror",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/fnaf.webp"
+  },
+  {
+    "name": "FNAF 3",
+    "file": "games/fnaf-3.html",
+    "cat": "Horror",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/fnaf.webp"
+  },
+  {
+    "name": "FNAF 4",
+    "file": "games/fnaf-4.html",
+    "cat": "Horror",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/fnaf.webp"
+  },
+  {
+    "name": "FNAF Sister Location",
+    "file": "games/fnaf-sister-location.html",
+    "cat": "Horror",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/fnaf.webp"
+  },
+  {
+    "name": "Fnaf2",
+    "file": "play/fnaf2/index.html",
+    "cat": "Horror",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/fnaf.webp"
+  },
+  {
+    "name": "Fnaf3",
+    "file": "play/fnaf3/index.html",
+    "cat": "Horror",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/fnaf.webp"
+  },
+  {
+    "name": "Fnaf4",
+    "file": "play/fnaf4/index.html",
+    "cat": "Horror",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/fnaf.webp"
+  },
+  {
+    "name": "Football Bros",
+    "file": "games/football-bros.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/football-bros.webp"
+  },
+  {
+    "name": "Football Legends",
+    "file": "games/football-legends.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/football-legends.webp"
+  },
+  {
+    "name": "Free Rider 3",
+    "file": "games/free-rider-3.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/free-rider-3.webp"
+  },
+  {
+    "name": "Friday Night Funkin",
+    "file": "games/friday-night-funkin.html",
+    "cat": "Horror",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/fridaynightfunkin.webp"
+  },
+  {
+    "name": "Fruit Ninja",
+    "file": "games/fruit-ninja.html",
+    "cat": "Action",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/ninjacut.webp"
+  },
+  {
+    "name": "Fruitninja",
+    "file": "play/fruitninja/index.html",
+    "cat": "Action",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/fruitninja.webp"
+  },
+  {
+    "name": "Funny Battle",
+    "file": "games/funny-battle.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/funny-battle.webp"
+  },
+  {
+    "name": "Funny Battle 2",
+    "file": "games/funny-battle-2.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/funny-battle-2.webp"
+  },
+  {
+    "name": "Funny Mad Racing",
+    "file": "games/funny-mad-racing.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/funny-mad-racing.webp"
+  },
+  {
+    "name": "Funny Shooter 2",
+    "file": "games/funny-shooter-2.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/funnyshooter.webp"
+  },
+  {
+    "name": "Funnyshooter",
+    "file": "play/funnyshooter/index.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/funnyshooter.webp"
+  },
+  {
+    "name": "Geometry Dash",
+    "file": "games/geometry-dash.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/geodash.webp"
+  },
+  {
+    "name": "Geometry Dash Lite",
+    "file": "games/geometry-dash-lite.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/geometry-dash-lite.webp"
+  },
+  {
+    "name": "Geometry Vibes",
+    "file": "games/geometry-vibes.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/geometry-vibes.webp"
+  },
+  {
+    "name": "Geometrydash",
+    "file": "play/geometrydash/index.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/geometrydash.webp"
+  },
+  {
+    "name": "Get On Top",
+    "file": "games/get-on-top.html",
+    "cat": "Multiplayer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/get-on-top.webp"
+  },
+  {
+    "name": "Getaway Shootout",
+    "file": "games/getaway-shootout.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/getaway-shootout.webp"
+  },
+  {
+    "name": "Gladi Hoppers",
+    "file": "games/gladi-hoppers.html",
+    "cat": "Multiplayer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/gladi-hoppers.webp"
+  },
+  {
+    "name": "Goodnight",
+    "file": "play/goodnight/index.html",
+    "cat": "Horror",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/gn.webp"
+  },
+  {
+    "name": "Google Baseball",
+    "file": "games/google-baseball.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/google-baseball.webp"
+  },
+  {
+    "name": "Granny",
+    "file": "games/granny.html",
+    "cat": "Horror",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/granny.webp"
+  },
+  {
+    "name": "Granny 2",
+    "file": "games/granny-2.html",
+    "cat": "Horror",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/granny-2.webp"
+  },
+  {
+    "name": "Guess Their Answer",
+    "file": "games/guess-their-answer.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/guess-their-answer.webp"
+  },
+  {
+    "name": "Hanger 2",
+    "file": "games/hanger-2.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/hanger-2.webp"
+  },
+  {
+    "name": "Happy Wheels",
+    "file": "games/happy-wheels.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/happy-wheels.webp"
+  },
+  {
+    "name": "Helix Jump",
+    "file": "games/helix-jump.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/helix-jump.webp"
+  },
+  {
+    "name": "Hextris",
+    "file": "play/hextris/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/hextrt.webp"
+  },
+  {
+    "name": "Highway Traffic",
+    "file": "games/highway-traffic.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/highway-traffic.webp"
+  },
+  {
+    "name": "Hill Climb Racing Lite",
+    "file": "games/hill-climb-racing-lite.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/hill-climb-racing-lite.webp"
+  },
+  {
+    "name": "Hole.io",
+    "file": "games/hole-io.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/hole-io.webp"
+  },
+  {
+    "name": "House Of Hazards",
+    "file": "games/house-of-hazards.html",
+    "cat": "Multiplayer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/house-of-hazards.webp"
+  },
+  {
+    "name": "Hover Racer Drive",
+    "file": "games/hover-racer-drive.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/hover-racer-drive.webp"
+  },
+  {
+    "name": "Ice Dodo",
+    "file": "games/ice-dodo.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ice-dodo.webp"
+  },
+  {
+    "name": "Idle Breakout",
+    "file": "games/idle-breakout.html",
+    "cat": "Idle",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/idlebreakout.webp"
+  },
+  {
+    "name": "Idle Dice",
+    "file": "games/idle-dice.html",
+    "cat": "Idle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/idle-dice.webp"
+  },
+  {
+    "name": "Idle Shark",
+    "file": "play/idle-shark/index.html",
+    "cat": "Idle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/sharkgame.webp"
+  },
+  {
+    "name": "Impossiblequiz",
+    "file": "play/impossiblequiz/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/impossiblequiz.webp"
+  },
+  {
+    "name": "Infiltrating The Airship",
+    "file": "games/infiltrating-the-airship.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/infiltrating-the-airship.webp"
+  },
+  {
+    "name": "Interactivebuddy",
+    "file": "play/interactivebuddy/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/interactivebuddy.webp"
+  },
+  {
+    "name": "Iron Snout",
+    "file": "games/iron-snout.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/iron-snout.webp"
+  },
+  {
+    "name": "Jacksmith",
+    "file": "games/jacksmith.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/jacksmith.webp"
+  },
+  {
+    "name": "Jetpack Joyride",
+    "file": "games/jetpack-joyride.html",
+    "cat": "Classic",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/jetpack-joyride.webp"
+  },
+  {
+    "name": "Johnny Trigger",
+    "file": "games/johnny-trigger.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/johnny-trigger.webp"
+  },
+  {
+    "name": "Jumping Shell",
+    "file": "games/jumping-shell.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/jumping-shell.webp"
+  },
+  {
+    "name": "Just Fall",
+    "file": "play/just-fall/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/just-fall.webp"
+  },
+  {
+    "name": "Just One Boss",
+    "file": "play/just-one-boss/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/just-one-boss.webp"
+  },
+  {
+    "name": "Karate Bros",
+    "file": "games/karate-bros.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/karate-bros.webp"
+  },
+  {
+    "name": "Kart Bros",
+    "file": "games/kart-bros.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/kart-bros.webp"
+  },
+  {
+    "name": "Kitchen Gun Game",
+    "file": "play/kitchen-gun-game/index.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/kitchen-gun-game.webp"
+  },
+  {
+    "name": "Kittencannon",
+    "file": "play/kittencannon/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/kittencannon.webp"
+  },
+  {
+    "name": "Kittytoy",
+    "file": "games/kittytoy.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/kittytoy.webp"
+  },
+  {
+    "name": "Krunker",
+    "file": "play/krunker/index.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/krunker.webp"
+  },
+  {
+    "name": "Learn To Fly",
+    "file": "games/learn-to-fly.html",
+    "cat": "Launcher",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/learntofly.webp"
+  },
+  {
+    "name": "Learn To Fly 2",
+    "file": "games/learn-to-fly-2.html",
+    "cat": "Launcher",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/learntofly2.webp"
+  },
+  {
+    "name": "Learn To Fly 3",
+    "file": "games/learn-to-fly-3.html",
+    "cat": "Launcher",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/learntofly.webp"
+  },
+  {
+    "name": "Learn To Fly Idle",
+    "file": "games/learn-to-fly-idle.html",
+    "cat": "Idle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/learntofly.webp"
+  },
+  {
+    "name": "Learntofly",
+    "file": "play/learntofly/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/learntofly.webp"
+  },
+  {
+    "name": "Learntofly2",
+    "file": "play/learntofly2/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/learntofly2.webp"
+  },
+  {
+    "name": "Level Devil",
+    "file": "games/level-devil.html",
+    "cat": "Platformer",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/level-devil.webp"
+  },
+  {
+    "name": "Little Alchemy 2",
+    "file": "games/little-alchemy-2.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/little-alchemy-2.webp"
+  },
+  {
+    "name": "Madalin Stunt Cars 2",
+    "file": "games/madalin-stunt-cars-2.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/madalin-stunt-cars-2.webp"
+  },
+  {
+    "name": "Madness Project Nexus",
+    "file": "games/madness-project-nexus.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/madness-project-nexus.webp"
+  },
+  {
+    "name": "Mario",
+    "file": "play/mario/index.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/mario.webp"
+  },
+  {
+    "name": "Melon Playground",
+    "file": "games/melon-playground.html",
+    "cat": "Simulation",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/melon-playground.webp"
+  },
+  {
+    "name": "Merge Round Racers",
+    "file": "games/merge-round-racers.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/merge-round-racers.webp"
+  },
+  {
+    "name": "Minecraft",
+    "file": "play/minecraft/index.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/minecraft.webp"
+  },
+  {
+    "name": "Minecraft Js",
+    "file": "play/minecraft-js/index.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/minecraft.webp"
+  },
+  {
+    "name": "Minesweeper",
+    "file": "games/minesweeper.html",
+    "cat": "Puzzle",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/minesweeper.webp"
+  },
+  {
+    "name": "Monkey Mart",
+    "file": "games/monkey-mart.htm",
+    "cat": "Idle",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/monkey-mart.webp"
+  },
+  {
+    "name": "Monster Tracks",
+    "file": "games/monster-tracks.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/monster-tracks.webp"
+  },
+  {
+    "name": "Motherload",
+    "file": "games/motherload.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/motherload.webp"
+  },
+  {
+    "name": "Moto X3M",
+    "file": "games/moto-x3m.htm",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/motox3m.webp"
+  },
+  {
+    "name": "Moto X3M",
+    "file": "play/motox3m/index.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/motox3m.webp"
+  },
+  {
+    "name": "Moto X3M 2",
+    "file": "games/moto-x3m-2.html",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/motox3m2.webp"
+  },
+  {
+    "name": "Moto X3M 3",
+    "file": "games/moto-x3m-3.html",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/motox3m.webp"
+  },
+  {
+    "name": "Moto X3M Pool",
+    "file": "play/motox3m-pool/index.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/motox3m-pool.webp"
+  },
+  {
+    "name": "Moto X3M Pool Party",
+    "file": "games/moto-x3m-pool-party.html",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/motox3m-pool.webp"
+  },
+  {
+    "name": "Moto X3M Spooky",
+    "file": "play/motox3m-spooky/index.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/motox3m.webp"
+  },
+  {
+    "name": "Moto X3M Spooky Land",
+    "file": "games/moto-x3m-spooky-land.html",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/moto-spook.webp"
+  },
+  {
+    "name": "Moto X3M Winter",
+    "file": "games/moto-x3m-winter.html",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/motox3m-winter.webp"
+  },
+  {
+    "name": "Moto X3M Winter",
+    "file": "play/motox3m-winter/index.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/motox3m-winter.webp"
+  },
+  {
+    "name": "Moto X3M2",
+    "file": "play/motox3m2/index.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/motox3m2.webp"
+  },
+  {
+    "name": "Multiplayer Pong",
+    "file": "play/multiplayer-pong/index.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/multiplayer-pong.webp"
+  },
+  {
+    "name": "Murder",
+    "file": "games/murder.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/murder.webp"
+  },
+  {
+    "name": "Noob Miner",
+    "file": "games/noob-miner.html",
+    "cat": "Idle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/noob-miner.webp"
+  },
+  {
+    "name": "OpenTTD",
+    "file": "games/openTTD.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/openttd.webp"
+  },
+  {
+    "name": "Opposite Day",
+    "file": "games/opposite-day.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/opposite-day.webp"
+  },
+  {
+    "name": "Ovo",
+    "file": "games/ovo.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ovo.webp"
+  },
+  {
+    "name": "Ovo 2",
+    "file": "games/ovo-2.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ovo-2.webp"
+  },
+  {
+    "name": "Ovo 3 Dimensions",
+    "file": "games/ovo-3-dimensions.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ovo-3-dimensions.webp"
+  },
+  {
+    "name": "Pac-Man",
+    "file": "games/pac-man.html",
+    "cat": "Classic",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/pacman.webp"
+  },
+  {
+    "name": "Pacman",
+    "file": "play/pacman/index.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/pacman.webp"
+  },
+  {
+    "name": "Papa's Bakeria",
+    "file": "games/papas-bakeria.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-bakeria.webp"
+  },
+  {
+    "name": "Papa's Burgeria",
+    "file": "games/papas-burgeria.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-burgeria.webp"
+  },
+  {
+    "name": "Papa's Cheeseria",
+    "file": "games/papas-cheeseria.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-cheeseria.webp"
+  },
+  {
+    "name": "Papa's Cupcakeria",
+    "file": "games/papas-cupcakeria.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-cupcakeria.webp"
+  },
+  {
+    "name": "Papa's Donuteria",
+    "file": "games/papas-donuteria.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-donuteria.webp"
+  },
+  {
+    "name": "Papa's Freezeria",
+    "file": "games/papas-freezeria.html",
+    "cat": "Cooking",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/papas-freezeria.webp"
+  },
+  {
+    "name": "Papa's Hot Doggeria",
+    "file": "games/papas-hot-doggeria.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-hot-doggeria.webp"
+  },
+  {
+    "name": "Papa's Pancakeria",
+    "file": "games/papas-pancakeria.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-pancakeria.webp"
+  },
+  {
+    "name": "Papa's Pastaria",
+    "file": "games/papas-pastaria.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-pastaria.webp"
+  },
+  {
+    "name": "Papa's Pizzeria",
+    "file": "games/papas-pizzeria.html",
+    "cat": "Cooking",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/papas-pizzeria.webp"
+  },
+  {
+    "name": "Papa's Scooperia",
+    "file": "games/papas-scooperia.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-scooperia.webp"
+  },
+  {
+    "name": "Papa's Sushiria",
+    "file": "games/papas-sushiria.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-sushiria.webp"
+  },
+  {
+    "name": "Papa's Taco Mia",
+    "file": "games/papas-taco-mia.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-taco-mia.webp"
+  },
+  {
+    "name": "Papa's Wingeria",
+    "file": "games/papas-wingeria.html",
+    "cat": "Cooking",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/papas-wingeria.webp"
+  },
+  {
+    "name": "Paper.io 2",
+    "file": "games/paper-io-2.htm",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/paperio.webp"
+  },
+  {
+    "name": "Paperio",
+    "file": "play/paperio/index.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/paperio.webp"
+  },
+  {
+    "name": "Papery Planes",
+    "file": "play/papery-planes/index.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "multi",
+    "icon": "play/papery-planes/thumb.png"
+  },
+  {
+    "name": "Parking Fury",
+    "file": "games/parking-fury.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/parking-fury.webp"
+  },
+  {
+    "name": "Parking Fury 2",
+    "file": "games/parking-fury-2.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/parking-fury-2.webp"
+  },
+  {
+    "name": "Parking Fury 3",
+    "file": "games/parking-fury-3.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/parking-fury-3.webp"
+  },
+  {
+    "name": "Particle Clicker",
+    "file": "play/particle-clicker/index.html",
+    "cat": "Idle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/particle-clicker.webp"
+  },
+  {
+    "name": "Picky Package",
+    "file": "play/picky-package/index.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "multi",
+    "icon": "play/picky-package/2b2f1e04eb440d7d6dcb03b177466f1b.png"
+  },
+  {
+    "name": "Pico's School",
+    "file": "games/picos-school.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/picos-school.webp"
+  },
+  {
+    "name": "Ping Pong Chaos",
+    "file": "games/ping-pong-chaos.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ping-pong-chaos.webp"
+  },
+  {
+    "name": "Pixel Speedrun",
+    "file": "games/pixel-speedrun.html",
+    "cat": "Runner",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/pixel-speedrun.webp"
+  },
+  {
+    "name": "Plants Vs Zombies",
+    "file": "games/plants-vs-zombies.html",
+    "cat": "Strategy",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/plants-vs-zombies.webp"
+  },
+  {
+    "name": "Plonky",
+    "file": "games/plonky.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/plonky.webp"
+  },
+  {
+    "name": "Pokemonfirered",
+    "file": "play/pokemonfirered/index.html",
+    "cat": "Retro",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/PokemonFireRed.webp"
+  },
+  {
+    "name": "Pokey Stick",
+    "file": "play/pokey-stick/index.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/pokey-stick.webp"
+  },
+  {
+    "name": "Polytrack",
+    "file": "games/polytrack.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/polytrack.webp"
+  },
+  {
+    "name": "Pong",
+    "file": "play/pong/index.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/pong.webp"
+  },
+  {
+    "name": "Poor Bunny",
+    "file": "games/poor-bunny.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/poor-bunny.webp"
+  },
+  {
+    "name": "Pou",
+    "file": "games/pou.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/pou.webp"
+  },
+  {
+    "name": "Pushback",
+    "file": "play/pushback/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/pushback.webp"
+  },
+  {
+    "name": "Racer",
+    "file": "play/racer/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/Racer.webp"
+  },
+  {
+    "name": "Radiusraid",
+    "file": "play/radiusraid/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/radiusraid.webp"
+  },
+  {
+    "name": "Ragdoll Archers",
+    "file": "games/ragdoll-archers.htm",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ragdoll-archers.webp"
+  },
+  {
+    "name": "Ragdoll Hit",
+    "file": "games/ragdoll-hit.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ragdoll-hit.webp"
+  },
+  {
+    "name": "Ragdoll Soccer",
+    "file": "games/ragdoll-soccer.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/ragdoll-soccer.webp"
+  },
+  {
+    "name": "Red Ball 4 Vol 1",
+    "file": "games/red-ball-4-vol-1.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/red-ball-4-vol-1.webp"
+  },
+  {
+    "name": "Red Ball 4 Vol 2",
+    "file": "games/red-ball-4-vol-2.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/red-ball-4-vol-2.webp"
+  },
+  {
+    "name": "Red Ball 4 Vol 3",
+    "file": "games/red-ball-4-vol-3.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/red-ball-4-vol-3.webp"
+  },
+  {
+    "name": "Restaurant Rush",
+    "file": "play/restaurant-rush/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/restaurant-rush.webp"
+  },
+  {
+    "name": "Retro Bowl",
+    "file": "games/retro-bowl.html",
+    "cat": "Retro",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/retrobowl.webp"
+  },
+  {
+    "name": "Retro Bowl College",
+    "file": "games/retro-bowl-college.html",
+    "cat": "Retro",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/retrobowl.webp"
+  },
+  {
+    "name": "Retro Highway",
+    "file": "games/retro-highway.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/retro-highway.webp"
+  },
+  {
+    "name": "Retro Ping Pong",
+    "file": "games/retro-ping-pong.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/pong.webp"
+  },
+  {
+    "name": "Retrobowl",
+    "file": "play/retrobowl/index.html",
+    "cat": "Retro",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/retrobowl.webp"
+  },
+  {
+    "name": "Retrohaunt",
+    "file": "play/retrohaunt/index.html",
+    "cat": "Retro",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/retrohaunt.webp"
+  },
+  {
+    "name": "Riddle School",
+    "file": "games/riddle-school.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/riddle-school.webp"
+  },
+  {
+    "name": "Riddle School 2",
+    "file": "games/riddle-school-2.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/riddle-school-2.webp"
+  },
+  {
+    "name": "Riddle School 3",
+    "file": "games/riddle-school-3.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/riddle-school-3.webp"
+  },
+  {
+    "name": "Riddle School 4",
+    "file": "games/riddle-school-4.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/riddle-school-4.webp"
+  },
+  {
+    "name": "Riddle School 5",
+    "file": "games/riddle-school-5.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/riddle-school-5.webp"
+  },
+  {
+    "name": "Riddle Transfer",
+    "file": "games/riddle-transfer.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/riddle-transfer.webp"
+  },
+  {
+    "name": "Riddle Transfer 2",
+    "file": "games/riddle-transfer-2.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/riddle-transfer-2.webp"
+  },
+  {
+    "name": "Rocket Soccer Derby",
+    "file": "games/rocket-soccer-derby.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/rocket-soccer-derby.webp"
+  },
+  {
+    "name": "Rooftop Run",
+    "file": "games/rooftop-run.html",
+    "cat": "Runner",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/rooftop-run.webp"
+  },
+  {
+    "name": "Rooftop Snipers",
+    "file": "games/rooftop-snipers.htm",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/rooftopsn.webp"
+  },
+  {
+    "name": "Rooftop Snipers 2",
+    "file": "games/rooftop-snipers-2.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/Rooftop-Snipers.webp"
+  },
+  {
+    "name": "Run",
+    "file": "games/run.html",
+    "cat": "Runner",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/run3.webp"
+  },
+  {
+    "name": "Run 2",
+    "file": "games/run-2.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/run-2.webp"
+  },
+  {
+    "name": "Run 3",
+    "file": "games/run-3.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/run3.webp"
+  },
+  {
+    "name": "Run3",
+    "file": "play/run3/index.html",
+    "cat": "Runner",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/run3.webp"
+  },
+  {
+    "name": "Sand Game",
+    "file": "games/sand-game.html",
+    "cat": "Simulation",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/sand-game.webp"
+  },
+  {
+    "name": "Sandbox City",
+    "file": "games/sandbox-city.html",
+    "cat": "Simulation",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/sandbox-city.webp"
+  },
+  {
+    "name": "Sans",
+    "file": "play/sans/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/sans.webp"
+  },
+  {
+    "name": "Short Life",
+    "file": "games/short-life.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/short-life.webp"
+  },
+  {
+    "name": "Six Cats Under",
+    "file": "games/six-cats-under.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/six-cats-under.webp"
+  },
+  {
+    "name": "Slope",
+    "file": "games/slope.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/slope.webp"
+  },
+  {
+    "name": "Slope 2 Player",
+    "file": "games/slope-2-player.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/slope.webp"
+  },
+  {
+    "name": "Slope 3",
+    "file": "games/slope-3.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/slope.webp"
+  },
+  {
+    "name": "Slow Roads",
+    "file": "games/slow-roads.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/slow-roads.webp"
+  },
+  {
+    "name": "Snail Bob",
+    "file": "games/snail-bob.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/snail-bob.webp"
+  },
+  {
+    "name": "Snail Bob 2",
+    "file": "games/snail-bob-2.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/snail-bob-2.webp"
+  },
+  {
+    "name": "Snail Bob 3",
+    "file": "games/snail-bob-3.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/snail-bob-3.webp"
+  },
+  {
+    "name": "Snail Bob 4",
+    "file": "games/snail-bob-4.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/snail-bob-4.webp"
+  },
+  {
+    "name": "Snail Bob 5",
+    "file": "games/snail-bob-5.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/snail-bob-5.webp"
+  },
+  {
+    "name": "Snail Bob 6",
+    "file": "games/snail-bob-6.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/snail-bob-6.webp"
+  },
+  {
+    "name": "Snail Bob 7",
+    "file": "games/snail-bob-7.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/snail-bob-7.webp"
+  },
+  {
+    "name": "Snail Bob 8",
+    "file": "games/snail-bob-8.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/snail-bob-8.webp"
+  },
+  {
+    "name": "Snow Rider",
+    "file": "games/snow-rider.htm",
+    "cat": "Driving",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/snow-rider.webp"
+  },
+  {
+    "name": "Snow Road",
+    "file": "games/snow-road.htm",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/snow-road.webp"
+  },
+  {
+    "name": "Snowball.io",
+    "file": "games/snowball-io.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/snowball-io.webp"
+  },
+  {
+    "name": "Soccer Bros",
+    "file": "games/soccer-bros.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/soccer-bros.webp"
+  },
+  {
+    "name": "Soccer Random",
+    "file": "games/soccer-random.htm",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/soccer-random.webp"
+  },
+  {
+    "name": "Space Is Key",
+    "file": "games/space-is-key.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/space-is-key.webp"
+  },
+  {
+    "name": "Space Is Key 2",
+    "file": "games/space-is-key-2.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/space-is-key-2.webp"
+  },
+  {
+    "name": "Space Waves",
+    "file": "games/space-waves.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/space-waves.webp"
+  },
+  {
+    "name": "Spacebar Clicker",
+    "file": "games/spacebar-clicker.html",
+    "cat": "Idle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/spacebar-clicker.webp"
+  },
+  {
+    "name": "Spaceinvaders",
+    "file": "play/spaceinvaders/index.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/spaceinv.webp"
+  },
+  {
+    "name": "Speed Stars",
+    "file": "games/speed-stars.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/speed-stars.webp"
+  },
+  {
+    "name": "Sprunki",
+    "file": "games/sprunki.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/sprunki.webp"
+  },
+  {
+    "name": "Stack",
+    "file": "games/stack.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/stack.webp"
+  },
+  {
+    "name": "Stack Ball",
+    "file": "play/stack-ball/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/stackball.webp"
+  },
+  {
+    "name": "Stacktris",
+    "file": "games/stacktris.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/stack.webp"
+  },
+  {
+    "name": "State.io",
+    "file": "games/state-io.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/state-io.webp"
+  },
+  {
+    "name": "Station Meltdown",
+    "file": "play/station-meltdown/index.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/Station-Meltdown.webp"
+  },
+  {
+    "name": "Steal This Election",
+    "file": "play/steal-this-election/index.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/elec.webp"
+  },
+  {
+    "name": "Stealing The Diamond",
+    "file": "games/stealing-the-diamond.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/stealing-the-diamond.webp"
+  },
+  {
+    "name": "Stick Archers Battle",
+    "file": "games/stick-archers-battle.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/stick-archers-battle.webp"
+  },
+  {
+    "name": "Stick Fighter",
+    "file": "games/stick-fighter.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/stick-fighter.webp"
+  },
+  {
+    "name": "Stick Merge",
+    "file": "games/stick-merge.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/stick-merge.webp"
+  },
+  {
+    "name": "Stickman Hook",
+    "file": "games/stickman-hook.html",
+    "cat": "Action",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/stickman-hook.webp"
+  },
+  {
+    "name": "Subway Surfers Beijing",
+    "file": "games/subway-surfers-beijing.html",
+    "cat": "Runner",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/subwaysurferbeijing.webp"
+  },
+  {
+    "name": "Subway Surfers beijing",
+    "file": "play/subwaysurfersbeijing/index.html",
+    "cat": "Runner",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/subway.webp"
+  },
+  {
+    "name": "Subway Surfers Havana",
+    "file": "games/subway-surfers-havana.html",
+    "cat": "Runner",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/subway.webp"
+  },
+  {
+    "name": "Subway Surfers houston",
+    "file": "play/subwaysurfershouston/index.html",
+    "cat": "Runner",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/subwaysurfershouston.webp"
+  },
+  {
+    "name": "Subway Surfers monaco",
+    "file": "play/subwaysurfersmonaco/index.html",
+    "cat": "Runner",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/subway.webp"
+  },
+  {
+    "name": "Subway Surfers sanfrancisco",
+    "file": "play/subwaysurferssanfrancisco/index.html",
+    "cat": "Runner",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/subway.webp"
+  },
+  {
+    "name": "Subway Surfers SF",
+    "file": "games/subway-surfers-san-francisco.html",
+    "cat": "Runner",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/subsan.webp"
+  },
+  {
+    "name": "Super Bike The Champion",
+    "file": "games/super-bike-the-champion.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/super-bike-the-champion.webp"
+  },
+  {
+    "name": "Super Liquid Soccer",
+    "file": "games/super-liquid-soccer.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/super-liquid-soccer.webp"
+  },
+  {
+    "name": "Super Mario 63",
+    "file": "games/sm-63.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/mario.webp"
+  },
+  {
+    "name": "Super Mario 64",
+    "file": "games/sm-64.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/super-mario-64.webp"
+  },
+  {
+    "name": "Super Star Car",
+    "file": "games/super-star-car.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/super-star-car.webp"
+  },
+  {
+    "name": "SUPERHOT",
+    "file": "games/superhot.html",
+    "cat": "Action",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/superhot.webp"
+  },
+  {
+    "name": "Table Tennis World Tour",
+    "file": "games/table-tennis-world-tour.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/table-tennis-world-tour.webp"
+  },
+  {
+    "name": "Tag",
+    "file": "games/tag.html",
+    "cat": "Multiplayer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/tag.webp"
+  },
+  {
+    "name": "Tanuki Sunset",
+    "file": "games/tanuki-sunset.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/tanuki-sunset.webp"
+  },
+  {
+    "name": "Tap Road",
+    "file": "games/tap-road.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/tap-road.webp"
+  },
+  {
+    "name": "Temple Of Boom",
+    "file": "games/temple-of-boom.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/temple-of-boom.webp"
+  },
+  {
+    "name": "Temple Run 2",
+    "file": "games/temple-run-2.htm",
+    "cat": "Action",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/templerun.webp"
+  },
+  {
+    "name": "Territorial.io",
+    "file": "games/territorial-io.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/territorial-io.webp"
+  },
+  {
+    "name": "Tetris",
+    "file": "play/tetris/index.html",
+    "cat": "Classic",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/tetris.webp"
+  },
+  {
+    "name": "Tetris",
+    "file": "games/tetrominoes.html",
+    "cat": "Classic",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/tetris.webp"
+  },
+  {
+    "name": "The Impossible Quiz",
+    "file": "games/the-impossible-quiz.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/impossiblequiz.webp"
+  },
+  {
+    "name": "The Impossible Quiz 2",
+    "file": "games/the-impossible-quiz-2.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/the-impossible-quiz-2.webp"
+  },
+  {
+    "name": "There Is No G",
+    "file": "games/there-is-no-g.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/there-is-no-g.webp"
+  },
+  {
+    "name": "Thesquare",
+    "file": "play/thesquare/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/thesquare.webp"
+  },
+  {
+    "name": "They Are Coming",
+    "file": "games/they-are-coming.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/they-are-coming.webp"
+  },
+  {
+    "name": "This Is The Only Level",
+    "file": "games/this-is-the-only-level.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/this-is-the-only-level.webp"
+  },
+  {
+    "name": "This Is The Only Level Too",
+    "file": "games/this-is-the-only-level-too.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/this-is-the-only-level-too.webp"
+  },
+  {
+    "name": "Tic Tac Toe",
+    "file": "play/tic-tac-toe/index.html",
+    "cat": "Multiplayer",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/tic-tac-toe.webp"
+  },
+  {
+    "name": "Tic Tac Toe Ai",
+    "file": "play/tic-tac-toe-ai/index.html",
+    "cat": "Multiplayer",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/tic-tac-toe-ai.webp"
+  },
+  {
+    "name": "Time Shooter 2",
+    "file": "games/time-shooter-2.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/timeshooters.webp"
+  },
+  {
+    "name": "Time Shooter 3",
+    "file": "games/time-shooter-3.htm",
+    "cat": "Action",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/time-shooter-3.webp"
+  },
+  {
+    "name": "Timeshooter",
+    "file": "play/timeshooter/index.html",
+    "cat": "Action",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/timeshooters.webp"
+  },
+  {
+    "name": "Tiny Fishing",
+    "file": "games/tiny-fishing.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/tiny-fishing.webp"
+  },
+  {
+    "name": "Tomb Of The Mask",
+    "file": "games/tomb-of-the-mask.htm",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/tomb-of-the-mask.webp"
+  },
+  {
+    "name": "Tomrun",
+    "file": "play/tomrun/index.html",
+    "cat": "Runner",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/tomrun.webp"
+  },
+  {
+    "name": "Towermaster",
+    "file": "play/towermaster/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/towermaster.webp"
+  },
+  {
+    "name": "Trap The Cat",
+    "file": "games/trap-the-cat.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/trap-the-cat.webp"
+  },
+  {
+    "name": "Trivia Crack",
+    "file": "games/trivia-crack.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/trivia-crack.webp"
+  },
+  {
+    "name": "Tube Jumpers",
+    "file": "games/tube-jumpers.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/tube-jumpers.webp"
+  },
+  {
+    "name": "Tunnel Rush",
+    "file": "games/tunnel-rush.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/tunnelrush.webp"
+  },
+  {
+    "name": "Tunnelrush",
+    "file": "play/tunnelrush/index.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/tunnelrush.webp"
+  },
+  {
+    "name": "Tv Static",
+    "file": "play/tv-static/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/tv-static.webp"
+  },
+  {
+    "name": "Twerk Race 3d",
+    "file": "play/twerk-race-3d/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/twerk-race-3d.webp"
+  },
+  {
+    "name": "Twitch Tetris",
+    "file": "play/twitch-tetris/index.html",
+    "cat": "Classic",
+    "hot": true,
+    "type": "multi",
+    "icon": "icons/twitch-tetris.webp"
+  },
+  {
+    "name": "Tyronetetris",
+    "file": "play/tyronetetris/index.html",
+    "cat": "Classic",
+    "hot": true,
+    "type": "multi",
+    "icon": "play/tyronetetris/flashtetris.png"
+  },
+  {
+    "name": "Unicycle Hero",
+    "file": "games/unicycle-hero.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/unicycle-hero.webp"
+  },
+  {
+    "name": "Veloce",
+    "file": "play/veloce/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/VELOCE.webp"
+  },
+  {
+    "name": "Vex 4",
+    "file": "games/vex-4.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/vex4.webp"
+  },
+  {
+    "name": "Vex 5",
+    "file": "games/vex-5.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/vex5.webp"
+  },
+  {
+    "name": "Vex 6",
+    "file": "games/vex-6.htm",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/vex6.webp"
+  },
+  {
+    "name": "Vex 7",
+    "file": "games/vex-7.htm",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/vex7.webp"
+  },
+  {
+    "name": "Vex 8",
+    "file": "games/vex-8.htm",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/vex-8.webp"
+  },
+  {
+    "name": "Vex X3m",
+    "file": "games/vex-x3m.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/vex-x3m.webp"
+  },
+  {
+    "name": "Vex X3m 2",
+    "file": "games/vex-x3m-2.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/vex-x3m-2.webp"
+  },
+  {
+    "name": "Vex3",
+    "file": "play/vex3/index.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/vex3.webp"
+  },
+  {
+    "name": "Vex4",
+    "file": "play/vex4/index.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/vex4.webp"
+  },
+  {
+    "name": "Vex5",
+    "file": "play/vex5/index.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/vex5.webp"
+  },
+  {
+    "name": "Vex6",
+    "file": "play/vex6/index.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/vex6.webp"
+  },
+  {
+    "name": "Vex7",
+    "file": "play/vex7/index.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/vex7.webp"
+  },
+  {
+    "name": "Volley Random",
+    "file": "games/volley-random.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/volley-random.webp"
+  },
+  {
+    "name": "Wallsmash",
+    "file": "play/wallsmash/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/wallsmash.webp"
+  },
+  {
+    "name": "War The Knights",
+    "file": "games/war-the-knights.html",
+    "cat": "Horror",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/war-the-knights.webp"
+  },
+  {
+    "name": "Waterworks",
+    "file": "play/waterworks/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/waterworks.webp"
+  },
+  {
+    "name": "We Become What We Behold",
+    "file": "games/we-become-what-we-behold.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/we-become-what-we-behold.webp"
+  },
+  {
+    "name": "Weavesilk",
+    "file": "play/weavesilk/index.html",
+    "cat": "Simulation",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/weavesilk.webp"
+  },
+  {
+    "name": "Webgl Fluid Simulation",
+    "file": "play/webgl-fluid-simulation/index.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/webgl-fluid-simulation.webp"
+  },
+  {
+    "name": "Webretro",
+    "file": "play/webretro/index.html",
+    "cat": "Retro",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/webretro.webp"
+  },
+  {
+    "name": "Whac A Mole",
+    "file": "play/whac-a-mole/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/Whac-A-Mole.webp"
+  },
+  {
+    "name": "Wheelie Bike",
+    "file": "games/wheelie-bike.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/wheelie-bike.webp"
+  },
+  {
+    "name": "Wheely",
+    "file": "games/wheely.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/wheely.webp"
+  },
+  {
+    "name": "Wheely 2",
+    "file": "games/wheely-2.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/wheely-2.webp"
+  },
+  {
+    "name": "Wheely 3",
+    "file": "games/wheely-3.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/wheely-3.webp"
+  },
+  {
+    "name": "Wheely 4",
+    "file": "games/wheely-4.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/wheely-4.webp"
+  },
+  {
+    "name": "Wheely 5",
+    "file": "games/wheely-5.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/wheely-5.webp"
+  },
+  {
+    "name": "Wheely 6",
+    "file": "games/wheely-6.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/wheely-6.webp"
+  },
+  {
+    "name": "Wheely 7",
+    "file": "games/wheely-7.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/wheely-7.webp"
+  },
+  {
+    "name": "Wheely 8",
+    "file": "games/wheely-8.html",
+    "cat": "Casual",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/wheely-8.webp"
+  },
+  {
+    "name": "Wordle",
+    "file": "play/wordle/index.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/wordle.webp"
+  },
+  {
+    "name": "Wordle Unlimited",
+    "file": "games/wordle-unlimited.html",
+    "cat": "Puzzle",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/wordle.webp"
+  },
+  {
+    "name": "World's Hardest Game",
+    "file": "games/worlds-hardest-game.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/whg.webp"
+  },
+  {
+    "name": "World's Hardest Game 2",
+    "file": "games/worlds-hardest-game-2.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/worlds-hardest-game-2.webp"
+  },
+  {
+    "name": "World's Hardest Game 3",
+    "file": "games/worlds-hardest-game-3.html",
+    "cat": "Other",
+    "hot": true,
+    "type": "single",
+    "icon": "icons/worlds-hardest-game-3.webp"
+  },
+  {
+    "name": "Wrestle Bros",
+    "file": "games/wrestle-bros.html",
+    "cat": "Sports",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/wrestle-bros.webp"
+  },
+  {
+    "name": "X Trial Racing",
+    "file": "play/x-trial-racing/index.html",
+    "cat": "Driving",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/xtr.webp"
+  },
+  {
+    "name": "Xx142 B2exe",
+    "file": "play/xx142-b2exe/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/xx142-b2exe.webp"
+  },
+  {
+    "name": "YoHoHo.io",
+    "file": "games/yohoho-io.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/yohoho-io.webp"
+  },
+  {
+    "name": "Yoshifabrication",
+    "file": "play/yoshifabrication/index.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/yoshifabrication.webp"
+  },
+  {
+    "name": "You Are Bezos",
+    "file": "play/you-are-bezos/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/you-are-bezos.webp"
+  },
+  {
+    "name": "Zombie Rush",
+    "file": "games/zombie-rush.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/zombie-rush.webp"
+  },
+  {
+    "name": "Zombs Royale",
+    "file": "play/zombs-royale/index.html",
+    "cat": "IO Games",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/zombs-royale.webp"
+  },
+  {
+    "name": "Zoro",
+    "file": "play/zoro/index.html",
+    "cat": "Other",
+    "hot": false,
+    "type": "multi",
+    "icon": "icons/zoro.webp"
+  },
+  {
+    "name": "Zrist",
+    "file": "games/zrist.html",
+    "cat": "Adventure",
+    "hot": false,
+    "type": "single",
+    "icon": "icons/zrist.webp"
+  }
+]
