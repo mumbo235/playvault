@@ -3877,7 +3877,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/dominoes.webp"
   },
   {
     "name": "Greedy Shark",
@@ -3885,7 +3885,7 @@
     "cat": "Action",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/greedy-shark.webp"
   },
   {
     "name": "Minecraft Classic",
@@ -3893,7 +3893,7 @@
     "cat": "Sandbox",
     "hot": true,
     "type": "html",
-    "icon": ""
+    "icon": "icons/minecraft-classic.webp"
   },
   {
     "name": "Solitaire",
@@ -3901,7 +3901,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "html",
-    "icon": ""
+    "icon": "icons/solitaire.webp"
   },
   {
     "name": "Chrome Dino 3D",
@@ -3925,7 +3925,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/3-foot-ninja-ii.webp"
   },
   {
     "name": "3 Foot Ninja",
@@ -3933,7 +3933,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/3-foot-ninja.webp"
   },
   {
     "name": "3D Reversi",
@@ -3941,7 +3941,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/3d-reversi.webp"
   },
   {
     "name": "3D Tanks",
@@ -3949,7 +3949,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/3d-tanks.webp"
   },
   {
     "name": "625 Sandwich Stacker",
@@ -3957,7 +3957,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/625-sandwich-stacker.webp"
   },
   {
     "name": "7 Days Without Rain",
@@ -3965,7 +3965,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/7-days-without-rain.webp"
   },
   {
     "name": "Abobos Big Adventure",
@@ -3973,7 +3973,7 @@
     "cat": "Adventure",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/abobos-big-adventure.webp"
   },
   {
     "name": "Ace Of Space",
@@ -3981,7 +3981,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/ace-of-space.webp"
   },
   {
     "name": "Achievement Unlocked 2",
@@ -3989,7 +3989,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/achievement-unlocked-2.webp"
   },
   {
     "name": "Achievement Unlocked 3",
@@ -3997,7 +3997,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/achievement-unlocked-3.webp"
   },
   {
     "name": "Action Driving Game",
@@ -4005,7 +4005,7 @@
     "cat": "Racing",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/action-driving-game.webp"
   },
   {
     "name": "Addiction Solitaire",
@@ -4013,7 +4013,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/addiction-solitaire.webp"
   },
   {
     "name": "Amorphous Plus",
@@ -4021,7 +4021,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/amorphous-plus.webp"
   },
   {
     "name": "Apple Shooter",
@@ -4029,7 +4029,7 @@
     "cat": "Shooter",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/apple-shooter.webp"
   },
   {
     "name": "Asteroids",
@@ -4037,7 +4037,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/asteroids.webp"
   },
   {
     "name": "Astroflash",
@@ -4045,7 +4045,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/astroflash.webp"
   },
   {
     "name": "Atari Breakout",
@@ -4053,7 +4053,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/atari-breakout.webp"
   },
   {
     "name": "Battle Pong",
@@ -4061,7 +4061,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/battle-pong.webp"
   },
   {
     "name": "Battleships",
@@ -4069,7 +4069,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/battleships.webp"
   },
   {
     "name": "Bloons Player Pack 2",
@@ -4077,7 +4077,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/bloons-player-pack-2.webp"
   },
   {
     "name": "Bloons Player Pack 3",
@@ -4085,7 +4085,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/bloons-player-pack-3.webp"
   },
   {
     "name": "Bloons Player Pack 4",
@@ -4093,7 +4093,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/bloons-player-pack-4.webp"
   },
   {
     "name": "Bloons Player Pack 5",
@@ -4101,7 +4101,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/bloons-player-pack-5.webp"
   },
   {
     "name": "Bloons Tower Defense 2",
@@ -4109,7 +4109,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/bloons-tower-defense-2.webp"
   },
   {
     "name": "Bloons Tower Defense 3",
@@ -4117,7 +4117,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/bloons-tower-defense-3.webp"
   },
   {
     "name": "Bloons Tower Defense",
@@ -4125,7 +4125,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/bloons-tower-defense.webp"
   },
   {
     "name": "Bowman",
@@ -4133,7 +4133,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/bowman.webp"
   },
   {
     "name": "Boxhead 2 Play",
@@ -4141,7 +4141,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/boxhead-2-play.webp"
   },
   {
     "name": "Bubble Tanks 2",
@@ -4149,7 +4149,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/bubble-tanks-2.webp"
   },
   {
     "name": "Bubble Trouble",
@@ -4157,7 +4157,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/bubble-trouble.webp"
   },
   {
     "name": "Bullet Bill",
@@ -4165,7 +4165,7 @@
     "cat": "Shooter",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/bullet-bill.webp"
   },
   {
     "name": "Castle Wars",
@@ -4173,7 +4173,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/castle-wars.webp"
   },
   {
     "name": "Causality",
@@ -4181,7 +4181,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/causality.webp"
   },
   {
     "name": "Champion Archer",
@@ -4189,7 +4189,7 @@
     "cat": "Shooter",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/champion-archer.webp"
   },
   {
     "name": "Chasm",
@@ -4205,7 +4205,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/choose-your-weapon-2.webp"
   },
   {
     "name": "Choose Your Weapon 3",
@@ -4213,7 +4213,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/choose-your-weapon-3.webp"
   },
   {
     "name": "Choose Your Weapon 4",
@@ -4221,7 +4221,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/choose-your-weapon-4.webp"
   },
   {
     "name": "Choose Your Weapon",
@@ -4229,7 +4229,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/choose-your-weapon.webp"
   },
   {
     "name": "Color Combat",
@@ -4237,7 +4237,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/color-combat.webp"
   },
   {
     "name": "Color Switch",
@@ -4245,7 +4245,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/color-switch.webp"
   },
   {
     "name": "Commando",
@@ -4253,7 +4253,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/commando.webp"
   },
   {
     "name": "Connect 4",
@@ -4261,7 +4261,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/connect-4.webp"
   },
   {
     "name": "Connect The World",
@@ -4269,7 +4269,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/connect-the-world.webp"
   },
   {
     "name": "Conquer Antarctica",
@@ -4277,7 +4277,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/conquer-antarctica.webp"
   },
   {
     "name": "Crimson Room",
@@ -4285,7 +4285,7 @@
     "cat": "Adventure",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/crimson-room.webp"
   },
   {
     "name": "Cubefield",
@@ -4293,7 +4293,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/cubefield.webp"
   },
   {
     "name": "Cursor 10",
@@ -4301,7 +4301,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/cursor-10.webp"
   },
   {
     "name": "Cursor Invisible",
@@ -4309,7 +4309,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/cursor-invisible.webp"
   },
   {
     "name": "Curveball",
@@ -4317,7 +4317,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/curveball.webp"
   },
   {
     "name": "Dad N Me",
@@ -4325,7 +4325,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/dad-n-me.webp"
   },
   {
     "name": "Dr Carter And The Cave Of Despair",
@@ -4333,7 +4333,7 @@
     "cat": "Racing",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/dr-carter-and-the-cave-of-despair.webp"
   },
   {
     "name": "Effing Worms",
@@ -4341,7 +4341,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/effing-worms.webp"
   },
   {
     "name": "Eggtastic",
@@ -4349,7 +4349,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/eggtastic.webp"
   },
   {
     "name": "Electric Box",
@@ -4357,7 +4357,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/electric-box.webp"
   },
   {
     "name": "Electric Man 2",
@@ -4365,7 +4365,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/electric-man-2.webp"
   },
   {
     "name": "Extinct",
@@ -4373,7 +4373,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/extinct.webp"
   },
   {
     "name": "Factory Balls 2",
@@ -4381,7 +4381,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/factory-balls-2.webp"
   },
   {
     "name": "Factory Balls 3",
@@ -4389,7 +4389,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/factory-balls-3.webp"
   },
   {
     "name": "Factory Balls 4",
@@ -4397,7 +4397,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/factory-balls-4.webp"
   },
   {
     "name": "Factory Balls",
@@ -4405,7 +4405,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/factory-balls.webp"
   },
   {
     "name": "Falldown",
@@ -4413,7 +4413,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/falldown.webp"
   },
   {
     "name": "Falldown2",
@@ -4437,7 +4437,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/fat-ninja.webp"
   },
   {
     "name": "Feed Us",
@@ -4445,7 +4445,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/feed-us.webp"
   },
   {
     "name": "Feudalism",
@@ -4453,7 +4453,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/feudalism.webp"
   },
   {
     "name": "Frogger",
@@ -4461,7 +4461,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/frogger.webp"
   },
   {
     "name": "Galaga",
@@ -4469,7 +4469,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/galaga.webp"
   },
   {
     "name": "Gold_Miner_Special_Edition",
@@ -4493,7 +4493,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/gridlock.webp"
   },
   {
     "name": "Gun Mayhem 2",
@@ -4501,7 +4501,7 @@
     "cat": "Shooter",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/gun-mayhem-2.webp"
   },
   {
     "name": "Gun Mayhem 3",
@@ -4509,7 +4509,7 @@
     "cat": "Shooter",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/gun-mayhem-3.webp"
   },
   {
     "name": "Hobo 2",
@@ -4517,7 +4517,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/hobo-2.webp"
   },
   {
     "name": "Hobo 3",
@@ -4525,7 +4525,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/hobo-3.webp"
   },
   {
     "name": "Hobo 4",
@@ -4533,7 +4533,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/hobo-4.webp"
   },
   {
     "name": "Hobo 5",
@@ -4541,7 +4541,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/hobo-5.webp"
   },
   {
     "name": "Hobo 6",
@@ -4549,7 +4549,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/hobo-6.webp"
   },
   {
     "name": "Hobo 7",
@@ -4557,7 +4557,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/hobo-7.webp"
   },
   {
     "name": "Line Rider",
@@ -4565,7 +4565,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/line-rider.webp"
   },
   {
     "name": "Mario Combat",
@@ -4573,7 +4573,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/mario-combat.webp"
   },
   {
     "name": "Mindfields 2",
@@ -4581,7 +4581,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/mindfields-2.webp"
   },
   {
     "name": "Minecraft Tower Defence 2",
@@ -4589,7 +4589,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/minecraft-tower-defence-2.webp"
   },
   {
     "name": "Missile Strike",
@@ -4597,7 +4597,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/missile-strike.webp"
   },
   {
     "name": "Monster Brawl",
@@ -4605,7 +4605,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/monster-brawl.webp"
   },
   {
     "name": "Moss",
@@ -4613,7 +4613,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/moss.webp"
   },
   {
     "name": "Multitask",
@@ -4621,7 +4621,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/multitask.webp"
   },
   {
     "name": "N Game",
@@ -4629,7 +4629,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/n-game.webp"
   },
   {
     "name": "Pacman Advanced",
@@ -4637,7 +4637,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/pacman-advanced.webp"
   },
   {
     "name": "Pandemic 2",
@@ -4645,7 +4645,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/pandemic-2.webp"
   },
   {
     "name": "Papas Pizzeria",
@@ -4653,7 +4653,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/papas-pizzeria.webp"
   },
   {
     "name": "Penguin Diner",
@@ -4661,7 +4661,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/penguin-diner.webp"
   },
   {
     "name": "Penguin",
@@ -4669,7 +4669,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/penguin.webp"
   },
   {
     "name": "Picos School",
@@ -4677,7 +4677,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/picos-school.webp"
   },
   {
     "name": "Plant_Vs_Zombies_2",
@@ -4693,7 +4693,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/playing-with-fire-2.webp"
   },
   {
     "name": "Plazma Burst",
@@ -4701,7 +4701,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/plazma-burst.webp"
   },
   {
     "name": "Plumber 2",
@@ -4709,7 +4709,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/plumber-2.webp"
   },
   {
     "name": "Portal 2",
@@ -4717,7 +4717,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/portal-2.webp"
   },
   {
     "name": "Portal",
@@ -4725,7 +4725,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/portal.webp"
   },
   {
     "name": "Potty Racers 2",
@@ -4733,7 +4733,7 @@
     "cat": "Racing",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/potty-racers-2.webp"
   },
   {
     "name": "Potty Racers",
@@ -4741,7 +4741,7 @@
     "cat": "Racing",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/potty-racers.webp"
   },
   {
     "name": "Primary",
@@ -4749,7 +4749,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/primary.webp"
   },
   {
     "name": "Puzzle Bobble",
@@ -4757,7 +4757,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/puzzle-bobble.webp"
   },
   {
     "name": "Raft Wars 2",
@@ -4765,7 +4765,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/raft-wars-2.webp"
   },
   {
     "name": "Raft Wars",
@@ -4773,7 +4773,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/raft-wars.webp"
   },
   {
     "name": "Ragdoll Avalanche 2",
@@ -4781,7 +4781,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/ragdoll-avalanche-2.webp"
   },
   {
     "name": "Ragdoll Avalanche",
@@ -4789,7 +4789,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/ragdoll-avalanche.webp"
   },
   {
     "name": "Rage 2",
@@ -4797,7 +4797,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/rage-2.webp"
   },
   {
     "name": "Rage 3",
@@ -4805,7 +4805,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/rage-3.webp"
   },
   {
     "name": "Rage",
@@ -4813,7 +4813,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/rage.webp"
   },
   {
     "name": "Redbeard",
@@ -4821,7 +4821,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/redbeard.webp"
   },
   {
     "name": "Roadblock 2",
@@ -4829,7 +4829,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/roadblock-2.webp"
   },
   {
     "name": "Roadblock",
@@ -4837,7 +4837,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/roadblock.webp"
   },
   {
     "name": "Scary Maze Game",
@@ -4845,7 +4845,7 @@
     "cat": "Racing",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/scary-maze-game.webp"
   },
   {
     "name": "Shanghai Dynasty",
@@ -4853,7 +4853,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/shanghai-dynasty.webp"
   },
   {
     "name": "Shift 2",
@@ -4861,7 +4861,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/shift-2.webp"
   },
   {
     "name": "Shift 3",
@@ -4869,7 +4869,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/shift-3.webp"
   },
   {
     "name": "Shift 4",
@@ -4877,7 +4877,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/shift-4.webp"
   },
   {
     "name": "Shift",
@@ -4885,7 +4885,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/shift.webp"
   },
   {
     "name": "Shopping Cart Hero",
@@ -4893,7 +4893,7 @@
     "cat": "Racing",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/shopping-cart-hero.webp"
   },
   {
     "name": "Shuffle",
@@ -4901,7 +4901,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/shuffle.webp"
   },
   {
     "name": "Skywire 2",
@@ -4909,7 +4909,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/skywire-2.webp"
   },
   {
     "name": "Skywire",
@@ -4917,7 +4917,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/skywire.webp"
   },
   {
     "name": "Snake",
@@ -4925,7 +4925,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/snake.webp"
   },
   {
     "name": "Snow Storm",
@@ -4933,7 +4933,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/snow-storm.webp"
   },
   {
     "name": "Solitaire",
@@ -4941,7 +4941,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/solitaire.webp"
   },
   {
     "name": "Sonic",
@@ -4949,7 +4949,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/sonic.webp"
   },
   {
     "name": "Stick Rpg",
@@ -4957,7 +4957,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/stick-rpg.webp"
   },
   {
     "name": "Stupidity Test",
@@ -4965,7 +4965,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/stupidity-test.webp"
   },
   {
     "name": "Super Mario Flash 2",
@@ -4973,7 +4973,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/super-mario-flash-2.webp"
   },
   {
     "name": "Super Mario Flash",
@@ -4981,7 +4981,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/super-mario-flash.webp"
   },
   {
     "name": "Super Mario Sunshine 64",
@@ -4989,7 +4989,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/super-mario-sunshine-64.webp"
   },
   {
     "name": "Super Smash Flash",
@@ -4997,7 +4997,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/super-smash-flash.webp"
   },
   {
     "name": "Swords And Sandals 2",
@@ -5005,7 +5005,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/swords-and-sandals-2.webp"
   },
   {
     "name": "Swords And Sandals",
@@ -5013,7 +5013,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/swords-and-sandals.webp"
   },
   {
     "name": "Tank Trouble 2",
@@ -5021,7 +5021,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/tank-trouble-2.webp"
   },
   {
     "name": "Tanks",
@@ -5029,7 +5029,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/tanks.webp"
   },
   {
     "name": "Territory War",
@@ -5037,7 +5037,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/territory-war.webp"
   },
   {
     "name": "The Battle",
@@ -5045,7 +5045,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/the-battle.webp"
   },
   {
     "name": "The Bright From The Screen",
@@ -5053,7 +5053,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/the-bright-from-the-screen.webp"
   },
   {
     "name": "The Classroom",
@@ -5061,7 +5061,7 @@
     "cat": "Adventure",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/the-classroom.webp"
   },
   {
     "name": "The Impossible Game Lite",
@@ -5069,7 +5069,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/the-impossible-game-lite.webp"
   },
   {
     "name": "The Last Stand Union City",
@@ -5077,7 +5077,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/the-last-stand-union-city.webp"
   },
   {
     "name": "Thing Thing 2",
@@ -5085,7 +5085,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/thing-thing-2.webp"
   },
   {
     "name": "Thing Thing 3",
@@ -5093,7 +5093,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/thing-thing-3.webp"
   },
   {
     "name": "Thing Thing 4",
@@ -5101,7 +5101,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/thing-thing-4.webp"
   },
   {
     "name": "Thing Thing Arena 2",
@@ -5109,7 +5109,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/thing-thing-arena-2.webp"
   },
   {
     "name": "Thing Thing Arena",
@@ -5117,7 +5117,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/thing-thing-arena.webp"
   },
   {
     "name": "Thing Thing",
@@ -5125,7 +5125,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/thing-thing.webp"
   },
   {
     "name": "Travelogue Escape",
@@ -5133,7 +5133,7 @@
     "cat": "Adventure",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/travelogue-escape.webp"
   },
   {
     "name": "Ultimate Chess",
@@ -5141,7 +5141,7 @@
     "cat": "Puzzle",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/ultimate-chess.webp"
   },
   {
     "name": "Unfair Mario",
@@ -5149,7 +5149,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/unfair-mario.webp"
   },
   {
     "name": "Warp Shot",
@@ -5157,7 +5157,7 @@
     "cat": "Strategy",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/warp-shot.webp"
   },
   {
     "name": "Whack Your Pc",
@@ -5165,7 +5165,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/whack-your-pc.webp"
   },
   {
     "name": "Worlds Easiest Game",
@@ -5173,7 +5173,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/worlds-easiest-game.webp"
   },
   {
     "name": "Worlds Hardest Game 2",
@@ -5181,7 +5181,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/worlds-hardest-game-2.webp"
   },
   {
     "name": "Worlds Hardest Game",
@@ -5189,7 +5189,7 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
-    "icon": ""
+    "icon": "icons/worlds-hardest-game.webp"
   },
   {
     "name": "Yuletide Riptide",
@@ -5197,6 +5197,270 @@
     "cat": "Arcade",
     "hot": false,
     "type": "flash",
+    "icon": "icons/yuletide-riptide.webp"
+  },
+  {
+    "name": "Celeste",
+    "file": "games/celeste.html",
+    "cat": "Arcade",
+    "hot": true,
+    "type": "html",
+    "icon": "icons/celeste.webp"
+  },
+  {
+    "name": "Fluid Simulator",
+    "file": "games/fluidsimulator.html",
+    "cat": "Sandbox",
+    "hot": false,
+    "type": "html",
+    "icon": "icons/fluid-simulator.webp"
+  },
+  {
+    "name": "It's Raining Boxes",
+    "file": "games/itsrainingboxes.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": "icons/its-raining-boxes.webp"
+  },
+  {
+    "name": "Mountain Maze",
+    "file": "games/mountainmaze.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": "icons/mountain-maze.webp"
+  },
+  {
+    "name": "Ninja vs Evil Corp",
+    "file": "games/ninjavsevilcorp.html",
+    "cat": "Strategy",
+    "hot": false,
+    "type": "html",
+    "icon": "icons/ninja-vs-evil-corp.webp"
+  },
+  {
+    "name": "Offline Paradise",
+    "file": "games/offlineparadise.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": "icons/offline-paradise.webp"
+  },
+  {
+    "name": "Rolling Forests",
+    "file": "games/rollingforests.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": "icons/rolling-forests.webp"
+  },
+  {
+    "name": "T-Rex Run",
+    "file": "games/trex.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Color Run",
+    "file": "games/color-run.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "CS:GO 2D",
+    "file": "games/csgo.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Developer Game",
+    "file": "games/developer-game.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Game Stash",
+    "file": "games/game-stash.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Gorillas",
+    "file": "games/gorillas.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Hangman",
+    "file": "games/hangman.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Hazard House",
+    "file": "games/hazard-house.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Lighthouse",
+    "file": "games/lighthouse.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Long Road",
+    "file": "games/long-road.html",
+    "cat": "Racing",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Maze Runner",
+    "file": "games/maze.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Memory Game Pretty",
+    "file": "games/memory-game-pretty.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Memory Game",
+    "file": "games/memory-game.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Memory Timed",
+    "file": "games/memory-timed-game.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "N-Gon",
+    "file": "games/n-gon.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Platform Engine",
+    "file": "games/platform-game-engine.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Platformer",
+    "file": "games/platformer.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Rubik's Cube",
+    "file": "games/rubiks.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Sandboxels",
+    "file": "games/sandboxels.html",
+    "cat": "Sandbox",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Spell Cast",
+    "file": "games/spell-cast.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Stick Hero",
+    "file": "games/stick-hero.html",
+    "cat": "Platformer",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Tic Tac Toe 2P",
+    "file": "games/tic-tac-toe-2p.html",
+    "cat": "Arcade",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Tilting Maze",
+    "file": "games/tilting-maze.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Traffic Run",
+    "file": "games/traffic-run.html",
+    "cat": "Racing",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Ultrakill",
+    "file": "games/ultrakill.html",
+    "cat": "Shooter",
+    "hot": false,
+    "type": "html",
+    "icon": ""
+  },
+  {
+    "name": "Word Guessing",
+    "file": "games/word-guessing.html",
+    "cat": "Puzzle",
+    "hot": false,
+    "type": "html",
     "icon": ""
   }
 ]
