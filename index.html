@@ -155,21 +155,23 @@ body{
 }
 
 .modal-overlay{
-  position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:300;
+  position:fixed;inset:0;background:rgba(5,5,14,.9);z-index:300;
   display:none;align-items:center;justify-content:center;
-  backdrop-filter:blur(4px);
+  will-change:opacity;
 }
 .modal-overlay.active{display:flex}
+body.modal-open .animated-bg .orb{animation-play-state:paused!important}
 .modal{
+  position:relative;
   width:96vw;height:94vh;background:var(--bg2);border-radius:var(--radius);
   overflow:hidden;display:flex;flex-direction:column;
-  box-shadow:0 20px 60px rgba(0,0,0,.6);
+  box-shadow:0 16px 40px rgba(0,0,0,.55);
   border:1px solid var(--glass-border);
+  contain:layout paint;will-change:transform,opacity;
 }
 .modal-header{
   display:flex;align-items:center;padding:10px 14px;
-  background:rgba(14,14,30,.8);
-  backdrop-filter:blur(16px);
+  background:#0e0e1e;
   border-bottom:1px solid var(--border);
   gap:10px;flex-shrink:0;
 }
@@ -178,11 +180,35 @@ body{
 .mbtn{
   background:rgba(255,255,255,.06);border:1px solid var(--glass-border);
   border-radius:8px;color:var(--text2);padding:6px 12px;cursor:pointer;
-  font-size:12px;transition:all .2s;display:flex;align-items:center;gap:4px;
+  font-size:12px;transition:background .15s,color .15s,border-color .15s;display:flex;align-items:center;gap:4px;
 }
 .mbtn:hover{background:rgba(255,255,255,.1);color:var(--text)}
 .mbtn.close:hover{background:var(--hot);border-color:var(--hot);color:#fff}
-.modal iframe{flex:1;border:none;width:100%;background:#000;transition:opacity .15s ease}
+.modal iframe{flex:1;border:none;width:100%;background:#000;transition:opacity .22s ease;will-change:opacity}
+.modal-body{position:relative;flex:1;display:flex;min-height:0;background:var(--bg2);contain:strict}
+
+/* Game launch splash */
+.game-splash{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  background:radial-gradient(ellipse at 50% 45%,rgba(124,108,240,.14),transparent 60%),var(--bg2);
+  will-change:transform,opacity;
+}
+.game-splash.hidden{display:none}
+.splash-icon-wrap{position:relative;width:88px;height:88px;margin-bottom:8px;will-change:transform,opacity}
+.splash-icon-wrap::before{
+  content:'';position:absolute;inset:-12px;border-radius:50%;
+  border:2px solid rgba(124,108,240,.18);
+  border-top-color:var(--accent);border-right-color:var(--accent2);
+  animation:splashSpin .9s linear infinite;will-change:transform;
+}
+.splash-icon{
+  width:100%;height:100%;border-radius:20px;object-fit:cover;display:block;
+  box-shadow:0 8px 24px rgba(0,0,0,.45);
+}
+.splash-title{font-size:19px;font-weight:700;letter-spacing:.2px;color:var(--text);text-align:center;padding:0 20px}
+.splash-sub{font-size:11px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--text2)}
+@keyframes splashSpin{to{transform:rotate(360deg)}}
 
 .explore-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .explore-tag{
@@ -568,9 +594,8 @@ body{
 @keyframes orbC{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-80px,50px) scale(1.1)}66%{transform:translate(40px,-60px) scale(.9)}}
 .reduced-motion .animated-bg .orb{animation:none!important}
 
-/* Custom cursor */
-body,body *{cursor:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'><polygon points='2,1 2,17 6.5,12.5 10.5,20 12.5,19 8.5,11 14,11' fill='%237c6cf0' stroke='%23fff' stroke-width='.8'/></svg>") 2 1, auto}
-.game-card,.nav-btn,.s-btn,.tool-card,.explore-tag,.cloak-preset,.toggle,.flip-btn,.sw-btn,.calc-btn,.s-color,.recent-item,.fav-btn,.modal-fav,.mbtn{cursor:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><circle cx='12' cy='12' r='9' fill='none' stroke='%237c6cf0' stroke-width='2' opacity='.7'/><circle cx='12' cy='12' r='3' fill='%237c6cf0'/></svg>") 12 12, pointer}
+/* Pointer cursor for clickable elements */
+.game-card,.nav-btn,.s-btn,.tool-card,.explore-tag,.cloak-preset,.toggle,.flip-btn,.sw-btn,.calc-btn,.s-color,.recent-item,.fav-btn,.modal-fav,.mbtn{cursor:pointer}
 
 /* Favorites */
 .fav-btn{position:absolute;top:6px;left:6px;z-index:2;background:rgba(0,0,0,.5);border:none;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .18s,transform .18s;backdrop-filter:blur(4px)}
@@ -672,7 +697,14 @@ body,body *{cursor:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/sv
       </button>
       <button class="mbtn close" id="modalClose">&#10005; Close</button>
     </div>
-    <iframe id="gameFrame" sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-popups-to-escape-sandbox" loading="lazy"></iframe>
+    <div class="modal-body">
+      <iframe id="gameFrame" sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-modals allow-popups-to-escape-sandbox" loading="lazy"></iframe>
+      <div class="game-splash hidden" id="gameSplash">
+        <div class="splash-icon-wrap"><img class="splash-icon" id="splashIcon" src="" alt=""></div>
+        <div class="splash-title" id="splashTitle"></div>
+        <div class="splash-sub" id="splashSub"></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1312,9 +1344,34 @@ function buildAZBar(letters) {
   }).join('');
 }
 
+// ---- Game launch animation (compositor-only: transform + opacity) ----
+let lastLaunchRect = null;
+let launchId = 0;
+let closingGame = false;
+document.addEventListener('click', e => {
+  const el = e.target.closest && e.target.closest('[onclick*="openGame"]');
+  if (el) lastLaunchRect = el.getBoundingClientRect();
+}, true);
+
+const LAUNCH_EASE_OUT = 'cubic-bezier(.22,1,.36,1)';
+const LAUNCH_EASE_IN = 'cubic-bezier(.4,0,1,1)';
+
+// Compute a smooth 3D translation from the clicked card toward the center.
+function launchOffsetTransform(scale) {
+  const r = lastLaunchRect;
+  if (!r || r.width < 8 || r.height < 8 || r.bottom < 0 || r.top > innerHeight) {
+    return `translate3d(0,18px,0) scale(${scale})`;
+  }
+  const dx = ((r.left + r.width / 2) - innerWidth / 2) * 0.28;
+  const dy = ((r.top + r.height / 2) - innerHeight / 2) * 0.28;
+  return `translate3d(${dx.toFixed(1)}px,${dy.toFixed(1)}px,0) scale(${scale})`;
+}
+
 function openGame(name) {
   const game = GAMES.find(g => g.name === name);
   if (!game) return;
+  const myId = ++launchId;
+  closingGame = false;
   recentlyPlayed = recentlyPlayed.filter(n => n !== name);
   recentlyPlayed.unshift(name);
   if (recentlyPlayed.length > 20) recentlyPlayed = recentlyPlayed.slice(0, 20);
@@ -1325,23 +1382,108 @@ function openGame(name) {
   const favTxt = document.getElementById('modalFavText');
   if (favBtn) favBtn.classList.toggle('active', isFavorite(game.name));
   if (favTxt) favTxt.textContent = isFavorite(game.name) ? 'Favorited' : 'Favorite';
+
+  // Splash screen
+  const splash = document.getElementById('gameSplash');
+  const splashIcon = document.getElementById('splashIcon');
+  splashIcon.src = game.icon || '';
+  splashIcon.style.visibility = game.icon ? '' : 'hidden';
+  document.getElementById('splashTitle').textContent = game.name;
+  document.getElementById('splashSub').textContent = game.cat ? `${game.cat} · Loading` : 'Loading';
+  splash.getAnimations().forEach(a => a.cancel());
+  splash.classList.remove('hidden');
+
   const frame = document.getElementById('gameFrame');
   frame.style.opacity = '0';
-  frame.src = '';
-  frame.onload = () => { frame.style.opacity = '1'; };
-  requestAnimationFrame(() => { frame.src = game.file; });
-  document.getElementById('gameModal').classList.add('active');
+
+  const overlay = document.getElementById('gameModal');
+  const modal = overlay.querySelector('.modal');
+  overlay.getAnimations().forEach(a => a.cancel());
+  modal.getAnimations().forEach(a => a.cancel());
+  overlay.classList.add('active');
+  document.body.classList.add('modal-open');
   document.body.style.overflow = 'hidden';
+
+  const reduced = settings.reducedMotion;
+  const openedAt = performance.now();
+
+  const revealGame = () => {
+    if (myId !== launchId || closingGame) return;
+    const wait = Math.max(0, (reduced ? 0 : 480) - (performance.now() - openedAt));
+    setTimeout(() => {
+      if (myId !== launchId || closingGame) return;
+      const curFrame = document.getElementById('gameFrame');
+      if (curFrame) curFrame.style.opacity = '1';
+      if (reduced) { splash.classList.add('hidden'); return; }
+      splash.animate(
+        [{ opacity: 1, transform: 'translate3d(0,0,0) scale(1)' },
+         { opacity: 0, transform: 'translate3d(0,0,0) scale(1.03)' }],
+        { duration: 220, easing: 'ease-out' }
+      ).onfinish = () => { if (myId === launchId) splash.classList.add('hidden'); };
+    }, wait);
+  };
+
+  const startFrameLoad = () => {
+    if (myId !== launchId || closingGame) return;
+    const curFrame = document.getElementById('gameFrame');
+    curFrame.onload = () => { if (curFrame.getAttribute('src') === game.file) revealGame(); };
+    curFrame.src = game.file;
+  };
+
+  if (!reduced) {
+    overlay.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 220, easing: 'ease-out' });
+    const openAnim = modal.animate(
+      [{ opacity: 0, transform: launchOffsetTransform(0.88) },
+       { opacity: 1, transform: 'translate3d(0,0,0) scale(1)' }],
+      { duration: 280, easing: LAUNCH_EASE_OUT });
+    // Defer heavy iframe loading until the entrance animation finishes so it never drops frames
+    openAnim.onfinish = startFrameLoad;
+  } else {
+    requestAnimationFrame(startFrameLoad);
+  }
+  setTimeout(revealGame, 12000); // safety net if load never fires
 }
 
-function closeGame() {
+function destroyGameFrame() {
   const old = document.getElementById('gameFrame');
+  if (!old || !old.parentNode) return;
   const fresh = old.cloneNode(false);
   fresh.removeAttribute('src');
   fresh.style.opacity = '0';
   old.parentNode.replaceChild(fresh, old);
-  document.getElementById('gameModal').classList.remove('active');
-  document.body.style.overflow = '';
+}
+
+function closeGame() {
+  const overlay = document.getElementById('gameModal');
+  if (!overlay.classList.contains('active') || closingGame) return;
+  closingGame = true;
+  const myId = launchId;
+
+  const modal = overlay.querySelector('.modal');
+  const frame = document.getElementById('gameFrame');
+  if (frame) frame.style.opacity = '0';
+
+  const finish = () => {
+    if (myId !== launchId) return;
+    destroyGameFrame();
+    overlay.classList.remove('active');
+    overlay.getAnimations().forEach(a => a.cancel());
+    modal.getAnimations().forEach(a => a.cancel());
+    document.body.classList.remove('modal-open');
+    document.body.style.overflow = '';
+    closingGame = false;
+  };
+
+  if (settings.reducedMotion) { finish(); return; }
+
+  overlay.getAnimations().forEach(a => a.cancel());
+  modal.getAnimations().forEach(a => a.cancel());
+  overlay.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 190, easing: 'ease-in', fill: 'forwards' });
+  modal.animate(
+    [{ opacity: 1, transform: 'translate3d(0,0,0) scale(1)' },
+     { opacity: 0, transform: launchOffsetTransform(0.9) }],
+    { duration: 200, easing: LAUNCH_EASE_IN, fill: 'forwards' }
+  ).onfinish = finish;
 }
 
 function setupEvents() {
