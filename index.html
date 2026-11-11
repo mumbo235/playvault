@@ -147,7 +147,11 @@ body{
 .az-bar a:hover{background:var(--accent);color:#fff}
 .az-bar a.disabled{opacity:.2;pointer-events:none}
 
-.letter-section{margin-bottom:24px;content-visibility:auto;contain-intrinsic-size:auto 300px}
+.letter-section{margin-bottom:24px;content-visibility:auto;contain-intrinsic-size:auto 300px;scroll-margin-top:84px}
+.sort-toggle{margin-left:auto;display:flex;gap:2px;padding:3px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--glass-border)}
+.sort-btn{background:none;border:none;color:var(--text2);font-size:12px;font-weight:600;padding:5px 11px;border-radius:7px;cursor:pointer;transition:background .15s,color .15s}
+.sort-btn:hover{color:var(--text)}
+.sort-btn.active{background:var(--accent);color:#fff}
 .letter-section h3{
   font-size:15px;font-weight:700;color:var(--accent2);
   margin-bottom:12px;padding-bottom:6px;
@@ -209,6 +213,20 @@ body.modal-open .animated-bg .orb{animation-play-state:paused!important}
 .splash-title{font-size:19px;font-weight:700;letter-spacing:.2px;color:var(--text);text-align:center;padding:0 20px}
 .splash-sub{font-size:11px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--text2)}
 @keyframes splashSpin{to{transform:rotate(360deg)}}
+
+/* Home clock */
+.home-hero{text-align:center;padding:7.5vh 0 7.5vh}
+.home-time{
+  font-size:clamp(64px,13vw,150px);font-weight:800;line-height:1;letter-spacing:-3px;
+  font-variant-numeric:tabular-nums;
+  background:linear-gradient(180deg,var(--text) 30%,var(--accent2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  display:inline-block;transform:translateX(14px);
+}
+.home-ampm{font-size:.28em;font-weight:700;letter-spacing:1px;margin-left:.25em;vertical-align:.95em;color:var(--accent2);-webkit-text-fill-color:var(--accent2)}
+.home-date{margin-top:14px;font-size:clamp(15px,2vw,20px);font-weight:500;color:var(--text2);letter-spacing:.3px}
+.game-grid.home-picks{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:700px){.game-grid.home-picks{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 .explore-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .explore-tag{
@@ -436,152 +454,60 @@ body.modal-open .animated-bg .orb{animation-play-state:paused!important}
 }
 
 /* ===== TOOLS PAGE ===== */
-.tools-page{max-width:800px;margin:0 auto}
-.tools-page h2{font-size:22px;font-weight:700;margin-bottom:20px}
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:24px}
+.tools-page{max-width:1020px;margin:0 auto;padding-top:10px}
+.tools-page h2{font-size:28px;font-weight:800;margin-bottom:24px;letter-spacing:-.5px}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:22px;margin-bottom:32px}
 .tool-card{
-  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-  padding:20px;cursor:pointer;transition:all .2s;
-  display:flex;align-items:flex-start;gap:14px;
+  background:var(--card);border:1px solid var(--border);border-radius:calc(var(--radius) + 6px);
+  padding:36px 34px;cursor:pointer;transition:transform .22s cubic-bezier(.22,1,.36,1),border-color .22s,box-shadow .22s,background .22s;
+  display:flex;align-items:center;gap:26px;min-height:168px;position:relative;overflow:hidden;
 }
-.tool-card:hover{border-color:rgba(255,255,255,.12);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
-.tool-card .tool-icon{flex-shrink:0;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);border-radius:10px}
-.tool-card .tool-icon svg{width:24px;height:24px}
-.tool-emoji svg{width:22px;height:22px;vertical-align:middle}
-.tool-card .tool-name{font-size:14px;font-weight:600;color:var(--text)}
-.tool-card .tool-desc{font-size:11px;color:var(--text3);margin-top:3px}
+.tool-card:hover{
+  background:var(--card-hover);border-color:var(--accent);
+  transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.45),0 0 28px var(--accent-glow);
+}
+.tool-card .tool-icon{
+  flex-shrink:0;width:84px;height:84px;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.05);border:1px solid var(--glass-border);border-radius:22px;
+}
+.tool-card .tool-icon svg{width:50px;height:50px}
+.tool-emoji svg{width:28px;height:28px;vertical-align:middle}
+.tool-card .tool-tag{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
+  padding:4px 10px;border-radius:20px;background:rgba(124,108,240,.16);color:var(--accent2);margin-bottom:8px;
+}
+.tool-card .tool-name{font-size:24px;font-weight:800;color:var(--text);letter-spacing:-.4px}
+.tool-card .tool-desc{font-size:14px;color:var(--text2);margin-top:6px;line-height:1.45}
 .tool-panel{
-  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
-  padding:24px;margin-bottom:16px;
+  background:var(--card);border:1px solid var(--border);border-radius:calc(var(--radius) + 4px);
+  padding:32px;margin-bottom:20px;
 }
-.tool-panel-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.tool-panel-header{display:flex;align-items:center;gap:14px;margin-bottom:22px}
 .tool-panel-header .back-btn{
   background:rgba(255,255,255,.06);border:1px solid var(--glass-border);
-  border-radius:8px;color:var(--text2);padding:8px 12px;cursor:pointer;
-  font-size:12px;transition:all .2s;display:flex;align-items:center;gap:4px;
+  border-radius:10px;color:var(--text2);padding:10px 16px;cursor:pointer;
+  font-size:13px;font-weight:600;transition:all .2s;display:flex;align-items:center;gap:6px;
 }
 .tool-panel-header .back-btn:hover{background:rgba(255,255,255,.1);color:var(--text)}
-.tool-panel-header h3{font-size:18px;font-weight:700;flex:1}
-.tool-panel-header .tool-emoji{font-size:24px}
+.tool-panel-header h3{font-size:22px;font-weight:800;flex:1}
+.tool-panel-header .tool-emoji{font-size:26px}
 
-/* Calculator */
-.calc-display{
-  background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:var(--radius-sm);
-  padding:16px 20px;text-align:right;margin-bottom:12px;font-family:'Courier New',monospace;
-  min-height:64px;display:flex;flex-direction:column;justify-content:flex-end;
+/* Fullscreen uOS Overlay */
+.uos-overlay{
+  position:fixed;inset:0;width:100vw;height:100vh;z-index:500;
+  background:#05070c;display:none;
 }
-.calc-display .calc-expr{font-size:13px;color:var(--text3);min-height:18px}
-.calc-display .calc-result{font-size:28px;font-weight:700;color:var(--text);word-break:break-all}
-.calc-buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.calc-btn{
-  padding:14px;border-radius:var(--radius-sm);border:1px solid var(--border);
-  background:rgba(255,255,255,.04);color:var(--text);font-size:16px;
-  cursor:pointer;transition:all .15s;font-weight:500;
+.uos-overlay.active{display:block}
+.uos-overlay iframe{width:100%;height:100%;border:none;display:block}
+.uos-exit{
+  position:fixed;top:10px;right:12px;z-index:510;
+  padding:6px 14px;border-radius:99px;
+  background:rgba(15,18,28,.65);border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  color:rgba(255,255,255,.7);font-size:12px;font-weight:600;cursor:pointer;
+  opacity:.45;transition:opacity .2s,background .2s,color .2s,transform .2s;
 }
-.calc-btn:hover{background:rgba(255,255,255,.08)}
-.calc-btn.op{background:rgba(124,108,240,.15);color:var(--accent2);border-color:rgba(124,108,240,.2)}
-.calc-btn.op:hover{background:rgba(124,108,240,.25)}
-.calc-btn.eq{background:var(--accent);color:#fff;border-color:var(--accent)}
-.calc-btn.eq:hover{opacity:.85}
-.calc-btn.clear{background:rgba(255,80,80,.1);color:var(--hot);border-color:rgba(255,80,80,.2)}
-.calc-btn.clear:hover{background:rgba(255,80,80,.2)}
-
-/* Notes */
-.notes-area{
-  width:100%;min-height:300px;background:rgba(0,0,0,.2);border:1px solid var(--border);
-  border-radius:var(--radius-sm);padding:16px;color:var(--text);font-size:14px;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  resize:vertical;outline:none;line-height:1.6;
-}
-.notes-area:focus{border-color:var(--accent)}
-.notes-toolbar{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
-.notes-toolbar button{
-  padding:6px 12px;border-radius:6px;border:1px solid var(--glass-border);
-  background:rgba(255,255,255,.04);color:var(--text2);font-size:11px;
-  cursor:pointer;transition:all .15s;
-}
-.notes-toolbar button:hover{background:rgba(255,255,255,.08);color:var(--text)}
-.notes-status{font-size:11px;color:var(--text3);margin-top:8px}
-
-/* Stopwatch */
-.sw-display{
-  text-align:center;font-size:56px;font-weight:700;font-family:'Courier New',monospace;
-  color:var(--text);padding:30px 0;letter-spacing:2px;
-}
-.sw-ms{font-size:32px;color:var(--text3)}
-.sw-buttons{display:flex;gap:10px;justify-content:center;margin-bottom:16px}
-.sw-btn{
-  padding:10px 28px;border-radius:40px;border:1px solid var(--glass-border);
-  background:rgba(255,255,255,.04);color:var(--text);font-size:14px;font-weight:500;
-  cursor:pointer;transition:all .2s;
-}
-.sw-btn:hover{background:rgba(255,255,255,.08)}
-.sw-btn.start{background:rgba(0,184,148,.15);color:#00b894;border-color:rgba(0,184,148,.3)}
-.sw-btn.stop{background:rgba(255,80,80,.15);color:var(--hot);border-color:rgba(255,80,80,.3)}
-.sw-laps{max-height:200px;overflow-y:auto;margin-top:12px}
-.sw-lap{
-  display:flex;justify-content:space-between;padding:8px 12px;
-  border-bottom:1px solid var(--border);font-size:13px;color:var(--text2);
-  font-family:'Courier New',monospace;
-}
-
-/* Coin flip / dice */
-.flip-result{
-  font-size:80px;text-align:center;padding:30px 0;
-  transition:transform .3s;
-}
-.flip-result.flipping{animation:flipAnim .5s ease}
-@keyframes flipAnim{0%{transform:rotateY(0)}50%{transform:rotateY(180deg)}100%{transform:rotateY(360deg)}}
-.flip-buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.flip-btn{
-  padding:10px 24px;border-radius:40px;border:1px solid var(--glass-border);
-  background:rgba(255,255,255,.04);color:var(--text);font-size:14px;font-weight:500;
-  cursor:pointer;transition:all .2s;
-}
-.flip-btn:hover{background:rgba(255,255,255,.08)}
-.flip-history{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px;justify-content:center}
-.flip-history span{
-  background:rgba(255,255,255,.04);border:1px solid var(--border);
-  border-radius:6px;padding:4px 10px;font-size:18px;
-}
-
-/* Drawing pad */
-.draw-canvas{
-  width:100%;height:360px;background:rgba(0,0,0,.3);border:1px solid var(--border);
-  border-radius:var(--radius-sm);cursor:crosshair;touch-action:none;
-}
-.draw-toolbar{display:flex;gap:8px;margin-bottom:10px;align-items:center;flex-wrap:wrap}
-.draw-toolbar label{font-size:11px;color:var(--text3)}
-.draw-toolbar input[type=color]{
-  width:32px;height:26px;border:1px solid var(--border);border-radius:6px;
-  background:transparent;cursor:pointer;padding:0;
-}
-.draw-toolbar input[type=range]{width:80px;accent-color:var(--accent)}
-
-/* Password gen */
-.pw-output{
-  font-family:'Courier New',monospace;font-size:20px;text-align:center;
-  padding:20px;background:rgba(0,0,0,.3);border:1px solid var(--border);
-  border-radius:var(--radius-sm);color:var(--accent2);word-break:break-all;
-  margin-bottom:14px;letter-spacing:1px;user-select:all;
-}
-.pw-options{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
-.pw-options label{font-size:12px;color:var(--text2);display:flex;align-items:center;gap:4px}
-.pw-options input[type=checkbox]{accent-color:var(--accent)}
-
-/* Timer */
-.timer-display{
-  text-align:center;font-size:52px;font-weight:700;font-family:'Courier New',monospace;
-  color:var(--text);padding:24px 0;
-}
-.timer-display.done{color:var(--hot);animation:timerPulse 1s infinite}
-@keyframes timerPulse{0%,100%{opacity:1}50%{opacity:.4}}
-.timer-inputs{display:flex;gap:10px;justify-content:center;margin-bottom:16px;align-items:center}
-.timer-inputs input{
-  width:60px;text-align:center;background:rgba(0,0,0,.3);border:1px solid var(--border);
-  border-radius:8px;padding:8px;color:var(--text);font-size:16px;font-family:monospace;
-}
-.timer-inputs span{color:var(--text3);font-size:12px}
+.uos-exit:hover{opacity:1;background:rgba(255,80,80,.85);border-color:rgba(255,80,80,1);color:#fff;transform:scale(1.04)}
 
 /* Animated background */
 .animated-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
@@ -595,7 +521,128 @@ body.modal-open .animated-bg .orb{animation-play-state:paused!important}
 .reduced-motion .animated-bg .orb{animation:none!important}
 
 /* Pointer cursor for clickable elements */
-.game-card,.nav-btn,.s-btn,.tool-card,.explore-tag,.cloak-preset,.toggle,.flip-btn,.sw-btn,.calc-btn,.s-color,.recent-item,.fav-btn,.modal-fav,.mbtn{cursor:pointer}
+.game-card,.nav-btn,.s-btn,.tool-card,.explore-tag,.cloak-preset,.toggle,.flip-btn,.sw-btn,.calc-btn,.s-color,.recent-item,.fav-btn,.modal-fav,.mbtn,.theme-card,.bg-pill,.wiz-opt{cursor:pointer}
+
+/* Home greeting & 24h centering */
+.home-time.no-ampm{transform:none}
+.home-greeting{margin-top:10px;font-size:clamp(16px,2.2vw,22px);font-weight:600;color:var(--text);letter-spacing:-.2px}
+
+/* Background style variants */
+body.bg-grid .animated-bg .orb,body.bg-dots .animated-bg .orb,body.bg-none .animated-bg .orb{display:none}
+body.bg-grid .animated-bg{
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(ellipse at 50% 35%, #000 35%, transparent 85%);
+  -webkit-mask-image:radial-gradient(ellipse at 50% 35%, #000 35%, transparent 85%);
+}
+body.bg-dots .animated-bg{
+  background-image:radial-gradient(rgba(255,255,255,.09) 1px, transparent 1px);
+  background-size:24px 24px;
+}
+
+/* Nav labels & card title options */
+body.show-nav-labels .nav-btn span{display:inline}
+body.hide-card-titles .game-card .card-info{opacity:0;transform:translateY(4px);transition:opacity .18s,transform .18s}
+body.hide-card-titles .game-card:hover .card-info{opacity:1;transform:translateY(0)}
+
+/* Settings theme & personalization controls */
+.theme-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:8px;margin-top:10px}
+.theme-card{
+  display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:var(--radius-sm);
+  background:rgba(255,255,255,.03);border:1px solid var(--glass-border);transition:all .18s;
+}
+.theme-card:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15)}
+.theme-card.active{border-color:var(--accent);background:rgba(124,108,240,.12);box-shadow:0 0 14px var(--accent-glow)}
+.theme-swatch{width:28px;height:28px;border-radius:8px;border:1px solid rgba(255,255,255,.18);flex-shrink:0;position:relative;overflow:hidden}
+.theme-swatch::after{content:'';position:absolute;inset:auto 0 0 0;height:40%;background:var(--accent)}
+.theme-meta .t-name{font-size:12px;font-weight:600;color:var(--text)}
+.theme-meta .t-desc{font-size:10px;color:var(--text3)}
+
+.bg-pills{display:flex;gap:6px;flex-wrap:wrap}
+.bg-pill{
+  padding:6px 13px;border-radius:30px;font-size:12px;font-weight:500;
+  background:rgba(255,255,255,.04);border:1px solid var(--glass-border);color:var(--text2);transition:all .18s;
+}
+.bg-pill:hover{color:var(--text);background:rgba(255,255,255,.08)}
+.bg-pill.active{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 2px 10px var(--accent-glow)}
+
+.color-picker-wrap{
+  position:relative;width:28px;height:28px;border-radius:50%;overflow:hidden;
+  border:2px dashed rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:transform .15s,border-color .15s;
+}
+.color-picker-wrap:hover{transform:scale(1.12);border-color:#fff}
+.color-picker-wrap input[type=color]{position:absolute;inset:-8px;width:44px;height:44px;opacity:0;cursor:pointer;border:none}
+
+.setup-banner{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:16px 20px;margin-bottom:16px;border-radius:var(--radius);
+  background:linear-gradient(135deg,rgba(124,108,240,.18),rgba(232,67,147,.1));
+  border:1px solid rgba(124,108,240,.35);
+}
+.setup-banner .sb-text h4{font-size:14px;font-weight:700;margin-bottom:3px;color:var(--text)}
+.setup-banner .sb-text p{font-size:12px;color:var(--text2)}
+
+/* First-Time Setup Wizard */
+.setup-overlay{
+  position:fixed;inset:0;z-index:350;background:rgba(0,0,0,.78);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  display:none;align-items:center;justify-content:center;padding:18px;
+}
+.setup-overlay.active{display:flex}
+.setup-card{
+  width:100%;max-width:560px;background:var(--bg2);
+  border:1px solid var(--glass-border);border-radius:20px;
+  box-shadow:0 24px 80px rgba(0,0,0,.65),0 0 40px var(--accent-glow);
+  overflow:hidden;display:flex;flex-direction:column;max-height:90vh;
+  animation:wizPop .28s cubic-bezier(.22,1,.36,1);
+}
+@keyframes wizPop{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.setup-top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 24px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02);
+}
+.setup-brand{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--text)}
+.setup-brand span.step-tag{
+  font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;
+  background:rgba(255,255,255,.06);color:var(--text2);
+}
+.setup-skip{background:none;border:none;color:var(--text3);font-size:12px;cursor:pointer;padding:4px 8px;border-radius:6px;transition:color .15s}
+.setup-skip:hover{color:var(--text)}
+.setup-body{padding:24px;overflow-y:auto;flex:1}
+.setup-title{font-size:22px;font-weight:800;letter-spacing:-.4px;margin-bottom:6px}
+.setup-sub{font-size:13px;color:var(--text2);margin-bottom:20px;line-height:1.45}
+.wiz-field{margin-bottom:18px}
+.wiz-field:last-child{margin-bottom:0}
+.wiz-label{font-size:12px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px;display:block}
+.wiz-input{
+  width:100%;padding:11px 14px;border-radius:10px;
+  background:rgba(255,255,255,.05);border:1px solid var(--glass-border);
+  color:var(--text);font-size:14px;outline:none;transition:border-color .18s;
+}
+.wiz-input:focus{border-color:var(--accent)}
+.wiz-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.wiz-grid.cols-3{grid-template-columns:repeat(3,1fr)}
+.wiz-opt{
+  padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.03);
+  border:1px solid var(--glass-border);transition:all .18s;text-align:left;
+  display:flex;align-items:center;gap:10px;
+}
+.wiz-opt:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.15)}
+.wiz-opt.active{border-color:var(--accent);background:rgba(124,108,240,.14);box-shadow:0 0 14px var(--accent-glow)}
+.wiz-opt .wo-title{font-size:13px;font-weight:600;color:var(--text)}
+.wiz-opt .wo-desc{font-size:11px;color:var(--text3);margin-top:2px}
+.setup-foot{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 24px;border-top:1px solid var(--border);background:rgba(0,0,0,.2);
+}
+.setup-dots{display:flex;gap:6px}
+.setup-dot{width:8px;height:8px;border-radius:4px;background:rgba(255,255,255,.16);transition:all .2s}
+.setup-dot.active{width:22px;background:var(--accent)}
+.setup-dot.done{background:var(--accent2)}
+.setup-actions{display:flex;gap:8px}
 
 /* Favorites */
 .fav-btn{position:absolute;top:6px;left:6px;z-index:2;background:rgba(0,0,0,.5);border:none;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .18s,transform .18s;backdrop-filter:blur(4px)}
@@ -621,6 +668,7 @@ body.modal-open .animated-bg .orb{animation-play-state:paused!important}
   .sw-display{font-size:40px}
   .sw-ms{font-size:22px}
   .calc-btn{padding:10px}
+  .wiz-grid,.wiz-grid.cols-3{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -649,12 +697,13 @@ body.modal-open .animated-bg .orb{animation-play-state:paused!important}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     <span>Home</span>
   </button>
-  <button class="nav-btn" data-view="explore">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-    <span>Explore</span>
+  <button class="nav-btn" data-view="games">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15.5" cy="11" r="1"/><circle cx="17.5" cy="13.5" r="1"/></svg>
+    <span>Games</span>
   </button>
   <button class="nav-btn" data-view="favorites">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    <span>Favorites</span>
   </button>
   <div class="nav-divider"></div>
   <div class="search-wrap" id="searchWrap">
@@ -676,6 +725,13 @@ body.modal-open .animated-bg .orb{animation-play-state:paused!important}
 
 <div class="main" id="mainContent">
   <div id="contentArea"></div>
+</div>
+
+<div class="setup-overlay" id="setupOverlay"></div>
+
+<div class="uos-overlay" id="uosOverlay">
+  <button class="uos-exit" onclick="closeUOS()" title="Exit uOS">&#10005; Exit uOS</button>
+  <iframe id="uosFrame" allow="fullscreen; clipboard-read; clipboard-write; autoplay"></iframe>
 </div>
 
 <div class="modal-overlay" id="gameModal">
@@ -804,14 +860,46 @@ function categorize(name) {
   return "Other";
 }
 
-let currentView = 'home';
-let settings = {
-  cardSize: 150, gridGap: 14, accent: '#7c6cf0',
+const THEMES = [
+  {id:'midnight', name:'Midnight', desc:'Default deep space', bg:'#08090d', bg2:'#0e1017', bg3:'#151821', card:'#12141c', cardHover:'#191c28'},
+  {id:'oled', name:'OLED Black', desc:'Pure pitch black', bg:'#000000', bg2:'#07070a', bg3:'#101016', card:'#0a0a0f', cardHover:'#14141d'},
+  {id:'cyber', name:'Cyberpunk', desc:'Neon violet night', bg:'#090514', bg2:'#120b24', bg3:'#1b1136', card:'#150d2a', cardHover:'#211540'},
+  {id:'ocean', name:'Deep Ocean', desc:'Abyssal navy blue', bg:'#050d16', bg2:'#091624', bg3:'#0f2236', card:'#0b1a2b', cardHover:'#132840'},
+  {id:'forest', name:'Emerald', desc:'Dark matrix green', bg:'#05110d', bg2:'#091c15', bg3:'#102a20', card:'#0b2119', cardHover:'#133327'},
+  {id:'crimson', name:'Crimson', desc:'Dark blood moon', bg:'#120608', bg2:'#1c0a0e', bg3:'#281015', card:'#210c11', cardHover:'#30131a'}
+];
+
+const BG_STYLES = [
+  {id:'orbs', name:'Glow Orbs', desc:'Animated ambient light'},
+  {id:'grid', name:'Cyber Grid', desc:'Clean synthwave grid'},
+  {id:'dots', name:'Dot Matrix', desc:'Minimal studio dots'},
+  {id:'none', name:'Solid Clean', desc:'No background pattern'}
+];
+
+const DEFAULT_SETTINGS = {
+  userName: '', showGreeting: false,
+  clock24h: false, clockSeconds: false, homeGamesCount: 5,
+  theme: 'midnight', accent: '#7c6cf0', bgStyle: 'orbs',
+  navLabels: false, cardSize: 150, gridGap: 14, cardRadius: 14, showCardTitles: true,
   reducedMotion: false, showCount: true, sort: 'az',
   popularCount: 18, showRecent: true,
   cloak: 'none', cloakCustomTitle: '', cloakCustomFavicon: '',
-  panicKey: '`', aboutBlank: false
+  autoCloakBlur: false, panicKey: '`', panicUrl: 'https://classroom.google.com', aboutBlank: false
 };
+
+let currentView = 'home';
+let settings = { ...DEFAULT_SETTINGS };
+
+function lightenHex(hex, amt) {
+  if (!hex || hex.toLowerCase() === '#7c6cf0') return '#a29bfe';
+  const clean = hex.replace('#', '');
+  if (clean.length !== 6) return hex;
+  const num = parseInt(clean, 16);
+  const r = Math.min(255, ((num >> 16) & 255) + amt);
+  const g = Math.min(255, ((num >> 8) & 255) + amt);
+  const b = Math.min(255, (num & 255) + amt);
+  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
 
 let recentlyPlayed = [];
 try { recentlyPlayed = JSON.parse(localStorage.getItem('pv_recent') || '[]'); } catch(e) {}
@@ -860,11 +948,22 @@ function saveSettings() {
 
 function applySettings() {
   const r = document.documentElement;
+  const t = THEMES.find(x => x.id === settings.theme) || THEMES[0];
+  r.style.setProperty('--bg', t.bg);
+  r.style.setProperty('--bg2', t.bg2);
+  r.style.setProperty('--bg3', t.bg3);
+  r.style.setProperty('--card', t.card);
+  r.style.setProperty('--card-hover', t.cardHover);
   r.style.setProperty('--card-size', settings.cardSize + 'px');
   r.style.setProperty('--grid-gap', settings.gridGap + 'px');
+  r.style.setProperty('--radius', (settings.cardRadius ?? 14) + 'px');
   r.style.setProperty('--accent', settings.accent);
+  r.style.setProperty('--accent2', lightenHex(settings.accent, 42));
   r.style.setProperty('--accent-glow', settings.accent + '4d');
-  document.body.classList.toggle('reduced-motion', settings.reducedMotion);
+  document.body.classList.toggle('reduced-motion', !!settings.reducedMotion);
+  document.body.classList.toggle('show-nav-labels', !!settings.navLabels);
+  document.body.classList.toggle('hide-card-titles', settings.showCardTitles === false);
+  ['orbs','grid','dots','none'].forEach(b => document.body.classList.toggle('bg-' + b, (settings.bgStyle || 'orbs') === b));
   applyCloak();
 }
 
@@ -906,11 +1005,19 @@ async function init() {
 
   renderView('home');
   setupEvents();
+
+  let setupDone = false;
+  try { setupDone = localStorage.getItem('pv_setup_done') === '1'; } catch(e) {}
+  if (!setupDone) openSetupWizard();
 }
 
+let homeClockTimer = null;
+
 function renderView(view, extra) {
+  if (view === 'explore') view = 'games';
   currentView = view;
   if (view !== 'tools') currentTool = null;
+  if (homeClockTimer) { clearInterval(homeClockTimer); homeClockTimer = null; }
   const area = document.getElementById('contentArea');
   document.querySelectorAll('.nav-btn[data-view]').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.view === view);
@@ -918,7 +1025,7 @@ function renderView(view, extra) {
   document.getElementById('mainContent').scrollTop = 0;
   switch(view) {
     case 'home': renderHome(area); break;
-    case 'explore': renderExplore(area); break;
+    case 'games': renderGames(area); break;
     case 'favorites': renderFavorites(area); break;
     case 'search': renderSearch(area, extra); break;
     case 'tools': renderTools(area); break;
@@ -926,10 +1033,33 @@ function renderView(view, extra) {
   }
 }
 
+function updateHomeClock() {
+  const t = document.getElementById('homeTime');
+  const d = document.getElementById('homeDate');
+  if (!t || !d) return;
+  const now = new Date();
+  const opts = { hour: 'numeric', minute: '2-digit', hour12: !settings.clock24h };
+  if (settings.clockSeconds) opts.second = '2-digit';
+  const time = now.toLocaleTimeString([], opts);
+  const m = time.match(/^(.*?)\s*([AaPp]\.?[Mm]\.?)$/);
+  t.classList.toggle('no-ampm', !m);
+  t.innerHTML = m ? `${m[1]}<span class="home-ampm">${m[2]}</span>` : time;
+  d.textContent = now.toLocaleDateString([], { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+  const g = document.getElementById('homeGreeting');
+  if (g) {
+    const name = (settings.userName || '').trim();
+    if (settings.showGreeting || name) {
+      const hr = now.getHours();
+      const sal = hr < 12 ? 'Good morning' : hr < 18 ? 'Good afternoon' : 'Good evening';
+      g.textContent = name ? `${sal}, ${name}` : sal;
+      g.style.display = '';
+    } else {
+      g.style.display = 'none';
+    }
+  }
+}
+
 function renderHome(area) {
-  const popular = GAMES.filter(g => g.isPopular).sort(() => Math.random() - .5);
-  const letters = buildLetterMap(sortedGames);
-  const countBadge = settings.showCount ? `<span class="badge">${GAMES.length}</span>` : '';
   let html = '';
 
   let betaDismissed = false;
@@ -942,80 +1072,98 @@ function renderHome(area) {
     </div>`;
   }
 
-  if (settings.showRecent && recentlyPlayed.length > 0) {
-    const recent = recentlyPlayed.slice(0, 12).map(n => GAMES.find(g => g.name === n)).filter(Boolean);
-    if (recent.length) {
-      html += `<div class="section-header"><h2>&#128338; Continue Playing</h2></div>
-      <div class="recent-bar">${recent.map(g => {
-        const escaped = g.name.replace(/'/g, "\\'");
-        return `<div class="recent-item" onclick="openGame('${escaped}')">
-          <img src="${g.icon || ''}" alt="${g.name}" loading="lazy">
-          <div class="rname">${g.name}</div>
-        </div>`;
-      }).join('')}</div>`;
-    }
-  }
-
-  if (favorites.length > 0) {
-    const favGames = favorites.slice(0, 12).map(n => GAMES.find(g => g.name === n)).filter(Boolean);
-    if (favGames.length) {
-      html += `<div class="section-header"><h2>&#10084;&#65039; Favorites</h2><a class="see-all" onclick="renderView('favorites')">See all &rarr;</a></div>
-      <div class="game-grid">${favGames.map(g => gameCard(g)).join('')}</div>`;
-    }
-  }
+  const count = settings.homeGamesCount || 5;
+  const recent = settings.showRecent ? recentlyPlayed.map(n => GAMES.find(g => g.name === n)).filter(Boolean).slice(0, count) : [];
+  const hasRecent = recent.length > 0;
+  const picks = hasRecent ? recent : [...GAMES].sort(() => Math.random() - .5).slice(0, count);
 
   html += `
+    <div class="home-hero">
+      <div class="home-time" id="homeTime"></div>
+      <div class="home-date" id="homeDate"></div>
+      <div class="home-greeting" id="homeGreeting" style="display:none"></div>
+    </div>
     <div class="section-header">
-      <h2>&#128293; Popular</h2>
-      <span class="badge hot">Hot</span>
-      <a class="see-all" onclick="renderView('explore')">Explore all &rarr;</a>
+      <h2>${hasRecent ? '&#128338; Recently Played' : '&#127922; Try Something New'}</h2>
+      <a class="see-all" onclick="renderView('games')">All games &rarr;</a>
     </div>
-    <div class="game-grid">
-      ${popular.slice(0, settings.popularCount).map(g => gameCard(g, true)).join('')}
-    </div>
-    <div class="section-header" style="margin-top:4px">
-      <h2>&#127918; All Games</h2>
-      ${countBadge}
-    </div>
-    <div class="az-bar">${buildAZBar(letters)}</div>
+    <div class="game-grid home-picks">${picks.map(g => gameCard(g)).join('')}</div>
   `;
-  for (const letter of sortedLetterKeys(letters)) {
-    html += letterSectionHTML(letter, letters[letter]);
-  }
-  html += `<div class="footer">PlayVault &mdash; ${GAMES.length} games</div>`;
   area.innerHTML = html;
+  updateHomeClock();
+  homeClockTimer = setInterval(updateHomeClock, 1000);
 }
 
-function renderExplore(area) {
-  const cats = {};
-  GAMES.forEach(g => { cats[g.category] = (cats[g.category] || 0) + 1; });
-  const catList = Object.entries(cats).sort((a,b) => b[1]-a[1]);
-  const countBadge = settings.showCount ? `<span class="badge">${GAMES.length}</span>` : '';
-  area.innerHTML = `
-    <div class="section-header"><h2>&#128640; Explore</h2>${countBadge}</div>
-    <div class="explore-tags">
-      <div class="explore-tag active" onclick="filterExplore(this, 'all')">All (${GAMES.length})</div>
-      <div class="explore-tag" onclick="filterExplore(this, 'popular')">&#128293; Popular</div>
-      <div class="explore-tag" onclick="filterExplore(this, 'favorites')">&#10084;&#65039; Favorites</div>
-      <div class="explore-tag" onclick="filterExplore(this, 'recent')">&#128338; Recent</div>
-      ${catList.map(([c, n]) => `<div class="explore-tag" onclick="filterExplore(this, '${c}')">${c} (${n})</div>`).join('')}
-    </div>
-    <div class="game-grid" id="exploreGrid">
-      ${sortedGames.map(g => gameCard(g)).join('')}
-    </div>
-  `;
+let gamesFilter = 'all';
+
+function gamesOrder() { return settings.sort === 'za' ? 'za' : 'az'; }
+
+function setGamesOrder(order) {
+  settings.sort = order;
+  applySorting();
+  saveSettings();
+  renderGamesList();
 }
 
 function filterExplore(el, filter) {
-  document.querySelectorAll('.explore-tag').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  let filtered;
-  if (filter === 'all') filtered = sortedGames;
-  else if (filter === 'popular') filtered = sortedGames.filter(g => g.isPopular);
-  else if (filter === 'favorites') filtered = favorites.map(n => GAMES.find(g => g.name === n)).filter(Boolean);
-  else if (filter === 'recent') filtered = recentlyPlayed.map(n => GAMES.find(g => g.name === n)).filter(Boolean);
-  else filtered = sortedGames.filter(g => g.category === filter);
-  document.getElementById('exploreGrid').innerHTML = filtered.map(g => gameCard(g)).join('');
+  gamesFilter = filter;
+  document.querySelectorAll('.explore-tag').forEach(t => t.classList.toggle('active', t === el));
+  renderGamesList();
+}
+
+function renderGamesList() {
+  const wrap = document.getElementById('gamesList');
+  if (!wrap) return;
+  const order = gamesOrder();
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.toggle('active', b.dataset.order === order));
+
+  let list;
+  if (gamesFilter === 'all') list = GAMES;
+  else if (gamesFilter === 'popular') list = GAMES.filter(g => g.isPopular);
+  else if (gamesFilter === 'favorites') list = favorites.map(n => GAMES.find(g => g.name === n)).filter(Boolean);
+  else if (gamesFilter === 'recent') list = recentlyPlayed.map(n => GAMES.find(g => g.name === n)).filter(Boolean);
+  else list = GAMES.filter(g => g.category === gamesFilter);
+
+  list = [...list].sort((a, b) => order === 'za' ? b.name.localeCompare(a.name) : a.name.localeCompare(b.name));
+  const letters = buildLetterMap(list);
+  let keys = sortedLetterKeys(letters);
+  if (order === 'za') keys = keys.reverse();
+
+  document.getElementById('gamesAZ').innerHTML = buildAZBar(letters);
+  const countEl = document.getElementById('gamesCount');
+  if (countEl) countEl.textContent = list.length;
+
+  wrap.innerHTML = list.length
+    ? keys.map(k => letterSectionHTML(k, letters[k])).join('')
+    : `<div class="no-results"><div class="big">&#127918;</div><p>No games here yet.</p></div>`;
+}
+
+function renderGames(area) {
+  const cats = {};
+  GAMES.forEach(g => { cats[g.category] = (cats[g.category] || 0) + 1; });
+  const catList = Object.entries(cats).sort((a,b) => b[1]-a[1]);
+  const countBadge = settings.showCount ? `<span class="badge" id="gamesCount">${GAMES.length}</span>` : '';
+  const tag = (f, label) => `<div class="explore-tag ${gamesFilter === f ? 'active' : ''}" onclick="filterExplore(this, '${f.replace(/'/g, "\\'")}')">${label}</div>`;
+  area.innerHTML = `
+    <div class="section-header">
+      <h2>&#127918; Games</h2>${countBadge}
+      <div class="sort-toggle">
+        <button class="sort-btn" data-order="az" onclick="setGamesOrder('az')">A&rarr;Z</button>
+        <button class="sort-btn" data-order="za" onclick="setGamesOrder('za')">Z&rarr;A</button>
+      </div>
+    </div>
+    <div class="explore-tags">
+      ${tag('all', `All (${GAMES.length})`)}
+      ${tag('popular', '&#128293; Popular')}
+      ${tag('favorites', '&#10084;&#65039; Favorites')}
+      ${tag('recent', '&#128338; Recent')}
+      ${catList.map(([c, n]) => tag(c, `${c} (${n})`)).join('')}
+    </div>
+    <div class="az-bar" id="gamesAZ"></div>
+    <div id="gamesList"></div>
+    <div class="footer">PlayVault &mdash; ${GAMES.length} games</div>
+  `;
+  renderGamesList();
 }
 
 function renderSearch(area, query) {
@@ -1046,20 +1194,207 @@ function renderFavorites(area) {
 
 function renderSettings(area) {
   const activeCloak = settings.cloak;
+  const isPresetAccent = ACCENT_COLORS.some(c => c.value.toLowerCase() === (settings.accent || '').toLowerCase());
   area.innerHTML = `
   <div class="settings-page">
-    <h2>&#9881; Settings</h2>
+    <h2>&#9881; Settings &amp; Personalization</h2>
 
-    <!-- TAB CLOAKING -->
+    <div class="setup-banner">
+      <div class="sb-text">
+        <h4>&#10024; Quick Setup Wizard</h4>
+        <p>Customize your theme, clock, layout, and stealth preferences step-by-step.</p>
+      </div>
+      <button class="s-btn primary" onclick="openSetupWizard()">Run Setup Wizard</button>
+    </div>
+
+    <!-- PROFILE & HOME SCREEN -->
+    <div class="s-section">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profile &amp; Home Screen
+      </h3>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Display Name</div>
+          <div class="desc">Shown in your personalized greeting on the Home screen</div>
+        </div>
+        <input type="text" value="${(settings.userName || '').replace(/"/g,'&quot;')}" placeholder="Your name (optional)..." oninput="settings.userName=this.value;if(this.value.trim())settings.showGreeting=true;saveSettings()">
+      </div>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Show Greeting on Home</div>
+          <div class="desc">Display "Good morning / afternoon / evening" below the date</div>
+        </div>
+        <button class="toggle ${settings.showGreeting?'on':''}" onclick="settings.showGreeting=!settings.showGreeting;this.classList.toggle('on');saveSettings()"></button>
+      </div>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">24-Hour Clock</div>
+          <div class="desc">Use 24-hour military time (e.g. 17:30 instead of 5:30 PM)</div>
+        </div>
+        <button class="toggle ${settings.clock24h?'on':''}" onclick="settings.clock24h=!settings.clock24h;this.classList.toggle('on');saveSettings()"></button>
+      </div>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Show Seconds on Clock</div>
+          <div class="desc">Include live ticking seconds on the Home clock</div>
+        </div>
+        <button class="toggle ${settings.clockSeconds?'on':''}" onclick="settings.clockSeconds=!settings.clockSeconds;this.classList.toggle('on');saveSettings()"></button>
+      </div>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Home Games Count</div>
+          <div class="desc">Number of recent or random games displayed below the clock</div>
+        </div>
+        <select onchange="settings.homeGamesCount=+this.value;saveSettings()">
+          <option value="5" ${(settings.homeGamesCount||5)===5?'selected':''}>5 Games (1 Row)</option>
+          <option value="10" ${settings.homeGamesCount===10?'selected':''}>10 Games (2 Rows)</option>
+          <option value="15" ${settings.homeGamesCount===15?'selected':''}>15 Games (3 Rows)</option>
+        </select>
+      </div>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Prioritize Recently Played</div>
+          <div class="desc">Show your recently played games on Home instead of random picks</div>
+        </div>
+        <button class="toggle ${settings.showRecent?'on':''}" onclick="settings.showRecent=!settings.showRecent;this.classList.toggle('on');saveSettings()"></button>
+      </div>
+    </div>
+
+    <!-- THEMES & APPEARANCE -->
+    <div class="s-section">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        Themes &amp; Visuals
+      </h3>
+      <div class="s-row" style="border:none;padding-bottom:2px">
+        <div class="s-label">
+          <div class="title">Base Theme</div>
+          <div class="desc">Choose your background palette and surface tone</div>
+        </div>
+      </div>
+      <div class="theme-grid">
+        ${THEMES.map(t => `
+          <div class="theme-card ${(settings.theme||'midnight') === t.id ? 'active' : ''}" onclick="setTheme('${t.id}')">
+            <div class="theme-swatch" style="background:linear-gradient(135deg,${t.bg} 50%,${t.cardHover} 50%)"></div>
+            <div class="theme-meta">
+              <div class="t-name">${t.name}</div>
+              <div class="t-desc">${t.desc}</div>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="s-row" style="margin-top:14px">
+        <div class="s-label">
+          <div class="title">Accent Color</div>
+          <div class="desc">Pick a preset swatch or choose any custom hex color</div>
+        </div>
+        <div class="s-colors">
+          ${ACCENT_COLORS.map(c =>
+            `<div class="s-color ${settings.accent.toLowerCase() === c.value.toLowerCase() ? 'active' : ''}" style="background:${c.value}" title="${c.name}" onclick="setAccent('${c.value}')"></div>`
+          ).join('')}
+          <label class="color-picker-wrap" title="Custom Color" style="background:${!isPresetAccent ? settings.accent : 'transparent'}">
+            <span style="font-size:13px;line-height:1;pointer-events:none">+</span>
+            <input type="color" value="${settings.accent}" oninput="setAccent(this.value)">
+          </label>
+        </div>
+      </div>
+
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Background Effect</div>
+          <div class="desc">Ambient visual style behind the interface</div>
+        </div>
+        <div class="bg-pills">
+          ${BG_STYLES.map(b => `
+            <button class="bg-pill ${(settings.bgStyle||'orbs') === b.id ? 'active' : ''}" onclick="setBgStyle('${b.id}')" title="${b.desc}">${b.name}</button>
+          `).join('')}
+        </div>
+      </div>
+
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Reduce Animations</div>
+          <div class="desc">Disable hover effects and transitions for maximum performance</div>
+        </div>
+        <button class="toggle ${settings.reducedMotion?'on':''}" onclick="settings.reducedMotion=!settings.reducedMotion;this.classList.toggle('on');applySettings();saveSettings()"></button>
+      </div>
+    </div>
+
+    <!-- LAYOUT & CARDS -->
+    <div class="s-section">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Layout &amp; Cards
+      </h3>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Show Navigation Bar Labels</div>
+          <div class="desc">Always show text labels next to icons in the top navigation bar</div>
+        </div>
+        <button class="toggle ${settings.navLabels?'on':''}" onclick="settings.navLabels=!settings.navLabels;this.classList.toggle('on');applySettings();saveSettings()"></button>
+      </div>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Always Show Game Titles</div>
+          <div class="desc">Turn off for a clean poster grid that reveals titles on hover</div>
+        </div>
+        <button class="toggle ${settings.showCardTitles!==false?'on':''}" onclick="settings.showCardTitles=settings.showCardTitles===false;this.classList.toggle('on');applySettings();saveSettings()"></button>
+      </div>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Card Size</div>
+          <div class="desc">Size of game cards in the grid</div>
+        </div>
+        <input type="range" id="sCardSize" min="100" max="280" value="${settings.cardSize}" oninput="setSetting('cardSize',+this.value)">
+        <div class="val" id="sCardSizeVal">${settings.cardSize}px</div>
+      </div>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Grid Spacing</div>
+          <div class="desc">Gap between game cards</div>
+        </div>
+        <input type="range" id="sGridGap" min="4" max="32" value="${settings.gridGap}" oninput="setSetting('gridGap',+this.value)">
+        <div class="val" id="sGridGapVal">${settings.gridGap}px</div>
+      </div>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Card Corner Roundness</div>
+          <div class="desc">Border radius from sharp (0px) to extra rounded (28px)</div>
+        </div>
+        <input type="range" id="sCardRadius" min="0" max="28" value="${settings.cardRadius ?? 14}" oninput="setSetting('cardRadius',+this.value)">
+        <div class="val" id="sCardRadiusVal">${settings.cardRadius ?? 14}px</div>
+      </div>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Default Sort Order</div>
+          <div class="desc">How games are sorted in lists</div>
+        </div>
+        <select onchange="settings.sort=this.value;applySorting();saveSettings();renderView(currentView)">
+          <option value="az" ${settings.sort==='az'?'selected':''}>A to Z</option>
+          <option value="za" ${settings.sort==='za'?'selected':''}>Z to A</option>
+        </select>
+      </div>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Show Game Count Badges</div>
+          <div class="desc">Display total game count badges in section headers</div>
+        </div>
+        <button class="toggle ${settings.showCount?'on':''}" onclick="settings.showCount=!settings.showCount;this.classList.toggle('on');saveSettings()"></button>
+      </div>
+    </div>
+
+    <!-- TAB CLOAKING & STEALTH -->
     <div class="s-section">
       <h3>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Tab Cloaking
+        Stealth &amp; Tab Cloaking
       </h3>
       <div class="s-row">
         <div class="s-label">
           <div class="title">Disguise Tab</div>
-          <div class="desc">Change the tab title and icon to look like another site</div>
+          <div class="desc">Change the browser tab title and icon to look like another site</div>
         </div>
       </div>
       <div class="cloak-presets" id="cloakPresets">
@@ -1076,106 +1411,48 @@ function renderSettings(area) {
       ${activeCloak === 'custom' ? `
       <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px">
         <div class="s-row" style="border:none;padding:0">
-          <div class="s-label"><div class="title">Custom Title</div></div>
-          <input type="text" id="customCloakTitle" value="${settings.cloakCustomTitle}" placeholder="Tab title..." onchange="settings.cloakCustomTitle=this.value;saveSettings();applyCloak()">
+          <div class="s-label"><div class="title">Custom Tab Title</div></div>
+          <input type="text" id="customCloakTitle" value="${(settings.cloakCustomTitle||'').replace(/"/g,'&quot;')}" placeholder="Tab title..." oninput="settings.cloakCustomTitle=this.value;saveSettings();applyCloak()">
+        </div>
+        <div class="s-row" style="border:none;padding:0">
+          <div class="s-label"><div class="title">Custom Favicon URL</div></div>
+          <input type="text" id="customCloakIcon" value="${(settings.cloakCustomFavicon||'').replace(/"/g,'&quot;')}" placeholder="https://example.com/favicon.ico" oninput="settings.cloakCustomFavicon=this.value;saveSettings();applyCloak()">
         </div>
       </div>` : ''}
 
       <div class="s-row" style="margin-top:14px">
         <div class="s-label">
+          <div class="title">Auto-Cloak When Switching Tabs</div>
+          <div class="desc">Automatically disguise tab as Google Docs whenever you leave or minimize this tab</div>
+        </div>
+        <button class="toggle ${settings.autoCloakBlur?'on':''}" onclick="settings.autoCloakBlur=!settings.autoCloakBlur;this.classList.toggle('on');saveSettings()"></button>
+      </div>
+
+      <div class="s-row">
+        <div class="s-label">
           <div class="title">Panic Key</div>
-          <div class="desc">Instantly hide the page when pressed</div>
+          <div class="desc">Instantly redirect this tab when pressed</div>
         </div>
         <div class="key-capture" id="panicKeyCapture" onclick="startKeyCapture(this)">${formatKey(settings.panicKey)}</div>
       </div>
 
       <div class="s-row">
         <div class="s-label">
+          <div class="title">Panic Redirect URL</div>
+          <div class="desc">Where the Panic Key sends you</div>
+        </div>
+        <input type="text" value="${(settings.panicUrl||'https://classroom.google.com').replace(/"/g,'&quot;')}" placeholder="https://classroom.google.com" onchange="settings.panicUrl=this.value.trim()||'https://classroom.google.com';saveSettings()">
+      </div>
+
+      <div class="s-row">
+        <div class="s-label">
           <div class="title">About:Blank Mode</div>
-          <div class="desc">Open the site inside about:blank to hide the URL</div>
+          <div class="desc">Open PlayVault inside an about:blank tab to hide the URL</div>
         </div>
         <button class="s-btn primary" onclick="openInAboutBlank()">Open in about:blank</button>
       </div>
       <div class="about-blank-notice">
-        About:blank mode opens PlayVault inside a blank page so the URL bar shows "about:blank" instead of the real URL. Useful if the domain is blocked.
-      </div>
-    </div>
-
-    <!-- APPEARANCE -->
-    <div class="s-section">
-      <h3>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        Appearance
-      </h3>
-      <div class="s-row">
-        <div class="s-label"><div class="title">Accent Color</div></div>
-        <div class="s-colors">${ACCENT_COLORS.map(c =>
-          `<div class="s-color ${settings.accent === c.value ? 'active' : ''}" style="background:${c.value}" title="${c.name}" onclick="setAccent('${c.value}')"></div>`
-        ).join('')}</div>
-      </div>
-      <div class="s-row">
-        <div class="s-label">
-          <div class="title">Card Size</div>
-          <div class="desc">Size of game cards in grid</div>
-        </div>
-        <input type="range" id="sCardSize" min="100" max="280" value="${settings.cardSize}" oninput="setSetting('cardSize',+this.value)">
-        <div class="val" id="sCardSizeVal">${settings.cardSize}px</div>
-      </div>
-      <div class="s-row">
-        <div class="s-label">
-          <div class="title">Grid Spacing</div>
-          <div class="desc">Gap between game cards</div>
-        </div>
-        <input type="range" id="sGridGap" min="4" max="32" value="${settings.gridGap}" oninput="setSetting('gridGap',+this.value)">
-        <div class="val" id="sGridGapVal">${settings.gridGap}px</div>
-      </div>
-      <div class="s-row">
-        <div class="s-label">
-          <div class="title">Popular Games Shown</div>
-          <div class="desc">Number of popular games on the home page</div>
-        </div>
-        <input type="range" id="sPopCount" min="6" max="48" step="6" value="${settings.popularCount}" oninput="setSetting('popularCount',+this.value)">
-        <div class="val" id="sPopCountVal">${settings.popularCount}</div>
-      </div>
-    </div>
-
-    <!-- BEHAVIOR -->
-    <div class="s-section">
-      <h3>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Behavior
-      </h3>
-      <div class="s-row">
-        <div class="s-label">
-          <div class="title">Sort Order</div>
-          <div class="desc">How games are sorted in lists</div>
-        </div>
-        <select onchange="settings.sort=this.value;applySorting();saveSettings();renderView(currentView)">
-          <option value="az" ${settings.sort==='az'?'selected':''}>A to Z</option>
-          <option value="za" ${settings.sort==='za'?'selected':''}>Z to A</option>
-          <option value="random" ${settings.sort==='random'?'selected':''}>Random</option>
-        </select>
-      </div>
-      <div class="s-row">
-        <div class="s-label">
-          <div class="title">Show Game Count</div>
-          <div class="desc">Display total game count badges</div>
-        </div>
-        <button class="toggle ${settings.showCount?'on':''}" onclick="settings.showCount=!settings.showCount;this.classList.toggle('on');saveSettings()"></button>
-      </div>
-      <div class="s-row">
-        <div class="s-label">
-          <div class="title">Show Recently Played</div>
-          <div class="desc">Continue Playing section on home page</div>
-        </div>
-        <button class="toggle ${settings.showRecent?'on':''}" onclick="settings.showRecent=!settings.showRecent;this.classList.toggle('on');saveSettings()"></button>
-      </div>
-      <div class="s-row">
-        <div class="s-label">
-          <div class="title">Reduce Animations</div>
-          <div class="desc">Disable hover effects and transitions for better performance</div>
-        </div>
-        <button class="toggle ${settings.reducedMotion?'on':''}" onclick="settings.reducedMotion=!settings.reducedMotion;this.classList.toggle('on');applySettings();saveSettings()"></button>
+        About:blank mode opens PlayVault inside a blank page so the address bar shows "about:blank" instead of the real URL.
       </div>
     </div>
 
@@ -1188,12 +1465,23 @@ function renderSettings(area) {
       <div id="reportsInbox">${renderReportsInbox()}</div>
     </div>
 
-    <!-- DATA -->
+    <!-- DATA & BACKUP -->
     <div class="s-section">
       <h3>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        Data
+        Data &amp; Backup
       </h3>
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Backup &amp; Restore Data</div>
+          <div class="desc">Export or import your settings, favorites, and play history as a JSON file</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="s-btn" onclick="exportUserData()">Export JSON</button>
+          <button class="s-btn" onclick="document.getElementById('importDataInput').click()">Import JSON</button>
+          <input type="file" id="importDataInput" accept=".json" style="display:none" onchange="importUserData(event)">
+        </div>
+      </div>
       <div class="s-row">
         <div class="s-label">
           <div class="title">Clear Recently Played</div>
@@ -1204,9 +1492,9 @@ function renderSettings(area) {
       <div class="s-row">
         <div class="s-label">
           <div class="title">Reset All Settings</div>
-          <div class="desc">Restore everything to default</div>
+          <div class="desc">Restore all preferences, favorites, and history to default</div>
         </div>
-        <button class="s-btn danger" onclick="resetAll()">Reset</button>
+        <button class="s-btn danger" onclick="resetAll()">Reset All</button>
       </div>
     </div>
 
@@ -1215,18 +1503,32 @@ function renderSettings(area) {
   `;
 }
 
+function setTheme(id) {
+  settings.theme = id;
+  applySettings();
+  saveSettings();
+  if (currentView === 'settings') renderSettings(document.getElementById('contentArea'));
+}
+
+function setBgStyle(id) {
+  settings.bgStyle = id;
+  applySettings();
+  saveSettings();
+  if (currentView === 'settings') renderSettings(document.getElementById('contentArea'));
+}
+
 function setCloak(id) {
   settings.cloak = id;
   saveSettings();
   applyCloak();
-  renderSettings(document.getElementById('contentArea'));
+  if (currentView === 'settings') renderSettings(document.getElementById('contentArea'));
 }
 
 function setAccent(color) {
   settings.accent = color;
   applySettings();
   saveSettings();
-  renderSettings(document.getElementById('contentArea'));
+  if (currentView === 'settings') renderSettings(document.getElementById('contentArea'));
 }
 
 function setSetting(key, value) {
@@ -1269,6 +1571,38 @@ function openInAboutBlank() {
   }
 }
 
+function exportUserData() {
+  const payload = { version: 1, settings, favorites, recentlyPlayed };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'playvault-backup.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function importUserData(e) {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const data = JSON.parse(reader.result);
+      if (data.settings) Object.assign(settings, data.settings);
+      if (Array.isArray(data.favorites)) favorites = data.favorites;
+      if (Array.isArray(data.recentlyPlayed)) recentlyPlayed = data.recentlyPlayed;
+      saveSettings();
+      saveFavorites();
+      try { localStorage.setItem('pv_recent', JSON.stringify(recentlyPlayed)); } catch(err) {}
+      applySettings();
+      renderView(currentView);
+    } catch(err) {
+      alert('Invalid backup JSON file.');
+    }
+  };
+  reader.readAsText(file);
+}
+
 function clearRecent() {
   recentlyPlayed = [];
   try { localStorage.removeItem('pv_recent'); } catch(e) {}
@@ -1279,15 +1613,194 @@ function resetAll() {
   try { localStorage.removeItem('pv_settings'); localStorage.removeItem('pv_recent'); localStorage.removeItem('pv_favorites'); } catch(e) {}
   recentlyPlayed = [];
   favorites = [];
-  settings = {
-    cardSize: 150, gridGap: 14, accent: '#7c6cf0',
-    reducedMotion: false, showCount: true, sort: 'az',
-    popularCount: 18, showRecent: true,
-    cloak: 'none', cloakCustomTitle: '', cloakCustomFavicon: '',
-    panicKey: '`', aboutBlank: false
-  };
+  settings = { ...DEFAULT_SETTINGS };
   applySettings();
   renderSettings(document.getElementById('contentArea'));
+}
+
+// ===== FIRST-TIME SETUP WIZARD =====
+let setupStep = 0;
+
+function openSetupWizard() {
+  setupStep = 0;
+  const ov = document.getElementById('setupOverlay');
+  ov.classList.add('active');
+  renderSetupStep();
+}
+
+function closeSetupWizard() {
+  try { localStorage.setItem('pv_setup_done', '1'); } catch(e) {}
+  saveSettings();
+  applySettings();
+  document.getElementById('setupOverlay').classList.remove('active');
+  renderView(currentView);
+}
+
+function nextSetupStep(dir) {
+  setupStep = Math.max(0, Math.min(3, setupStep + dir));
+  renderSetupStep();
+}
+
+function renderSetupStep() {
+  const ov = document.getElementById('setupOverlay');
+  if (!ov) return;
+  let bodyHTML = '';
+
+  if (setupStep === 0) {
+    bodyHTML = `
+      <div class="setup-title">&#128075; Welcome to PlayVault</div>
+      <div class="setup-sub">Let's personalize your space in a few seconds. You can change any of these later in Settings.</div>
+      <div class="wiz-field">
+        <label class="wiz-label">What should we call you? (Optional)</label>
+        <input class="wiz-input" type="text" placeholder="Enter a nickname for your Home screen..." value="${(settings.userName||'').replace(/"/g,'&quot;')}" oninput="settings.userName=this.value;settings.showGreeting=!!this.value.trim();saveSettings();updateHomeClock()">
+      </div>
+      <div class="wiz-field">
+        <label class="wiz-label">Home Clock Format</label>
+        <div class="wiz-grid">
+          <div class="wiz-opt ${!settings.clock24h ? 'active' : ''}" onclick="settings.clock24h=false;saveSettings();updateHomeClock();renderSetupStep()">
+            <div><div class="wo-title">12-Hour (AM / PM)</div><div class="wo-desc">e.g. 4:30 PM</div></div>
+          </div>
+          <div class="wiz-opt ${settings.clock24h ? 'active' : ''}" onclick="settings.clock24h=true;saveSettings();updateHomeClock();renderSetupStep()">
+            <div><div class="wo-title">24-Hour Clock</div><div class="wo-desc">e.g. 16:30</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="wiz-field">
+        <label class="wiz-label">Home Quick Picks</label>
+        <div class="wiz-grid cols-3">
+          ${[5,10,15].map(n => `
+            <div class="wiz-opt ${(settings.homeGamesCount||5)===n ? 'active' : ''}" onclick="settings.homeGamesCount=${n};saveSettings();renderSetupStep()">
+              <div><div class="wo-title">${n} Games</div><div class="wo-desc">${n/5} row${n>5?'s':''} on Home</div></div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  } else if (setupStep === 1) {
+    bodyHTML = `
+      <div class="setup-title">&#127912; Theme &amp; Colors</div>
+      <div class="setup-sub">Pick a base theme, accent color, and background effect. Watch the page update live behind this window!</div>
+      <div class="wiz-field">
+        <label class="wiz-label">Base Theme</label>
+        <div class="theme-grid" style="margin-top:0">
+          ${THEMES.map(t => `
+            <div class="theme-card ${(settings.theme||'midnight') === t.id ? 'active' : ''}" onclick="settings.theme='${t.id}';applySettings();saveSettings();renderSetupStep()">
+              <div class="theme-swatch" style="background:linear-gradient(135deg,${t.bg} 50%,${t.cardHover} 50%)"></div>
+              <div class="theme-meta"><div class="t-name">${t.name}</div><div class="t-desc">${t.desc}</div></div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="wiz-field">
+        <label class="wiz-label">Accent Color</label>
+        <div class="s-colors">
+          ${ACCENT_COLORS.map(c =>
+            `<div class="s-color ${settings.accent.toLowerCase() === c.value.toLowerCase() ? 'active' : ''}" style="background:${c.value}" title="${c.name}" onclick="settings.accent='${c.value}';applySettings();saveSettings();renderSetupStep()"></div>`
+          ).join('')}
+          <label class="color-picker-wrap" title="Custom Color">
+            <span style="font-size:13px;line-height:1;pointer-events:none">+</span>
+            <input type="color" value="${settings.accent}" oninput="settings.accent=this.value;applySettings();saveSettings()">
+          </label>
+        </div>
+      </div>
+      <div class="wiz-field">
+        <label class="wiz-label">Background Style</label>
+        <div class="bg-pills">
+          ${BG_STYLES.map(b => `
+            <button class="bg-pill ${(settings.bgStyle||'orbs') === b.id ? 'active' : ''}" onclick="settings.bgStyle='${b.id}';applySettings();saveSettings();renderSetupStep()">${b.name}</button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  } else if (setupStep === 2) {
+    bodyHTML = `
+      <div class="setup-title">&#128450; Layout &amp; Navigation</div>
+      <div class="setup-sub">Choose how your navigation bar and game cards look and feel.</div>
+      <div class="wiz-field">
+        <label class="wiz-label">Top Navigation Bar</label>
+        <div class="wiz-grid">
+          <div class="wiz-opt ${!settings.navLabels ? 'active' : ''}" onclick="settings.navLabels=false;applySettings();saveSettings();renderSetupStep()">
+            <div><div class="wo-title">Compact Icons</div><div class="wo-desc">Clean icon-only pill bar</div></div>
+          </div>
+          <div class="wiz-opt ${settings.navLabels ? 'active' : ''}" onclick="settings.navLabels=true;applySettings();saveSettings();renderSetupStep()">
+            <div><div class="wo-title">Icons + Text Labels</div><div class="wo-desc">Show Home, Games, Tools labels</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="wiz-field">
+        <label class="wiz-label">Game Card Size</label>
+        <div class="wiz-grid cols-3">
+          ${[{n:'Compact',v:125,d:'More per row'},{n:'Balanced',v:150,d:'Default size'},{n:'Large',v:190,d:'Bigger artwork'}].map(o => `
+            <div class="wiz-opt ${settings.cardSize===o.v ? 'active' : ''}" onclick="settings.cardSize=${o.v};applySettings();saveSettings();renderSetupStep()">
+              <div><div class="wo-title">${o.n}</div><div class="wo-desc">${o.d}</div></div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="wiz-field">
+        <label class="wiz-label">Card Titles</label>
+        <div class="wiz-grid">
+          <div class="wiz-opt ${settings.showCardTitles!==false ? 'active' : ''}" onclick="settings.showCardTitles=true;applySettings();saveSettings();renderSetupStep()">
+            <div><div class="wo-title">Always Visible</div><div class="wo-desc">Show title on every card</div></div>
+          </div>
+          <div class="wiz-opt ${settings.showCardTitles===false ? 'active' : ''}" onclick="settings.showCardTitles=false;applySettings();saveSettings();renderSetupStep()">
+            <div><div class="wo-title">Hover Only</div><div class="wo-desc">Clean artwork grid</div></div>
+          </div>
+        </div>
+      </div>
+    `;
+  } else {
+    bodyHTML = `
+      <div class="setup-title">&#128737; Stealth &amp; Privacy</div>
+      <div class="setup-sub">Optional: Disguise your browser tab or set a quick Panic Key before jumping in.</div>
+      <div class="wiz-field">
+        <label class="wiz-label">Tab Disguise (Cloak)</label>
+        <div class="cloak-presets">
+          ${CLOAK_PRESETS.filter(p => p.id !== 'custom').slice(0, 6).map(p => `
+            <div class="cloak-preset ${settings.cloak === p.id ? 'active' : ''}" onclick="settings.cloak='${p.id}';applyCloak();saveSettings();renderSetupStep()">
+              <div class="cp-icon">${p.icon}</div>
+              <div><div class="cp-name">${p.name}</div><div class="cp-desc">${p.desc}</div></div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="wiz-field">
+        <label class="wiz-label">Auto-Cloak on Tab Switch</label>
+        <div class="wiz-grid">
+          <div class="wiz-opt ${!settings.autoCloakBlur ? 'active' : ''}" onclick="settings.autoCloakBlur=false;saveSettings();renderSetupStep()">
+            <div><div class="wo-title">Off</div><div class="wo-desc">Keep selected tab title</div></div>
+          </div>
+          <div class="wiz-opt ${settings.autoCloakBlur ? 'active' : ''}" onclick="settings.autoCloakBlur=true;saveSettings();renderSetupStep()">
+            <div><div class="wo-title">Auto-Disguise on Blur</div><div class="wo-desc">Switch to Google Docs when tab is unfocused</div></div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  ov.innerHTML = `
+    <div class="setup-card">
+      <div class="setup-top">
+        <div class="setup-brand">
+          <span>&#127918; PlayVault Setup</span>
+          <span class="step-tag">Step ${setupStep + 1} of 4</span>
+        </div>
+        <button class="setup-skip" onclick="closeSetupWizard()">Skip setup &times;</button>
+      </div>
+      <div class="setup-body">${bodyHTML}</div>
+      <div class="setup-foot">
+        <div class="setup-dots">
+          ${[0,1,2,3].map(i => `<div class="setup-dot ${i === setupStep ? 'active' : i < setupStep ? 'done' : ''}"></div>`).join('')}
+        </div>
+        <div class="setup-actions">
+          ${setupStep > 0 ? `<button class="s-btn" onclick="nextSetupStep(-1)">&larr; Back</button>` : ''}
+          ${setupStep < 3
+            ? `<button class="s-btn primary" onclick="nextSetupStep(1)">Next &rarr;</button>`
+            : `<button class="s-btn primary" onclick="closeSetupWizard()">&#128640; Launch PlayVault</button>`}
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 function buildLetterMap(games) {
@@ -1472,6 +1985,7 @@ function closeGame() {
     document.body.classList.remove('modal-open');
     document.body.style.overflow = '';
     closingGame = false;
+    if (currentView === 'home') renderView('home');
   };
 
   if (settings.reducedMotion) { finish(); return; }
@@ -1526,15 +2040,18 @@ function setupEvents() {
 
   document.addEventListener('keydown', e => {
     if (capturingKey) return;
+    const tag = (e.target && e.target.tagName) || '';
+    const inInput = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
 
     // Panic key
-    if (e.key === settings.panicKey) {
-      window.location.replace('https://classroom.google.com');
+    if (e.key === settings.panicKey && (!inInput || e.key === '`' || e.key === 'Escape')) {
+      window.location.replace(settings.panicUrl || 'https://classroom.google.com');
       return;
     }
 
     if (e.key === 'Escape') {
       if (document.fullscreenElement) { document.exitFullscreen(); return; }
+      if (document.getElementById('setupOverlay').classList.contains('active')) { closeSetupWizard(); return; }
       if (document.getElementById('gameModal').classList.contains('active')) closeGame();
       else if (searchWrap.classList.contains('expanded')) {
         searchWrap.classList.remove('expanded');
@@ -1547,6 +2064,19 @@ function setupEvents() {
       searchWrap.classList.add('expanded');
       searchInput.focus();
     }
+  });
+
+  window.addEventListener('blur', () => {
+    if (settings.autoCloakBlur && settings.cloak === 'none') {
+      const gdocs = CLOAK_PRESETS.find(p => p.id === 'gdocs');
+      if (gdocs) {
+        document.title = gdocs.title;
+        document.getElementById('cloakFavicon').href = gdocs.favicon;
+      }
+    }
+  });
+  window.addEventListener('focus', () => {
+    if (settings.autoCloakBlur) applyCloak();
   });
 }
 
@@ -1624,19 +2154,20 @@ function clearAllReports() {
 
 // ===== TOOLS =====
 const TOOLS_LIST = [
-  {id:'calc', name:'Calculator', desc:'Basic & scientific math', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#a29bfe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="16" y2="18"/></svg>'},
-  {id:'notes', name:'Notes', desc:'Quick notepad with auto-save', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#ffeaa7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg>'},
-  {id:'stopwatch', name:'Stopwatch', desc:'Timer with lap tracking', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#74b9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3L2 6"/><path d="M22 6l-3-3"/><line x1="10" y1="2" x2="14" y2="2"/><line x1="12" y1="2" x2="12" y2="5"/></svg>'},
-  {id:'timer', name:'Countdown Timer', desc:'Set a countdown alarm', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fd79a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'},
-  {id:'coinflip', name:'Coin & Dice', desc:'Flip coins and roll dice', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5" fill="#00cec9"/><circle cx="15.5" cy="8.5" r="1.5" fill="#00cec9"/><circle cx="8.5" cy="15.5" r="1.5" fill="#00cec9"/><circle cx="15.5" cy="15.5" r="1.5" fill="#00cec9"/><circle cx="12" cy="12" r="1.5" fill="#00cec9"/></svg>'},
-  {id:'password', name:'Password Generator', desc:'Create strong passwords', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#e17055" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1" fill="#e17055"/><line x1="12" y1="17" x2="12" y2="19"/></svg>'},
-  {id:'drawing', name:'Drawing Pad', desc:'Sketch and doodle', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#e84393" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17" cy="12.5" r="2" stroke="#a29bfe"/><circle cx="8" cy="8" r="2" stroke="#00cec9"/><circle cx="6.5" cy="14.5" r="2.5" stroke="#ffeaa7"/><circle cx="12" cy="18" r="2" stroke="#fd79a8"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="#e84393"/></svg>'},
-  {id:'converter', name:'Unit Converter', desc:'Length, weight, temp & more', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#6c5ce7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>'},
-  {id:'aboutblank', name:'Open in about:blank', desc:'Hide the URL from the address bar', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#636e72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><circle cx="7" cy="6" r="1" fill="#636e72" stroke="none"/><circle cx="10" cy="6" r="1" fill="#636e72" stroke="none"/></svg>'},
-  {id:'htmlopener', name:'HTML Opener', desc:'Run custom HTML/JS in a new tab', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#d63031" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20" stroke="#d63031" opacity=".5"/></svg>'},
-  {id:'qrcode', name:'QR Code Generator', desc:'Generate QR codes for any text or URL', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#0984e3" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/></svg>'},
-  {id:'colorpicker', name:'Color Picker', desc:'Pick, convert & explore colors', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fdcb6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="2.5" stroke="#e17055"/><circle cx="17" cy="12.5" r="2" stroke="#0984e3"/><circle cx="8" cy="8" r="2" stroke="#00b894"/><circle cx="6.5" cy="14.5" r="2.5" stroke="#fdcb6e"/><circle cx="12" cy="18" r="2" stroke="#e84393"/><circle cx="12" cy="12" r="10" stroke="#636e72"/></svg>'},
-  {id:'texttools', name:'Text Tools', desc:'Word count, case convert & more', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#55efc4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>'},
+  {
+    id:'uos',
+    tag:'Fullscreen OS',
+    name:'uOS',
+    desc:'Launch a complete desktop Web Operating System in fullscreen with apps, files, terminal & games.',
+    icon:'<svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="uoslg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#54b8ff"/><stop offset="1" stop-color="#7c5cff"/></linearGradient></defs><rect x="2" y="2" width="44" height="44" rx="13" fill="url(#uoslg)"/><path d="M15 15.5v10.5a10 10 0 0 0 20 0V15.5" fill="none" stroke="#fff" stroke-width="5.2" stroke-linecap="round"/><circle cx="35" cy="15.5" r="3.4" fill="#fff"/></svg>'
+  },
+  {
+    id:'htmlopener',
+    tag:'Code Runner',
+    name:'HTML Opener',
+    desc:'Paste or upload custom HTML/JS code and launch it instantly in a new tab or fullscreen.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20" stroke="#ff6b6b" opacity=".65"/></svg>'
+  }
 ];
 
 let currentTool = null;
@@ -1645,12 +2176,13 @@ function renderTools(area) {
   if (currentTool) { renderToolPanel(area, currentTool); return; }
   area.innerHTML = `
   <div class="tools-page">
-    <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:24px;height:24px;vertical-align:middle;margin-right:6px"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Tools</h2>
+    <h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:28px;height:28px;vertical-align:middle;margin-right:8px"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Tools</h2>
     <div class="tools-grid">
       ${TOOLS_LIST.map(t => `
         <div class="tool-card" onclick="openTool('${t.id}')">
           <div class="tool-icon">${t.icon}</div>
           <div>
+            <div class="tool-tag">${t.tag}</div>
             <div class="tool-name">${t.name}</div>
             <div class="tool-desc">${t.desc}</div>
           </div>
@@ -1661,7 +2193,38 @@ function renderTools(area) {
   </div>`;
 }
 
+function launchUOS() {
+  const ov = document.getElementById('uosOverlay');
+  const frame = document.getElementById('uosFrame');
+  if (!ov || !frame) return;
+  ov.classList.add('active');
+  document.body.classList.add('modal-open');
+  document.body.style.overflow = 'hidden';
+  if (!frame.getAttribute('src')) frame.src = 'uOS.html';
+  if (ov.requestFullscreen) {
+    ov.requestFullscreen().catch(() => {});
+  } else if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  }
+}
+
+function closeUOS() {
+  const ov = document.getElementById('uosOverlay');
+  const frame = document.getElementById('uosFrame');
+  if (document.fullscreenElement) {
+    document.exitFullscreen().catch(() => {});
+  }
+  if (ov) ov.classList.remove('active');
+  if (frame) frame.removeAttribute('src');
+  document.body.classList.remove('modal-open');
+  document.body.style.overflow = '';
+}
+
 function openTool(id) {
+  if (id === 'uos') {
+    launchUOS();
+    return;
+  }
   currentTool = id;
   renderTools(document.getElementById('contentArea'));
 }
@@ -1674,21 +2237,7 @@ function toolBack() {
 function renderToolPanel(area, id) {
   const tool = TOOLS_LIST.find(t => t.id === id);
   let content = '';
-  switch(id) {
-    case 'calc': content = renderCalc(); break;
-    case 'notes': content = renderNotes(); break;
-    case 'stopwatch': content = renderStopwatch(); break;
-    case 'timer': content = renderTimer(); break;
-    case 'coinflip': content = renderCoinFlip(); break;
-    case 'password': content = renderPassword(); break;
-    case 'drawing': content = renderDrawing(); break;
-    case 'converter': content = renderConverter(); break;
-    case 'aboutblank': content = renderAboutBlank(); break;
-    case 'htmlopener': content = renderHtmlOpener(); break;
-    case 'qrcode': content = renderQRCode(); break;
-    case 'colorpicker': content = renderColorPicker(); break;
-    case 'texttools': content = renderTextTools(); break;
-  }
+  if (id === 'htmlopener') content = renderHtmlOpener();
   area.innerHTML = `
   <div class="tools-page">
     <div class="tool-panel">
@@ -1700,499 +2249,16 @@ function renderToolPanel(area, id) {
       ${content}
     </div>
   </div>`;
-  if (id === 'drawing') initDrawing();
-  if (id === 'stopwatch') updateStopwatchDisplay();
-  if (id === 'timer') updateTimerDisplay();
-  if (id === 'qrcode') setTimeout(generateQR, 0);
-  if (id === 'colorpicker') setTimeout(updateColorPicker, 0);
-}
-
-// ---- Calculator ----
-let calcExpr = '', calcResult = '0', calcNewNum = true;
-
-function renderCalc() {
-  return `
-    <div class="calc-display">
-      <div class="calc-expr" id="calcExpr">${calcExpr}</div>
-      <div class="calc-result" id="calcResult">${calcResult}</div>
-    </div>
-    <div class="calc-buttons">
-      <button class="calc-btn clear" onclick="calcClear()">C</button>
-      <button class="calc-btn op" onclick="calcInput('(')">(</button>
-      <button class="calc-btn op" onclick="calcInput(')')">)</button>
-      <button class="calc-btn op" onclick="calcInput('/')">÷</button>
-      <button class="calc-btn" onclick="calcInput('7')">7</button>
-      <button class="calc-btn" onclick="calcInput('8')">8</button>
-      <button class="calc-btn" onclick="calcInput('9')">9</button>
-      <button class="calc-btn op" onclick="calcInput('*')">×</button>
-      <button class="calc-btn" onclick="calcInput('4')">4</button>
-      <button class="calc-btn" onclick="calcInput('5')">5</button>
-      <button class="calc-btn" onclick="calcInput('6')">6</button>
-      <button class="calc-btn op" onclick="calcInput('-')">−</button>
-      <button class="calc-btn" onclick="calcInput('1')">1</button>
-      <button class="calc-btn" onclick="calcInput('2')">2</button>
-      <button class="calc-btn" onclick="calcInput('3')">3</button>
-      <button class="calc-btn op" onclick="calcInput('+')">+</button>
-      <button class="calc-btn" onclick="calcInput('0')" style="grid-column:span 2">0</button>
-      <button class="calc-btn" onclick="calcInput('.')">.</button>
-      <button class="calc-btn eq" onclick="calcEval()">=</button>
-    </div>
-    <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
-      <button class="calc-btn op" onclick="calcInput('Math.sqrt(')" style="font-size:12px">√</button>
-      <button class="calc-btn op" onclick="calcInput('**2')" style="font-size:12px">x²</button>
-      <button class="calc-btn op" onclick="calcInput('**')" style="font-size:12px">xⁿ</button>
-      <button class="calc-btn op" onclick="calcInput('Math.PI')" style="font-size:12px">π</button>
-      <button class="calc-btn op" onclick="calcInput('%')" style="font-size:12px">%</button>
-    </div>`;
-}
-
-function calcClear() {
-  calcExpr = ''; calcResult = '0'; calcNewNum = true;
-  document.getElementById('calcExpr').textContent = '';
-  document.getElementById('calcResult').textContent = '0';
-}
-
-function calcInput(val) {
-  if (calcNewNum && '0123456789'.includes(val)) { calcExpr = ''; calcNewNum = false; }
-  calcExpr += val;
-  const display = calcExpr.replace(/\*/g,'×').replace(/\//g,'÷');
-  document.getElementById('calcExpr').textContent = display;
-}
-
-function calcEval() {
-  try {
-    const r = Function('"use strict";return (' + calcExpr + ')')();
-    calcResult = Number.isFinite(r) ? String(Math.round(r * 1e12) / 1e12) : 'Error';
-  } catch(e) { calcResult = 'Error'; }
-  document.getElementById('calcResult').textContent = calcResult;
-  calcNewNum = true;
-}
-
-// ---- Notes ----
-function renderNotes() {
-  let saved = '';
-  try { saved = localStorage.getItem('pv_notes') || ''; } catch(e) {}
-  const charCount = saved.length;
-  return `
-    <div class="notes-toolbar">
-      <button onclick="notesAction('clear')">Clear All</button>
-      <button onclick="notesAction('copy')">Copy to Clipboard</button>
-      <button onclick="notesAction('download')">Download .txt</button>
-      <button onclick="notesAction('timestamp')">Insert Timestamp</button>
-    </div>
-    <textarea class="notes-area" id="notesArea" placeholder="Type your notes here... They auto-save to your browser." oninput="saveNotes()">${saved.replace(/</g,'&lt;')}</textarea>
-    <div class="notes-status" id="notesStatus">${charCount} characters &bull; Auto-saved</div>`;
-}
-
-function saveNotes() {
-  const text = document.getElementById('notesArea').value;
-  try { localStorage.setItem('pv_notes', text); } catch(e) {}
-  document.getElementById('notesStatus').textContent = text.length + ' characters • Saved';
-}
-
-function notesAction(action) {
-  const ta = document.getElementById('notesArea');
-  if (action === 'clear') { ta.value = ''; saveNotes(); }
-  else if (action === 'copy') {
-    navigator.clipboard.writeText(ta.value).then(() => {
-      document.getElementById('notesStatus').textContent = 'Copied to clipboard!';
-    }).catch(() => { ta.select(); });
-  }
-  else if (action === 'download') {
-    const blob = new Blob([ta.value], {type:'text/plain'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = 'playvault-notes.txt'; a.click();
-    URL.revokeObjectURL(a.href);
-  }
-  else if (action === 'timestamp') {
-    const stamp = '\n[' + new Date().toLocaleString() + '] ';
-    const pos = ta.selectionStart;
-    ta.value = ta.value.slice(0, pos) + stamp + ta.value.slice(pos);
-    ta.selectionStart = ta.selectionEnd = pos + stamp.length;
-    ta.focus(); saveNotes();
-  }
-}
-
-// ---- Stopwatch ----
-let swRunning = false, swStart = 0, swElapsed = 0, swInterval = null, swLaps = [];
-
-function renderStopwatch() {
-  return `
-    <div class="sw-display" id="swDisplay">00:00.<span class="sw-ms">00</span></div>
-    <div class="sw-buttons">
-      <button class="sw-btn start" id="swStartBtn" onclick="swToggle()">${swRunning ? 'Pause' : 'Start'}</button>
-      <button class="sw-btn" onclick="swLap()">Lap</button>
-      <button class="sw-btn stop" onclick="swReset()">Reset</button>
-    </div>
-    <div class="sw-laps" id="swLaps">${swLaps.map((l,i) => `<div class="sw-lap"><span>Lap ${swLaps.length - i}</span><span>${formatSW(l)}</span></div>`).join('')}</div>`;
-}
-
-function swToggle() {
-  if (swRunning) {
-    clearInterval(swInterval);
-    swElapsed += Date.now() - swStart;
-    swRunning = false;
-  } else {
-    swStart = Date.now();
-    swRunning = true;
-    swInterval = setInterval(updateStopwatchDisplay, 10);
-  }
-  const btn = document.getElementById('swStartBtn');
-  if (btn) { btn.textContent = swRunning ? 'Pause' : 'Start'; btn.className = 'sw-btn ' + (swRunning ? 'stop' : 'start'); }
-}
-
-function swLap() {
-  const t = swRunning ? swElapsed + (Date.now() - swStart) : swElapsed;
-  if (t > 0) {
-    swLaps.unshift(t);
-    const el = document.getElementById('swLaps');
-    if (el) el.innerHTML = swLaps.map((l,i) => `<div class="sw-lap"><span>Lap ${swLaps.length - i}</span><span>${formatSW(l)}</span></div>`).join('');
-  }
-}
-
-function swReset() {
-  clearInterval(swInterval);
-  swRunning = false; swElapsed = 0; swLaps = [];
-  updateStopwatchDisplay();
-  const btn = document.getElementById('swStartBtn');
-  if (btn) { btn.textContent = 'Start'; btn.className = 'sw-btn start'; }
-  const el = document.getElementById('swLaps');
-  if (el) el.innerHTML = '';
-}
-
-function updateStopwatchDisplay() {
-  const t = swRunning ? swElapsed + (Date.now() - swStart) : swElapsed;
-  const el = document.getElementById('swDisplay');
-  if (el) el.innerHTML = formatSW(t);
-}
-
-function formatSW(ms) {
-  const m = Math.floor(ms / 60000);
-  const s = Math.floor((ms % 60000) / 1000);
-  const cs = Math.floor((ms % 1000) / 10);
-  return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}.<span class="sw-ms">${String(cs).padStart(2,'0')}</span>`;
-}
-
-// ---- Timer ----
-let timerTarget = 0, timerRemaining = 0, timerRunning = false, timerInterval = null;
-
-function renderTimer() {
-  return `
-    <div class="timer-display" id="timerDisplay">00:00</div>
-    <div class="timer-inputs" id="timerInputs">
-      <input type="number" id="timerMin" value="5" min="0" max="99" placeholder="mm">
-      <span>min</span>
-      <input type="number" id="timerSec" value="0" min="0" max="59" placeholder="ss">
-      <span>sec</span>
-    </div>
-    <div class="sw-buttons">
-      <button class="sw-btn start" id="timerStartBtn" onclick="timerToggle()">${timerRunning ? 'Pause' : 'Start'}</button>
-      <button class="sw-btn stop" onclick="timerReset()">Reset</button>
-    </div>`;
-}
-
-function timerToggle() {
-  if (timerRunning) {
-    clearInterval(timerInterval); timerRunning = false;
-  } else {
-    if (timerRemaining <= 0) {
-      const m = parseInt(document.getElementById('timerMin')?.value || '0');
-      const s = parseInt(document.getElementById('timerSec')?.value || '0');
-      timerRemaining = (m * 60 + s) * 1000;
-      timerTarget = Date.now() + timerRemaining;
-    } else {
-      timerTarget = Date.now() + timerRemaining;
-    }
-    if (timerRemaining <= 0) return;
-    timerRunning = true;
-    timerInterval = setInterval(updateTimerDisplay, 100);
-  }
-  const btn = document.getElementById('timerStartBtn');
-  if (btn) { btn.textContent = timerRunning ? 'Pause' : 'Start'; btn.className = 'sw-btn ' + (timerRunning ? 'stop' : 'start'); }
-  const inputs = document.getElementById('timerInputs');
-  if (inputs) inputs.style.display = timerRunning ? 'none' : 'flex';
-}
-
-function timerReset() {
-  clearInterval(timerInterval); timerRunning = false; timerRemaining = 0;
-  updateTimerDisplay();
-  const btn = document.getElementById('timerStartBtn');
-  if (btn) { btn.textContent = 'Start'; btn.className = 'sw-btn start'; }
-  const inputs = document.getElementById('timerInputs');
-  if (inputs) inputs.style.display = 'flex';
-  const disp = document.getElementById('timerDisplay');
-  if (disp) disp.classList.remove('done');
-}
-
-function updateTimerDisplay() {
-  if (timerRunning) {
-    timerRemaining = Math.max(0, timerTarget - Date.now());
-    if (timerRemaining <= 0) {
-      clearInterval(timerInterval); timerRunning = false;
-      const disp = document.getElementById('timerDisplay');
-      if (disp) { disp.textContent = "00:00"; disp.classList.add('done'); }
-      const btn = document.getElementById('timerStartBtn');
-      if (btn) { btn.textContent = 'Start'; btn.className = 'sw-btn start'; }
-      const inputs = document.getElementById('timerInputs');
-      if (inputs) inputs.style.display = 'flex';
-      try { new Audio('data:audio/wav;base64,UklGRl9vT19teleVm/Lwev8AAEAAAABAAEARKwAAIhYAQACABAAZGF0YQ==').play(); } catch(e) {}
-      return;
-    }
-  }
-  const totalSec = Math.ceil(timerRemaining / 1000);
-  const m = Math.floor(totalSec / 60);
-  const s = totalSec % 60;
-  const disp = document.getElementById('timerDisplay');
-  if (disp) disp.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-}
-
-// ---- Coin & Dice ----
-let flipHistory = [];
-
-function renderCoinFlip() {
-  return `
-    <div class="flip-result" id="flipResult"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd700" stroke-width="2" style="width:48px;height:48px"><circle cx="12" cy="12" r="10"/><text x="12" y="16" text-anchor="middle" fill="#ffd700" font-size="10" font-weight="bold" stroke="none">$</text></svg></div>
-    <div class="flip-buttons">
-      <button class="flip-btn" onclick="flipCoin()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/></svg>Flip Coin</button>
-      <button class="flip-btn" onclick="rollDice(6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1" fill="currentColor"/></svg>Roll d6</button>
-      <button class="flip-btn" onclick="rollDice(20)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><polygon points="12,2 22,18 2,18"/></svg>Roll d20</button>
-      <button class="flip-btn" onclick="rollDice(100)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>Roll d100</button>
-      <button class="flip-btn" onclick="flipHistory=[];document.getElementById('flipHist').innerHTML=''">Clear</button>
-    </div>
-    <div class="flip-history" id="flipHist">${flipHistory.map(h => `<span>${h}</span>`).join('')}</div>`;
-}
-
-function flipCoin() {
-  const el = document.getElementById('flipResult');
-  el.classList.remove('flipping');
-  void el.offsetWidth;
-  el.classList.add('flipping');
-  const heads = Math.random() < .5;
-  el.innerHTML = heads ? '<svg viewBox="0 0 24 24" style="width:48px;height:48px"><circle cx="12" cy="12" r="10" fill="#ffd700"/><text x="12" y="16" text-anchor="middle" fill="#b8860b" font-size="10" font-weight="bold">H</text></svg>' : '<svg viewBox="0 0 24 24" style="width:48px;height:48px"><circle cx="12" cy="12" r="10" fill="#c0c0c0"/><text x="12" y="16" text-anchor="middle" fill="#666" font-size="10" font-weight="bold">T</text></svg>';
-  const label = heads ? 'H' : 'T';
-  flipHistory.push(label);
-  document.getElementById('flipHist').innerHTML += `<span>${label}</span>`;
-}
-
-function rollDice(sides) {
-  const el = document.getElementById('flipResult');
-  el.classList.remove('flipping');
-  void el.offsetWidth;
-  el.classList.add('flipping');
-  const val = Math.floor(Math.random() * sides) + 1;
-  el.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2" style="width:48px;height:48px"><rect x="3" y="3" width="18" height="18" rx="3"/></svg><span style="font-size:32px;font-weight:700;margin-left:8px">' + val + '</span>';
-  flipHistory.push('d' + sides + ':' + val);
-  document.getElementById('flipHist').innerHTML += `<span>${val}</span>`;
-}
-
-// ---- Password Generator ----
-function renderPassword() {
-  const pw = generatePassword();
-  return `
-    <div class="pw-output" id="pwOutput">${pw}</div>
-    <div class="pw-options">
-      <label><input type="range" id="pwLen" min="8" max="64" value="16" oninput="genPW()"> <span id="pwLenVal">16</span> chars</label>
-      <label><input type="checkbox" id="pwUpper" checked onchange="genPW()"> A-Z</label>
-      <label><input type="checkbox" id="pwLower" checked onchange="genPW()"> a-z</label>
-      <label><input type="checkbox" id="pwDigits" checked onchange="genPW()"> 0-9</label>
-      <label><input type="checkbox" id="pwSymbols" checked onchange="genPW()"> !@#$</label>
-    </div>
-    <div style="display:flex;gap:8px">
-      <button class="s-btn primary" onclick="genPW()">Regenerate</button>
-      <button class="s-btn" onclick="navigator.clipboard.writeText(document.getElementById('pwOutput').textContent)">Copy</button>
-    </div>`;
-}
-
-function generatePassword(len, upper, lower, digits, symbols) {
-  len = len || 16;
-  let chars = '';
-  if (upper !== false) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  if (lower !== false) chars += 'abcdefghijklmnopqrstuvwxyz';
-  if (digits !== false) chars += '0123456789';
-  if (symbols !== false) chars += '!@#$%^&*_+-=?';
-  if (!chars) chars = 'abcdefghijklmnopqrstuvwxyz';
-  const arr = new Uint32Array(len);
-  crypto.getRandomValues(arr);
-  return Array.from(arr, v => chars[v % chars.length]).join('');
-}
-
-function genPW() {
-  const len = parseInt(document.getElementById('pwLen').value);
-  document.getElementById('pwLenVal').textContent = len;
-  const pw = generatePassword(
-    len,
-    document.getElementById('pwUpper').checked,
-    document.getElementById('pwLower').checked,
-    document.getElementById('pwDigits').checked,
-    document.getElementById('pwSymbols').checked
-  );
-  document.getElementById('pwOutput').textContent = pw;
-}
-
-// ---- Drawing Pad ----
-let drawCtx = null, drawing = false, drawColor = '#7c6cf0', drawSize = 4;
-
-function renderDrawing() {
-  return `
-    <div class="draw-toolbar">
-      <label>Color:</label>
-      <input type="color" id="drawColor" value="${drawColor}" onchange="drawColor=this.value">
-      <label>Size:</label>
-      <input type="range" id="drawSize" min="1" max="20" value="${drawSize}" oninput="drawSize=+this.value">
-      <button class="s-btn" onclick="drawCtx.clearRect(0,0,drawCtx.canvas.width,drawCtx.canvas.height)">Clear</button>
-    </div>
-    <canvas class="draw-canvas" id="drawCanvas"></canvas>`;
-}
-
-function initDrawing() {
-  const canvas = document.getElementById('drawCanvas');
-  if (!canvas) return;
-  canvas.width = canvas.offsetWidth * 2;
-  canvas.height = canvas.offsetHeight * 2;
-  canvas.style.width = canvas.offsetWidth + 'px';
-  canvas.style.height = canvas.offsetHeight + 'px';
-  drawCtx = canvas.getContext('2d');
-  drawCtx.scale(2, 2);
-  drawCtx.lineCap = 'round';
-  drawCtx.lineJoin = 'round';
-
-  const getPos = (e) => {
-    const r = canvas.getBoundingClientRect();
-    const t = e.touches ? e.touches[0] : e;
-    return { x: t.clientX - r.left, y: t.clientY - r.top };
-  };
-  const start = (e) => {
-    drawing = true;
-    const p = getPos(e);
-    drawCtx.beginPath();
-    drawCtx.moveTo(p.x, p.y);
-  };
-  const move = (e) => {
-    if (!drawing) return;
-    e.preventDefault();
-    const p = getPos(e);
-    drawCtx.strokeStyle = drawColor;
-    drawCtx.lineWidth = drawSize;
-    drawCtx.lineTo(p.x, p.y);
-    drawCtx.stroke();
-  };
-  const end = () => { drawing = false; };
-
-  canvas.addEventListener('mousedown', start);
-  canvas.addEventListener('mousemove', move);
-  canvas.addEventListener('mouseup', end);
-  canvas.addEventListener('mouseleave', end);
-  canvas.addEventListener('touchstart', start, {passive:false});
-  canvas.addEventListener('touchmove', move, {passive:false});
-  canvas.addEventListener('touchend', end);
-}
-
-// ---- Unit Converter ----
-const CONVERT_CATS = {
-  Length: {m:1, km:1000, cm:0.01, mm:0.001, mi:1609.344, ft:0.3048, in:0.0254, yd:0.9144},
-  Weight: {kg:1, g:0.001, mg:0.000001, lb:0.453592, oz:0.0283495, ton:1000},
-  Temperature: {C:'c', F:'f', K:'k'},
-  Speed: {'m/s':1, 'km/h':0.277778, mph:0.44704, knot:0.514444},
-  Data: {B:1, KB:1024, MB:1048576, GB:1073741824, TB:1099511627776},
-};
-
-function renderConverter() {
-  const cats = Object.keys(CONVERT_CATS);
-  const firstCat = cats[0];
-  const units = Object.keys(CONVERT_CATS[firstCat]);
-  return `
-    <div style="display:flex;flex-direction:column;gap:14px">
-      <div class="s-row" style="border:none;padding:0">
-        <div class="s-label"><div class="title">Category</div></div>
-        <select id="convCat" onchange="updateConvUnits()">
-          ${cats.map(c => `<option value="${c}">${c}</option>`).join('')}
-        </select>
-      </div>
-      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-        <input type="number" id="convFrom" value="1" oninput="doConvert()" style="flex:1;min-width:100px;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:8px;padding:10px;color:var(--text);font-size:16px">
-        <select id="convFromUnit" onchange="doConvert()" style="background:rgba(255,255,255,.04);border:1px solid var(--glass-border);border-radius:8px;padding:10px;color:var(--text);font-size:14px">
-          ${units.map((u,i) => `<option value="${u}" ${i===0?'selected':''}>${u}</option>`).join('')}
-        </select>
-        <span style="color:var(--text3);font-size:18px">→</span>
-        <select id="convToUnit" onchange="doConvert()" style="background:rgba(255,255,255,.04);border:1px solid var(--glass-border);border-radius:8px;padding:10px;color:var(--text);font-size:14px">
-          ${units.map((u,i) => `<option value="${u}" ${i===1?'selected':''}>${u}</option>`).join('')}
-        </select>
-      </div>
-      <div id="convResult" style="font-size:28px;font-weight:700;color:var(--accent2);text-align:center;padding:16px">
-      </div>
-    </div>`;
-  setTimeout(doConvert, 0);
-}
-
-function updateConvUnits() {
-  const cat = document.getElementById('convCat').value;
-  const units = Object.keys(CONVERT_CATS[cat]);
-  const html = (selIdx) => units.map((u,i) => `<option value="${u}" ${i===selIdx?'selected':''}>${u}</option>`).join('');
-  document.getElementById('convFromUnit').innerHTML = html(0);
-  document.getElementById('convToUnit').innerHTML = html(Math.min(1, units.length-1));
-  doConvert();
-}
-
-function doConvert() {
-  const cat = document.getElementById('convCat').value;
-  const val = parseFloat(document.getElementById('convFrom').value) || 0;
-  const from = document.getElementById('convFromUnit').value;
-  const to = document.getElementById('convToUnit').value;
-  const table = CONVERT_CATS[cat];
-  let result;
-  if (cat === 'Temperature') {
-    let celsius;
-    if (from === 'C') celsius = val;
-    else if (from === 'F') celsius = (val - 32) * 5/9;
-    else celsius = val - 273.15;
-    if (to === 'C') result = celsius;
-    else if (to === 'F') result = celsius * 9/5 + 32;
-    else result = celsius + 273.15;
-  } else {
-    const base = val * table[from];
-    result = base / table[to];
-  }
-  const display = Number.isFinite(result) ? (Math.abs(result) < 0.001 || Math.abs(result) > 999999
-    ? result.toExponential(4) : Math.round(result * 10000) / 10000) : '—';
-  document.getElementById('convResult').textContent = `${val} ${from} = ${display} ${to}`;
-}
-
-// ---- About:blank ----
-function renderAboutBlank() {
-  return `
-    <div style="text-align:center;padding:20px 0">
-      <p style="color:var(--text2);margin-bottom:16px;font-size:13px">Opens PlayVault inside an about:blank page so the URL bar shows <code style="background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px">about:blank</code> instead of the real URL.</p>
-      <button class="s-btn primary" onclick="openInAboutBlank()" style="font-size:15px;padding:12px 32px">Open in about:blank</button>
-      <p style="color:var(--text3);margin-top:14px;font-size:11px">A new tab will open with the site running inside it. Useful if the domain is blocked.</p>
-    </div>
-    <div style="margin-top:20px;padding:16px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--radius-sm)">
-      <h4 style="font-size:13px;color:var(--text);margin-bottom:8px">Custom URL</h4>
-      <p style="font-size:11px;color:var(--text3);margin-bottom:10px">Open any URL inside about:blank</p>
-      <div style="display:flex;gap:8px">
-        <input type="text" id="abCustomUrl" placeholder="https://example.com" style="flex:1;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:8px;padding:10px;color:var(--text);font-size:13px;outline:none">
-        <button class="s-btn primary" onclick="openUrlInBlank()">Open</button>
-      </div>
-    </div>`;
-}
-
-function openUrlInBlank() {
-  const url = document.getElementById('abCustomUrl').value.trim();
-  if (!url) return;
-  const win = window.open('about:blank', '_blank');
-  if (win) {
-    win.document.write('<!DOCTYPE html><html><head><title>' + document.title + '</title><style>*{margin:0;padding:0}body,html{height:100%;overflow:hidden}iframe{width:100%;height:100%;border:none}</style></head><body><iframe src="' + url.replace(/"/g,'&quot;') + '"></iframe></body></html>');
-    win.document.close();
-  }
 }
 
 // ---- HTML Opener ----
 function renderHtmlOpener() {
   return `
-    <p style="color:var(--text2);font-size:13px;margin-bottom:12px">Paste HTML code below and run it in a new about:blank tab. Great for running saved games or custom pages.</p>
-    <textarea id="htmlOpenerCode" placeholder="<!DOCTYPE html>\n<html>\n<head><title>My Page</title></head>\n<body>\n  <h1>Hello World</h1>\n</body>\n</html>" style="width:100%;min-height:240px;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;color:#55efc4;font-size:13px;font-family:'Courier New',monospace;resize:vertical;outline:none;tab-size:2;line-height:1.5"></textarea>
-    <div style="display:flex;gap:8px;margin-top:10px">
-      <button class="s-btn primary" onclick="runHtmlCode()">Run in New Tab</button>
-      <button class="s-btn" onclick="document.getElementById('htmlOpenerCode').value=''">Clear</button>
+    <p style="color:var(--text2);font-size:15px;margin-bottom:16px">Paste HTML code below and run it in a new <code style="background:rgba(255,255,255,.06);padding:2px 7px;border-radius:5px">about:blank</code> tab. Great for running saved games or custom pages.</p>
+    <textarea id="htmlOpenerCode" placeholder="<!DOCTYPE html>\n<html>\n<head><title>My Page</title></head>\n<body>\n  <h1>Hello World</h1>\n</body>\n</html>" style="width:100%;min-height:360px;background:rgba(0,0,0,.35);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;color:#55efc4;font-size:14px;font-family:'Courier New',monospace;resize:vertical;outline:none;tab-size:2;line-height:1.55"></textarea>
+    <div style="display:flex;gap:10px;margin-top:14px">
+      <button class="s-btn primary" style="padding:12px 24px;font-size:14px" onclick="runHtmlCode()">&#9654; Run in New Tab</button>
+      <button class="s-btn" style="padding:12px 20px;font-size:14px" onclick="document.getElementById('htmlOpenerCode').value=''">Clear</button>
     </div>`;
 }
 
@@ -2201,138 +2267,6 @@ function runHtmlCode() {
   if (!code.trim()) return;
   const win = window.open('about:blank', '_blank');
   if (win) { win.document.write(code); win.document.close(); }
-}
-
-// ---- QR Code Generator ----
-function renderQRCode() {
-  return `
-    <div style="display:flex;flex-direction:column;gap:14px;align-items:center">
-      <input type="text" id="qrInput" value="https://playvault.com" placeholder="Enter text or URL..." oninput="generateQR()" style="width:100%;max-width:400px;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:8px;padding:12px;color:var(--text);font-size:14px;outline:none;text-align:center">
-      <canvas id="qrCanvas" width="200" height="200" style="border-radius:var(--radius-sm);background:#fff;image-rendering:pixelated"></canvas>
-      <p style="font-size:11px;color:var(--text3)">Scan with your phone camera</p>
-    </div>`;
-}
-
-function generateQR() {
-  const text = document.getElementById('qrInput').value || 'PlayVault';
-  const canvas = document.getElementById('qrCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const size = 200;
-  ctx.fillStyle = '#fff';
-  ctx.fillRect(0, 0, size, size);
-  // Simple visual QR-like pattern (not a real QR encoder)
-  ctx.fillStyle = '#000';
-  const seed = Array.from(text).reduce((a, c) => a + c.charCodeAt(0), 0);
-  const grid = 21;
-  const cell = size / grid;
-  // Position patterns
-  function drawFinder(x, y) {
-    ctx.fillRect(x*cell, y*cell, 7*cell, 7*cell);
-    ctx.fillStyle = '#fff';
-    ctx.fillRect((x+1)*cell, (y+1)*cell, 5*cell, 5*cell);
-    ctx.fillStyle = '#000';
-    ctx.fillRect((x+2)*cell, (y+2)*cell, 3*cell, 3*cell);
-  }
-  drawFinder(0, 0); drawFinder(grid-7, 0); drawFinder(0, grid-7);
-  // Data area with seeded pattern
-  let rng = seed;
-  for (let y = 0; y < grid; y++) {
-    for (let x = 0; x < grid; x++) {
-      if ((x < 8 && y < 8) || (x >= grid-8 && y < 8) || (x < 8 && y >= grid-8)) continue;
-      rng = (rng * 1103515245 + 12345) & 0x7fffffff;
-      if (rng % 3 !== 0) { ctx.fillStyle = '#000'; ctx.fillRect(x*cell, y*cell, cell, cell); }
-    }
-  }
-}
-
-// ---- Color Picker ----
-function renderColorPicker() {
-  return `
-    <div style="display:flex;flex-direction:column;gap:16px;align-items:center">
-      <input type="color" id="cpColor" value="#7c6cf0" oninput="updateColorPicker()" style="width:120px;height:80px;border:2px solid var(--border);border-radius:var(--radius-sm);background:transparent;cursor:pointer;padding:0">
-      <div id="cpValues" style="width:100%;max-width:400px;display:flex;flex-direction:column;gap:8px"></div>
-      <div id="cpPalette" style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:8px"></div>
-    </div>`;
-}
-
-function updateColorPicker() {
-  const hex = document.getElementById('cpColor').value;
-  const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
-  const max = Math.max(r,g,b)/255, min = Math.min(r,g,b)/255, d = max-min;
-  let h=0, s=0, l=(max+min)/2;
-  if (d > 0) {
-    s = l > .5 ? d/(2-max-min) : d/(max+min);
-    if (max === r/255) h = ((g/255-b/255)/d + (g<b?6:0))/6;
-    else if (max === g/255) h = ((b/255-r/255)/d + 2)/6;
-    else h = ((r/255-g/255)/d + 4)/6;
-  }
-  const row = (label, val) => `<div style="display:flex;justify-content:space-between;padding:8px 14px;background:rgba(0,0,0,.2);border:1px solid var(--border);border-radius:8px"><span style="color:var(--text3);font-size:12px">${label}</span><span style="font-family:monospace;font-size:13px;color:var(--text);user-select:all">${val}</span></div>`;
-  document.getElementById('cpValues').innerHTML =
-    `<div style="width:100%;height:48px;border-radius:8px;background:${hex};border:1px solid var(--border)"></div>` +
-    row('HEX', hex.toUpperCase()) +
-    row('RGB', `rgb(${r}, ${g}, ${b})`) +
-    row('HSL', `hsl(${Math.round(h*360)}, ${Math.round(s*100)}%, ${Math.round(l*100)}%)`) +
-    row('CSS', `--color: ${hex};`);
-  let palette = '';
-  for (let i = 0; i < 10; i++) {
-    const light = 10 + i * 9;
-    const c = `hsl(${Math.round(h*360)}, ${Math.round(s*100)}%, ${light}%)`;
-    palette += `<div style="width:28px;height:28px;border-radius:6px;background:${c};border:1px solid var(--border);cursor:pointer" title="${c}" onclick="document.getElementById('cpColor').value=hslToHex(${Math.round(h*360)},${Math.round(s*100)},${light});updateColorPicker()"></div>`;
-  }
-  document.getElementById('cpPalette').innerHTML = palette;
-}
-
-function hslToHex(h, s, l) {
-  s /= 100; l /= 100;
-  const a = s * Math.min(l, 1-l);
-  const f = n => { const k = (n + h/30) % 12; return l - a * Math.max(Math.min(k-3, 9-k, 1), -1); };
-  return '#' + [f(0),f(8),f(4)].map(x => Math.round(x*255).toString(16).padStart(2,'0')).join('');
-}
-
-// ---- Text Tools ----
-function renderTextTools() {
-  let saved = '';
-  try { saved = document.getElementById('textToolsInput')?.value || ''; } catch(e) {}
-  return `
-    <textarea id="textToolsInput" placeholder="Paste or type text here..." oninput="updateTextStats()" style="width:100%;min-height:180px;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;color:var(--text);font-size:14px;font-family:inherit;resize:vertical;outline:none;line-height:1.6">${saved}</textarea>
-    <div id="textStats" style="font-size:11px;color:var(--text3);margin:8px 0">0 words &bull; 0 characters &bull; 0 lines</div>
-    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
-      <button class="s-btn" onclick="textConvert('upper')">UPPERCASE</button>
-      <button class="s-btn" onclick="textConvert('lower')">lowercase</button>
-      <button class="s-btn" onclick="textConvert('title')">Title Case</button>
-      <button class="s-btn" onclick="textConvert('sentence')">Sentence case</button>
-      <button class="s-btn" onclick="textConvert('reverse')">esreveR</button>
-      <button class="s-btn" onclick="textConvert('trim')">Trim Spaces</button>
-      <button class="s-btn" onclick="textConvert('dedupe')">Remove Dupes</button>
-      <button class="s-btn" onclick="textConvert('sort')">Sort Lines</button>
-      <button class="s-btn" onclick="navigator.clipboard.writeText(document.getElementById('textToolsInput').value)">Copy</button>
-    </div>`;
-}
-
-function updateTextStats() {
-  const text = document.getElementById('textToolsInput').value;
-  const words = text.trim() ? text.trim().split(/\s+/).length : 0;
-  const chars = text.length;
-  const lines = text ? text.split('\n').length : 0;
-  document.getElementById('textStats').textContent = `${words} words • ${chars} characters • ${lines} lines`;
-}
-
-function textConvert(type) {
-  const ta = document.getElementById('textToolsInput');
-  let t = ta.value;
-  switch(type) {
-    case 'upper': t = t.toUpperCase(); break;
-    case 'lower': t = t.toLowerCase(); break;
-    case 'title': t = t.replace(/\b\w/g, c => c.toUpperCase()); break;
-    case 'sentence': t = t.toLowerCase().replace(/(^|\.\s+)\w/g, c => c.toUpperCase()); break;
-    case 'reverse': t = t.split('').reverse().join(''); break;
-    case 'trim': t = t.replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim(); break;
-    case 'dedupe': t = [...new Set(t.split('\n'))].join('\n'); break;
-    case 'sort': t = t.split('\n').sort().join('\n'); break;
-  }
-  ta.value = t;
-  updateTextStats();
 }
 
 init();
