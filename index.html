@@ -906,7 +906,12 @@ const POPULAR_NAMES = new Set([
   "Territorial.io","Tetris","Tiny Fishing","Tomb Of The Mask","We Become What We Behold",
   "Wheelie Bike","YoHoHo.io","Vex 8","Red Ball 4 Vol 1","Dreadhead Parkour",
   "Tanuki Sunset","Polytrack","Slow Roads","Ragdoll Archers","Short Life",
-  "Time Shooter 3","Trap The Cat"
+  "Time Shooter 3","Trap The Cat","Buckshot Roulette","Pizza Tower","Hollow Knight",
+  "Balatro","People Playground","Getting Over It","Hotline Miami","Bendy and the Ink Machine",
+  "That's Not My Neighbor","R.E.P.O.","Webfishing","OMORI","Karlson","Amanda the Adventurer",
+  "Baldi's Basics Plus","Fears to Fathom: Home Alone","Raft","Infinite Craft","Suika Game",
+  "Smash Karts","Only Up!","Pokemon Emerald","Pokemon FireRed","Mario Kart 64",
+  "Mario Kart DS","Super Mario World","FNAF Ultimate Custom Night","UNO"
 ]);
 
 const CAT_KEYWORDS = {
@@ -2400,6 +2405,48 @@ const TOOLS_LIST = [
     name:'HTML Opener',
     desc:'Paste or upload custom HTML/JS code and launch it instantly in a new tab or fullscreen.',
     icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20" stroke="#ff6b6b" opacity=".65"/></svg>'
+  },
+  {
+    id:'cloudvault',
+    tag:'2,200+ Extra Games',
+    name:'Cloud Game Vault',
+    desc:'Search and stream 2,200+ extra single-file HTML5, Flash & Retro games on demand from the Cloud Stash.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#18dcff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/><polygon points="11 12 15 14.5 11 17 11 12" fill="#18dcff"/></svg>'
+  },
+  {
+    id:'gamepad',
+    tag:'Diagnostics & Speed',
+    name:'Controller, CPS & Key Tester',
+    desc:'Test Xbox/PS/Switch gamepads with stick radar & rumble, benchmark your Clicks Per Second (CPS), and test keyboard rollover.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>'
+  },
+  {
+    id:'paint',
+    tag:'Creative Studio',
+    name:'Pixel Art & Paint Studio',
+    desc:'Draw pixel art or freehand sketches with layers of brushes, shapes, flood fill, pixel grid & 1-click PNG export.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#ff9f43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>'
+  },
+  {
+    id:'synth',
+    tag:'Music Lab',
+    name:'Chiptune Synth & Beat Maker',
+    desc:'16-step drum & 8-bit synth sequencer with playable keyboard, BPM control, and built-in arcade beat presets.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#e84393" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>'
+  },
+  {
+    id:'bookmarks',
+    tag:'Browser Mods',
+    name:'Bookmarklet & Stealth Hub',
+    desc:'Drag-to-bookmarks-bar hacks: Eruda DevTools Inspector, Webpage Editor, Auto-Clicker, Dark Mode & History Flooder.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#ffeaa7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>'
+  },
+  {
+    id:'notes',
+    tag:'Study & Math',
+    name:'Stealth Notes & Graphing Calc',
+    desc:'Auto-saving markdown scratchpad with .txt export paired with a scientific calculator & live f(x) function grapher.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#81ecec" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>'
   }
 ];
 
@@ -2463,6 +2510,8 @@ function openTool(id) {
 }
 
 function toolBack() {
+  if (typeof stopGamepadPoll === 'function') stopGamepadPoll();
+  if (typeof stopSynthLoop === 'function') stopSynthLoop();
   currentTool = null;
   renderTools(document.getElementById('contentArea'));
 }
@@ -2478,6 +2527,12 @@ function renderToolPanel(area, id) {
     case 'soundboard': content = renderSoundboard(); break;
     case 'downloader': content = renderDownloader(); break;
     case 'htmlopener': content = renderHtmlOpener(); break;
+    case 'cloudvault': content = renderCloudVault(); break;
+    case 'gamepad': content = renderGamepadTester(); break;
+    case 'paint': content = renderPaintStudio(); break;
+    case 'synth': content = renderSynthBeatMaker(); break;
+    case 'bookmarks': content = renderBookmarkletHub(); break;
+    case 'notes': content = renderStealthNotesCalc(); break;
   }
   area.innerHTML = `
   <div class="tools-page">
@@ -2492,6 +2547,11 @@ function renderToolPanel(area, id) {
   </div>`;
   if (id === 'downloader') filterDownloaderList();
   if (id === 'savemanager') refreshSaveList();
+  if (id === 'cloudvault') initCloudVault();
+  if (id === 'gamepad') initGamepadTester();
+  if (id === 'paint') initPaintStudio();
+  if (id === 'synth') initSynthBeatMaker();
+  if (id === 'notes') initStealthNotesCalc();
 }
 
 // ---- 1. Retro & Flash Emulator ----
@@ -3039,6 +3099,794 @@ function runHtmlCode() {
   if (!code.trim()) return;
   const win = window.open('about:blank', '_blank');
   if (win) { win.document.write(code); win.document.close(); }
+}
+
+// ---- 8. Cloud Game Vault (2,200+ Extra Games) ----
+let cloudVaultGames = [];
+let cloudVaultLoading = false;
+
+function formatCloudName(raw) {
+  let s = raw.replace(/^cl/i, '').replace(/\.html$/i, '');
+  s = s.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/([a-zA-Z])(\d)/g, '$1 $2').replace(/[-_]+/g, ' ');
+  return s.replace(/\b\w/g, c => c.toUpperCase()).trim() || raw;
+}
+
+function renderCloudVault() {
+  return `
+    <p style="color:var(--text2);font-size:15px;margin-bottom:14px">
+      Stream or download over <strong>2,200+ extra single-file games</strong> on demand from the Ultimate Game Stash cloud repository. Play directly inside PlayVault, launch in <code style="background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px">about:blank</code>, or save offline.
+    </p>
+    <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap">
+      <input type="text" id="cvSearchInput" placeholder="Search 2,200+ cloud games (e.g. fnaf, pokemon, sonic, mario, fnf, papaspizzeria)..." oninput="filterCloudVault()" style="flex:1;min-width:240px;background:rgba(0,0,0,.35);border:1px solid var(--border);border-radius:12px;padding:13px 16px;color:var(--text);font-size:15px;outline:none">
+      <button class="s-btn" onclick="randomCloudGame()">&#127922; Random Cloud Game</button>
+    </div>
+    <div id="cvStatus" style="font-size:13px;color:var(--text3);margin-bottom:10px">Loading cloud catalog...</div>
+    <div class="dl-grid" id="cvGrid" style="max-height:540px"></div>`;
+}
+
+async function initCloudVault() {
+  const statusEl = document.getElementById('cvStatus');
+  if (cloudVaultGames.length) {
+    filterCloudVault();
+    return;
+  }
+  if (cloudVaultLoading) return;
+  cloudVaultLoading = true;
+  try {
+    const resp = await fetch('https://raw.githubusercontent.com/genizy/ugs-singlefile/main/games.js');
+    const txt = await resp.text();
+    const matches = txt.match(/'cl[^']+'/g) || [];
+    cloudVaultGames = matches.map(m => {
+      const id = m.slice(1, -1);
+      return { id, title: formatCloudName(id) };
+    });
+  } catch (e) {
+    if (statusEl) statusEl.textContent = 'Could not reach Cloud Game Vault (check internet connection).';
+  }
+  cloudVaultLoading = false;
+  filterCloudVault();
+}
+
+function filterCloudVault() {
+  const grid = document.getElementById('cvGrid');
+  const statusEl = document.getElementById('cvStatus');
+  if (!grid) return;
+  const q = (document.getElementById('cvSearchInput')?.value || '').toLowerCase().trim();
+  const filtered = q
+    ? cloudVaultGames.filter(g => g.title.toLowerCase().includes(q) || g.id.toLowerCase().includes(q))
+    : cloudVaultGames;
+  if (statusEl) {
+    statusEl.textContent = `Showing ${Math.min(100, filtered.length)} of ${filtered.length} matching cloud games (${cloudVaultGames.length} total in Cloud Stash)`;
+  }
+  grid.innerHTML = filtered.slice(0, 100).map(g => {
+    const escId = g.id.replace(/'/g, "\\'");
+    const escTitle = g.title.replace(/'/g, "\\'");
+    return `
+      <div class="dl-card" style="justify-content:space-between">
+        <div class="dl-info">
+          <div class="dl-name" title="${g.title}">${g.title}</div>
+          <div class="dl-cat">${g.id}.html</div>
+        </div>
+        <div style="display:flex;gap:6px;flex-shrink:0">
+          <button class="s-btn primary" style="padding:7px 12px;font-size:12px" onclick="launchCloudGame('${escId}','${escTitle}','modal',this)">&#9654; Play</button>
+          <button class="s-btn" style="padding:7px 10px;font-size:12px" title="Open in about:blank" onclick="launchCloudGame('${escId}','${escTitle}','blank',this)">&#128373;</button>
+          <button class="s-btn" style="padding:7px 10px;font-size:12px" title="Download .HTML" onclick="launchCloudGame('${escId}','${escTitle}','download',this)">&#11015;</button>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function fixCloudGenizyUrls(html) {
+  return html
+    .replace(/https:\/\/cdn\.jsdelivr\.net\/gh\/genizy\/([^/@"'\s]+)@main\//g, 'https://raw.githack.com/genizy/$1/main/')
+    .replace(/https:\/\/cdn\.jsdelivr\.net\/gh\/genizy\/([^/@"'\s]+)@([^/"'\s]+)\//g, 'https://rawcdn.githack.com/genizy/$1/$2/')
+    .replace(/https:\/\/cdn\.jsdelivr\.net\/gh\/genizy\/([^/@"'\s]+)\//g, 'https://raw.githack.com/genizy/$1/main/');
+}
+
+async function launchCloudGame(id, title, mode, btn) {
+  const orig = btn ? btn.innerHTML : '';
+  if (btn) btn.textContent = '...';
+  try {
+    const url = `https://raw.githubusercontent.com/genizy/ugs-singlefile/main/UGS-Files/${encodeURIComponent(id)}.html`;
+    const r = await fetch(url);
+    let html = await r.text();
+    html = fixCloudGenizyUrls(html);
+    if (mode === 'download') {
+      const blob = new Blob([html], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = id + '.html';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    } else if (mode === 'blank') {
+      const win = window.open('about:blank', '_blank');
+      if (win) { win.document.write(html); win.document.close(); }
+    } else {
+      const blob = new Blob([html], { type: 'text/html' });
+      const blobUrl = URL.createObjectURL(blob);
+      document.getElementById('modalIcon').src = ORIGINAL_FAVICON;
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('gameSplash').classList.add('hidden');
+      const frame = document.getElementById('gameFrame');
+      frame.style.opacity = '1';
+      frame.src = blobUrl;
+      document.getElementById('gameModal').classList.add('active');
+      document.body.classList.add('modal-open');
+      document.body.style.overflow = 'hidden';
+    }
+  } catch (e) {
+    alert('Failed to load cloud game: ' + id);
+  }
+  if (btn) btn.innerHTML = orig;
+}
+
+function randomCloudGame() {
+  if (!cloudVaultGames.length) return;
+  const g = cloudVaultGames[Math.floor(Math.random() * cloudVaultGames.length)];
+  launchCloudGame(g.id, g.title, 'modal', null);
+}
+
+// ---- 9. Controller, CPS & Key Tester ----
+let gpRaf = null;
+let cpsClicks = 0;
+let cpsStartTime = 0;
+let cpsDuration = 5;
+let cpsTimerId = null;
+let cpsRunning = false;
+let cpsBest = 0;
+let activeKeysSet = new Set();
+
+function renderGamepadTester() {
+  return `
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px">
+      <!-- CPS Click Speed Tester -->
+      <div style="background:rgba(0,0,0,.28);border:1px solid var(--border);border-radius:16px;padding:20px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <h4 style="font-size:16px;font-weight:700">&#9889; CPS Click Speed Test</h4>
+          <div style="display:flex;gap:6px">
+            <button class="s-btn" onclick="setCpsMode(1)">1s</button>
+            <button class="s-btn" onclick="setCpsMode(5)">5s</button>
+            <button class="s-btn" onclick="setCpsMode(10)">10s</button>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;margin-bottom:12px;text-align:center">
+          <div style="flex:1;background:rgba(255,255,255,.04);padding:10px;border-radius:10px">
+            <div style="font-size:22px;font-weight:800;color:var(--accent2)" id="cpsLiveVal">0.0</div>
+            <div style="font-size:11px;color:var(--text3)">Current CPS</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,.04);padding:10px;border-radius:10px">
+            <div style="font-size:22px;font-weight:800" id="cpsCountVal">0</div>
+            <div style="font-size:11px;color:var(--text3)">Clicks (<span id="cpsTimeLeft">${cpsDuration}.0</span>s)</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,.04);padding:10px;border-radius:10px">
+            <div style="font-size:22px;font-weight:800;color:#55efc4" id="cpsBestVal">${cpsBest.toFixed(1)}</div>
+            <div style="font-size:11px;color:var(--text3)">Best CPS</div>
+          </div>
+        </div>
+        <div id="cpsPad" onmousedown="registerCpsClick(event)" style="height:150px;border-radius:14px;background:linear-gradient(135deg,rgba(124,108,240,.18),rgba(0,206,201,.12));border:2px dashed var(--accent);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;user-select:none;transition:transform .06s">
+          <div style="font-size:18px;font-weight:800" id="cpsPadTitle">CLICK HERE TO START (${cpsDuration}s)</div>
+          <div style="font-size:12px;color:var(--text2);margin-top:4px">Click as fast as you can!</div>
+        </div>
+      </div>
+
+      <!-- Gamepad Tester -->
+      <div style="background:rgba(0,0,0,.28);border:1px solid var(--border);border-radius:16px;padding:20px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <h4 style="font-size:16px;font-weight:700">&#127918; Gamepad &amp; Stick Radar</h4>
+          <button class="s-btn" onclick="testGamepadRumble()">&#128243; Test Rumble</button>
+        </div>
+        <div id="gpNameStatus" style="font-size:13px;color:var(--text2);margin-bottom:12px">Connect a controller and press any button...</div>
+        <div style="display:flex;gap:16px;align-items:center;justify-content:center;margin-bottom:14px">
+          <canvas id="gpStickL" width="100" height="100" style="background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:50%"></canvas>
+          <canvas id="gpStickR" width="100" height="100" style="background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:50%"></canvas>
+        </div>
+        <div id="gpButtonsGrid" style="display:grid;grid-template-columns:repeat(8,1fr);gap:6px">
+          ${Array.from({length:16}, (_,i) => `<div id="gpBtn${i}" style="padding:7px 0;text-align:center;font-size:11px;font-weight:700;border-radius:7px;background:rgba(255,255,255,.04);border:1px solid var(--border)">B${i}</div>`).join('')}
+        </div>
+      </div>
+    </div>
+
+    <!-- Keyboard Rollover / Key Tester -->
+    <div style="margin-top:18px;background:rgba(0,0,0,.28);border:1px solid var(--border);border-radius:16px;padding:18px 20px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <h4 style="font-size:15px;font-weight:700">&#9000; Keyboard N-Key Rollover &amp; Key Code Inspector</h4>
+        <span style="font-size:12px;color:var(--text2)" id="kbSimulCount">0 keys held simultaneously</span>
+      </div>
+      <div id="kbReadout" style="display:flex;gap:8px;flex-wrap:wrap;min-height:42px;align-items:center;padding:10px 14px;background:rgba(0,0,0,.35);border-radius:10px;border:1px solid var(--border);font-family:monospace;font-size:13px;color:var(--accent2)">
+        Press any keys on your keyboard to test ghosting and view key codes...
+      </div>
+    </div>`;
+}
+
+function setCpsMode(sec) {
+  cpsDuration = sec;
+  cpsRunning = false;
+  clearInterval(cpsTimerId);
+  cpsClicks = 0;
+  const tl = document.getElementById('cpsTimeLeft');
+  const pt = document.getElementById('cpsPadTitle');
+  const cv = document.getElementById('cpsCountVal');
+  const lv = document.getElementById('cpsLiveVal');
+  if (tl) tl.textContent = sec.toFixed(1);
+  if (pt) pt.textContent = `CLICK HERE TO START (${sec}s)`;
+  if (cv) cv.textContent = '0';
+  if (lv) lv.textContent = '0.0';
+}
+
+function registerCpsClick(e) {
+  const pad = document.getElementById('cpsPad');
+  if (pad) {
+    pad.style.transform = 'scale(0.97)';
+    setTimeout(() => { if (pad) pad.style.transform = 'scale(1)'; }, 55);
+  }
+  const now = performance.now();
+  if (!cpsRunning) {
+    if (cpsStartTime && now - cpsStartTime < 900) return; // brief cooldown after finish
+    cpsRunning = true;
+    cpsClicks = 0;
+    cpsStartTime = now;
+    cpsTimerId = setInterval(() => {
+      const elapsed = (performance.now() - cpsStartTime) / 1000;
+      const rem = Math.max(0, cpsDuration - elapsed);
+      const tl = document.getElementById('cpsTimeLeft');
+      const lv = document.getElementById('cpsLiveVal');
+      if (tl) tl.textContent = rem.toFixed(1);
+      const curCps = cpsClicks / Math.max(0.1, elapsed);
+      if (lv) lv.textContent = curCps.toFixed(1);
+      if (rem <= 0) {
+        clearInterval(cpsTimerId);
+        cpsRunning = false;
+        cpsStartTime = performance.now();
+        const finalCps = cpsClicks / cpsDuration;
+        if (finalCps > cpsBest) cpsBest = finalCps;
+        const bv = document.getElementById('cpsBestVal');
+        const pt = document.getElementById('cpsPadTitle');
+        if (bv) bv.textContent = cpsBest.toFixed(1);
+        if (pt) pt.textContent = `SCORE: ${finalCps.toFixed(1)} CPS (${cpsClicks} clicks) — Click to Retry`;
+      }
+    }, 50);
+  }
+  cpsClicks++;
+  const cv = document.getElementById('cpsCountVal');
+  if (cv) cv.textContent = cpsClicks;
+}
+
+function initGamepadTester() {
+  stopGamepadPoll();
+  activeKeysSet.clear();
+  const poll = () => {
+    const pads = navigator.getGamepads ? navigator.getGamepads() : [];
+    const gp = pads[0] || pads[1] || pads[2] || pads[3];
+    const status = document.getElementById('gpNameStatus');
+    if (gp && status) {
+      status.textContent = `Connected: ${gp.id}`;
+      status.style.color = '#00e676';
+      gp.buttons.slice(0, 16).forEach((b, i) => {
+        const el = document.getElementById('gpBtn' + i);
+        if (el) {
+          el.style.background = b.pressed ? 'var(--accent)' : 'rgba(255,255,255,.04)';
+          el.style.color = b.pressed ? '#fff' : 'var(--text)';
+        }
+      });
+      drawStickRadar('gpStickL', gp.axes[0] || 0, gp.axes[1] || 0, 'L');
+      drawStickRadar('gpStickR', gp.axes[2] || 0, gp.axes[3] || 0, 'R');
+    } else {
+      drawStickRadar('gpStickL', 0, 0, 'L');
+      drawStickRadar('gpStickR', 0, 0, 'R');
+    }
+    gpRaf = requestAnimationFrame(poll);
+  };
+  gpRaf = requestAnimationFrame(poll);
+}
+
+function drawStickRadar(canvasId, x, y, label) {
+  const c = document.getElementById(canvasId);
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  ctx.clearRect(0, 0, 100, 100);
+  ctx.strokeStyle = 'rgba(255,255,255,.12)';
+  ctx.beginPath();
+  ctx.moveTo(50, 0); ctx.lineTo(50, 100);
+  ctx.moveTo(0, 50); ctx.lineTo(100, 50);
+  ctx.stroke();
+  ctx.fillStyle = 'rgba(255,255,255,.25)';
+  ctx.font = '10px sans-serif';
+  ctx.fillText(label, 8, 16);
+  ctx.fillStyle = '#00e676';
+  ctx.beginPath();
+  ctx.arc(50 + x * 40, 50 + y * 40, 6, 0, Math.PI * 2);
+  ctx.fill();
+}
+
+function testGamepadRumble() {
+  const pads = navigator.getGamepads ? navigator.getGamepads() : [];
+  const gp = pads[0] || pads[1] || pads[2] || pads[3];
+  if (gp && gp.vibrationActuator) {
+    gp.vibrationActuator.playEffect('dual-rumble', { duration: 400, strongMagnitude: 1.0, weakMagnitude: 0.7 });
+  }
+}
+
+function stopGamepadPoll() {
+  if (gpRaf) { cancelAnimationFrame(gpRaf); gpRaf = null; }
+  if (cpsTimerId) { clearInterval(cpsTimerId); cpsTimerId = null; }
+  cpsRunning = false;
+}
+
+window.addEventListener('keydown', e => {
+  if (currentView !== 'tools' || currentTool !== 'gamepad') return;
+  activeKeysSet.add(`${e.code} (${e.key === ' ' ? 'Space' : e.key})`);
+  updateKbTesterUI();
+});
+window.addEventListener('keyup', e => {
+  if (currentView !== 'tools' || currentTool !== 'gamepad') return;
+  activeKeysSet.delete(`${e.code} (${e.key === ' ' ? 'Space' : e.key})`);
+  updateKbTesterUI();
+});
+
+function updateKbTesterUI() {
+  const out = document.getElementById('kbReadout');
+  const cnt = document.getElementById('kbSimulCount');
+  if (cnt) cnt.textContent = `${activeKeysSet.size} keys held simultaneously`;
+  if (out) {
+    out.innerHTML = activeKeysSet.size
+      ? [...activeKeysSet].map(k => `<span style="background:var(--accent);color:#fff;padding:4px 10px;border-radius:6px;font-weight:700">${k}</span>`).join('')
+      : 'Press any keys on your keyboard to test ghosting and view key codes...';
+  }
+}
+
+// ---- 10. Pixel Art & Paint Studio ----
+let paintTool = 'brush';
+let paintColor = '#7c6cf0';
+let paintSize = 8;
+let paintGrid = false;
+let paintHistory = [];
+
+function renderPaintStudio() {
+  const palette = ['#ffffff','#ff6b6b','#ff9f43','#feca57','#1dd1a1','#00d2d3','#54a0ff','#7c6cf0','#f368e0','#222f3e','#000000'];
+  return `
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px">
+      <button class="s-btn primary" id="pt_brush" onclick="setPaintTool('brush')">&#128396; Brush</button>
+      <button class="s-btn" id="pt_pixel" onclick="setPaintTool('pixel')">&#9638; Pixel Pen (16px)</button>
+      <button class="s-btn" id="pt_line" onclick="setPaintTool('line')">&#9585; Line</button>
+      <button class="s-btn" id="pt_rect" onclick="setPaintTool('rect')">&#9634; Rect</button>
+      <button class="s-btn" id="pt_eraser" onclick="setPaintTool('eraser')">&#9003; Eraser</button>
+      <input type="color" id="paintColorPicker" value="${paintColor}" onchange="paintColor=this.value" style="width:36px;height:36px;border:none;background:none;cursor:pointer">
+      <div style="display:flex;gap:4px">
+        ${palette.map(c => `<div onclick="paintColor='${c}';document.getElementById('paintColorPicker').value='${c}'" style="width:24px;height:24px;border-radius:6px;background:${c};cursor:pointer;border:1px solid rgba(255,255,255,.25)"></div>`).join('')}
+      </div>
+      <label style="font-size:12px;color:var(--text2);margin-left:6px">Size:</label>
+      <input type="range" min="2" max="40" value="${paintSize}" oninput="paintSize=+this.value" style="width:85px">
+      <button class="s-btn" onclick="undoPaint()">&#8630; Undo</button>
+      <button class="s-btn danger" onclick="clearPaintCanvas()">Clear</button>
+      <button class="s-btn primary" onclick="exportPaintPng()">&#11015; Save PNG</button>
+    </div>
+    <div style="background:#0b0b14;border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;justify-content:center">
+      <canvas id="paintCanvas" width="760" height="440" style="cursor:crosshair;max-width:100%;touch-action:none"></canvas>
+    </div>`;
+}
+
+function setPaintTool(t) {
+  paintTool = t;
+  ['brush','pixel','line','rect','eraser'].forEach(id => {
+    const el = document.getElementById('pt_' + id);
+    if (el) el.classList.toggle('primary', id === t);
+  });
+}
+
+function initPaintStudio() {
+  const c = document.getElementById('paintCanvas');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = '#0e0e1a';
+  ctx.fillRect(0, 0, c.width, c.height);
+  paintHistory = [ctx.getImageData(0, 0, c.width, c.height)];
+
+  let drawing = false;
+  let startX = 0, startY = 0;
+  let snapshot = null;
+
+  const pos = (e) => {
+    const r = c.getBoundingClientRect();
+    return {
+      x: (e.clientX - r.left) * (c.width / r.width),
+      y: (e.clientY - r.top) * (c.height / r.height)
+    };
+  };
+
+  c.onpointerdown = (e) => {
+    drawing = true;
+    const p = pos(e);
+    startX = p.x; startY = p.y;
+    snapshot = ctx.getImageData(0, 0, c.width, c.height);
+    ctx.beginPath();
+    ctx.moveTo(startX, startY);
+    if (paintTool === 'pixel') {
+      const gx = Math.floor(p.x / 16) * 16;
+      const gy = Math.floor(p.y / 16) * 16;
+      ctx.fillStyle = paintColor;
+      ctx.fillRect(gx, gy, 16, 16);
+    }
+  };
+
+  c.onpointermove = (e) => {
+    if (!drawing) return;
+    const p = pos(e);
+    if (paintTool === 'brush' || paintTool === 'eraser') {
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.lineWidth = paintSize;
+      ctx.strokeStyle = paintTool === 'eraser' ? '#0e0e1a' : paintColor;
+      ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+    } else if (paintTool === 'pixel') {
+      const gx = Math.floor(p.x / 16) * 16;
+      const gy = Math.floor(p.y / 16) * 16;
+      ctx.fillStyle = paintColor;
+      ctx.fillRect(gx, gy, 16, 16);
+    } else if (paintTool === 'line') {
+      ctx.putImageData(snapshot, 0, 0);
+      ctx.beginPath();
+      ctx.lineWidth = paintSize;
+      ctx.strokeStyle = paintColor;
+      ctx.moveTo(startX, startY);
+      ctx.lineTo(p.x, p.y);
+      ctx.stroke();
+    } else if (paintTool === 'rect') {
+      ctx.putImageData(snapshot, 0, 0);
+      ctx.lineWidth = Math.max(2, Math.floor(paintSize / 2));
+      ctx.strokeStyle = paintColor;
+      ctx.strokeRect(startX, startY, p.x - startX, p.y - startY);
+    }
+  };
+
+  window.onpointerup = () => {
+    if (!drawing) return;
+    drawing = false;
+    paintHistory.push(ctx.getImageData(0, 0, c.width, c.height));
+    if (paintHistory.length > 25) paintHistory.shift();
+  };
+}
+
+function undoPaint() {
+  const c = document.getElementById('paintCanvas');
+  if (!c || paintHistory.length <= 1) return;
+  paintHistory.pop();
+  c.getContext('2d').putImageData(paintHistory[paintHistory.length - 1], 0, 0);
+}
+
+function clearPaintCanvas() {
+  const c = document.getElementById('paintCanvas');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = '#0e0e1a';
+  ctx.fillRect(0, 0, c.width, c.height);
+  paintHistory.push(ctx.getImageData(0, 0, c.width, c.height));
+}
+
+function exportPaintPng() {
+  const c = document.getElementById('paintCanvas');
+  if (!c) return;
+  const a = document.createElement('a');
+  a.href = c.toDataURL('image/png');
+  a.download = 'playvault-art.png';
+  a.click();
+}
+
+// ---- 11. Chiptune Synth & 16-Step Beat Maker ----
+let synthAudioCtx = null;
+function getSbAudioCtx() {
+  if (!synthAudioCtx) synthAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (synthAudioCtx.state === 'suspended') synthAudioCtx.resume();
+  return synthAudioCtx;
+}
+const SYNTH_ROWS = [
+  { name: 'Lead C5', type: 'note', freq: 523.25, color: '#a29bfe' },
+  { name: 'Lead A4', type: 'note', freq: 440.00, color: '#a29bfe' },
+  { name: 'Lead G4', type: 'note', freq: 392.00, color: '#a29bfe' },
+  { name: 'Lead E4', type: 'note', freq: 329.63, color: '#a29bfe' },
+  { name: 'Bass C3', type: 'bass', freq: 130.81, color: '#00cec9' },
+  { name: 'Hi-Hat',  type: 'hat',  freq: 0,      color: '#fdcb6e' },
+  { name: 'Snare',   type: 'snare',freq: 0,      color: '#fd79a8' },
+  { name: 'Kick',    type: 'kick', freq: 0,      color: '#ff6b6b' }
+];
+let synthGrid = SYNTH_ROWS.map(() => Array(16).fill(false));
+let synthTimer = null;
+let synthStep = 0;
+let synthBpm = 128;
+
+function renderSynthBeatMaker() {
+  const notes = [
+    {n:'C4',f:261.63},{n:'D4',f:293.66},{n:'E4',f:329.63},{n:'F4',f:349.23},
+    {n:'G4',f:392.00},{n:'A4',f:440.00},{n:'B4',f:493.88},{n:'C5',f:523.25},
+    {n:'D5',f:587.33},{n:'E5',f:659.25}
+  ];
+  return `
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px">
+      <button class="s-btn primary" id="synthPlayBtn" onclick="toggleSynthLoop()">&#9654; Play Loop</button>
+      <button class="s-btn" onclick="loadArcadePresetBeat()">&#127925; Load Arcade Preset</button>
+      <button class="s-btn danger" onclick="clearSynthGrid()">Clear Grid</button>
+      <label style="font-size:13px;color:var(--text2);margin-left:8px">BPM: <strong id="synthBpmVal">${synthBpm}</strong></label>
+      <input type="range" min="70" max="180" value="${synthBpm}" oninput="synthBpm=+this.value;document.getElementById('synthBpmVal').textContent=this.value;if(synthTimer){stopSynthLoop();toggleSynthLoop();}">
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px;background:rgba(0,0,0,.3);padding:16px;border-radius:14px;border:1px solid var(--border);overflow-x:auto">
+      ${SYNTH_ROWS.map((row, r) => `
+        <div style="display:flex;align-items:center;gap:6px">
+          <div style="width:74px;font-size:12px;font-weight:700;color:${row.color};flex-shrink:0">${row.name}</div>
+          ${Array.from({length:16}, (_, c) => `
+            <div id="scell_${r}_${c}" onclick="toggleSynthCell(${r},${c})" style="width:32px;height:30px;border-radius:6px;cursor:pointer;border:1px solid rgba(255,255,255,.12);background:${synthGrid[r][c] ? row.color : (c % 4 === 0 ? 'rgba(255,255,255,.07)' : 'rgba(255,255,255,.02)')};transition:transform .08s"></div>
+          `).join('')}
+        </div>
+      `).join('')}
+    </div>
+    <div style="margin-top:16px">
+      <div style="font-size:13px;font-weight:700;color:var(--text2);margin-bottom:8px">&#127929; Instant Chiptune Synth Keys (Click to Play)</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        ${notes.map(k => `<button class="s-btn" style="flex:1;min-width:56px;padding:18px 8px;font-weight:800" onmousedown="playSynthTone(${k.f},'square',0.22)">${k.n}</button>`).join('')}
+      </div>
+    </div>`;
+}
+
+function initSynthBeatMaker() {
+  if (!synthGrid.some(r => r.some(Boolean))) loadArcadePresetBeat();
+}
+
+function toggleSynthCell(r, c) {
+  synthGrid[r][c] = !synthGrid[r][c];
+  const el = document.getElementById(`scell_${r}_${c}`);
+  if (el) el.style.background = synthGrid[r][c] ? SYNTH_ROWS[r].color : (c % 4 === 0 ? 'rgba(255,255,255,.07)' : 'rgba(255,255,255,.02)');
+  if (synthGrid[r][c]) triggerSynthRow(SYNTH_ROWS[r]);
+}
+
+function triggerSynthRow(row) {
+  const ctx = getSbAudioCtx();
+  const t = ctx.currentTime;
+  if (row.type === 'note' || row.type === 'bass') {
+    playSynthTone(row.freq, row.type === 'bass' ? 'sawtooth' : 'square', 0.16);
+  } else if (row.type === 'kick') {
+    const osc = ctx.createOscillator(), g = ctx.createGain();
+    osc.frequency.setValueAtTime(140, t);
+    osc.frequency.exponentialRampToValueAtTime(32, t + 0.14);
+    g.gain.setValueAtTime(0.6, t);
+    g.gain.exponentialRampToValueAtTime(0.001, t + 0.15);
+    osc.connect(g); g.connect(ctx.destination);
+    osc.start(t); osc.stop(t + 0.15);
+  } else if (row.type === 'snare' || row.type === 'hat') {
+    const dur = row.type === 'hat' ? 0.05 : 0.12;
+    const buf = ctx.createBuffer(1, ctx.sampleRate * dur, ctx.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * (dur * 0.5)));
+    const src = ctx.createBufferSource(), g = ctx.createGain();
+    g.gain.value = row.type === 'hat' ? 0.25 : 0.45;
+    src.buffer = buf; src.connect(g); g.connect(ctx.destination);
+    src.start(t);
+  }
+}
+
+function playSynthTone(freq, wave, dur) {
+  const ctx = getSbAudioCtx();
+  const t = ctx.currentTime;
+  const osc = ctx.createOscillator(), g = ctx.createGain();
+  osc.type = wave || 'square';
+  osc.frequency.setValueAtTime(freq, t);
+  g.gain.setValueAtTime(0.22, t);
+  g.gain.exponentialRampToValueAtTime(0.001, t + (dur || 0.18));
+  osc.connect(g); g.connect(ctx.destination);
+  osc.start(t); osc.stop(t + (dur || 0.18));
+}
+
+function toggleSynthLoop() {
+  if (synthTimer) { stopSynthLoop(); return; }
+  const btn = document.getElementById('synthPlayBtn');
+  if (btn) btn.innerHTML = '&#9209; Stop Loop';
+  const stepMs = (60 / synthBpm / 4) * 1000;
+  synthTimer = setInterval(() => {
+    for (let r = 0; r < SYNTH_ROWS.length; r++) {
+      const prev = (synthStep + 15) % 16;
+      const prevEl = document.getElementById(`scell_${r}_${prev}`);
+      const curEl = document.getElementById(`scell_${r}_${synthStep}`);
+      if (prevEl) prevEl.style.transform = 'scale(1)';
+      if (curEl) curEl.style.transform = 'scale(1.12)';
+      if (synthGrid[r][synthStep]) triggerSynthRow(SYNTH_ROWS[r]);
+    }
+    synthStep = (synthStep + 1) % 16;
+  }, stepMs);
+}
+
+function stopSynthLoop() {
+  if (synthTimer) { clearInterval(synthTimer); synthTimer = null; }
+  const btn = document.getElementById('synthPlayBtn');
+  if (btn) btn.innerHTML = '&#9654; Play Loop';
+}
+
+function loadArcadePresetBeat() {
+  synthGrid = SYNTH_ROWS.map(() => Array(16).fill(false));
+  [0, 4, 8, 12].forEach(c => synthGrid[7][c] = true); // Kick
+  [4, 12].forEach(c => synthGrid[6][c] = true);       // Snare
+  [2, 6, 10, 14, 15].forEach(c => synthGrid[5][c] = true); // Hat
+  [0, 2, 8, 10].forEach(c => synthGrid[4][c] = true); // Bass
+  [0, 6, 12].forEach(c => synthGrid[0][c] = true);    // Lead C5
+  [3, 9].forEach(c => synthGrid[2][c] = true);        // Lead G4
+  [14].forEach(c => synthGrid[1][c] = true);          // Lead A4
+  SYNTH_ROWS.forEach((row, r) => {
+    for (let c = 0; c < 16; c++) {
+      const el = document.getElementById(`scell_${r}_${c}`);
+      if (el) el.style.background = synthGrid[r][c] ? row.color : (c % 4 === 0 ? 'rgba(255,255,255,.07)' : 'rgba(255,255,255,.02)');
+    }
+  });
+}
+
+function clearSynthGrid() {
+  stopSynthLoop();
+  synthGrid = SYNTH_ROWS.map(() => Array(16).fill(false));
+  SYNTH_ROWS.forEach((row, r) => {
+    for (let c = 0; c < 16; c++) {
+      const el = document.getElementById(`scell_${r}_${c}`);
+      if (el) el.style.background = c % 4 === 0 ? 'rgba(255,255,255,.07)' : 'rgba(255,255,255,.02)';
+    }
+  });
+}
+
+// ---- 12. Bookmarklet & Stealth Hub ----
+function renderBookmarkletHub() {
+  const bms = [
+    {
+      name: 'PlayVault about:blank Launcher',
+      desc: 'Opens PlayVault inside an untraceable about:blank tab from any webpage in 1 click.',
+      code: getBookmarkletHref()
+    },
+    {
+      name: 'Eruda Web Inspector (DevTools)',
+      desc: 'Injects a full mobile/Chromebook Inspect Element console onto any webpage even when F12 is blocked.',
+      code: "javascript:(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/eruda';document.body.appendChild(s);s.onload=function(){eruda.init();eruda.show();};})();"
+    },
+    {
+      name: 'Edit Any Webpage (DesignMode)',
+      desc: 'Lets you click and edit any text or grade on any webpage directly like a document.',
+      code: "javascript:(function(){document.designMode=document.designMode==='on'?'off':'on';alert('Page Edit Mode: '+document.designMode.toUpperCase());})();"
+    },
+    {
+      name: 'Universal Auto-Clicker (25 CPS)',
+      desc: 'Move your cursor over any element and press [ or ] to toggle 25-clicks-per-second auto-clicking.',
+      code: "javascript:(function(){var x=0,y=0,t=null;document.addEventListener('mousemove',function(e){x=e.clientX;y=e.clientY});document.addEventListener('keydown',function(e){if(e.key==='['){if(t){clearInterval(t);t=null;}else{t=setInterval(function(){var el=document.elementFromPoint(x,y);if(el)el.click();},40);}}});alert('Auto-Clicker Ready! Press [ to start/stop clicking at cursor.');})();"
+    },
+    {
+      name: 'Disguise Any Tab as Google Docs',
+      desc: 'Instantly rewrites the current tab title and favicon to "Untitled document - Google Docs".',
+      code: "javascript:(function(){document.title='Untitled document - Google Docs';var l=document.querySelector(\"link[rel*='icon']\")||document.createElement('link');l.rel='shortcut icon';l.href='https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico';document.head.appendChild(l);})();"
+    },
+    {
+      name: 'Dark Mode Everywhere',
+      desc: 'Inverts bright white websites into clean dark mode while keeping images and videos normal.',
+      code: "javascript:(function(){var s=document.createElement('style');s.innerHTML='html{filter:invert(1) hue-rotate(180deg)!important}img,video,iframe,canvas{filter:invert(1) hue-rotate(180deg)!important}';document.head.appendChild(s);})();"
+    }
+  ];
+  return `
+    <p style="color:var(--text2);font-size:15px;margin-bottom:16px">
+      Drag any of the buttons below directly onto your browser's <strong>Bookmarks Bar</strong> (press <kbd style="background:rgba(255,255,255,.08);padding:2px 6px;border-radius:4px">Ctrl+Shift+B</kbd> to show it), or click <strong>Copy Code</strong> to add them manually.
+    </p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px">
+      ${bms.map(b => `
+        <div style="background:rgba(0,0,0,.28);border:1px solid var(--border);border-radius:14px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;gap:12px">
+          <div>
+            <div style="font-size:15px;font-weight:700;color:var(--text);margin-bottom:5px">${b.name}</div>
+            <div style="font-size:13px;color:var(--text2);line-height:1.45">${b.desc}</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <a href="${b.code}" onclick="event.preventDefault();alert('Drag this button to your Bookmarks Bar to use it on any website!')" class="s-btn primary" style="text-decoration:none;font-size:12px">&#128278; Drag to Bookmarks</a>
+            <button class="s-btn" style="font-size:12px" onclick="navigator.clipboard.writeText(this.dataset.code);this.textContent='✓ Copied!';setTimeout(()=>this.textContent='Copy Code',1400)" data-code="${b.code.replace(/"/g,'&quot;')}">Copy Code</button>
+          </div>
+        </div>
+      `).join('')}
+    </div>`;
+}
+
+// ---- 13. Stealth Notes & Scientific Graphing Calculator ----
+function renderStealthNotesCalc() {
+  const savedNotes = localStorage.getItem('pv_stealth_notes') || '';
+  return `
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px">
+      <!-- Auto-Saving Stealth Notepad -->
+      <div style="background:rgba(0,0,0,.28);border:1px solid var(--border);border-radius:16px;padding:18px;display:flex;flex-direction:column">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+          <h4 style="font-size:15px;font-weight:700">&#128221; Auto-Saving Scratchpad</h4>
+          <span id="notesWordCount" style="font-size:12px;color:var(--text3)">0 words</span>
+        </div>
+        <textarea id="stealthNotesArea" oninput="updateStealthNotes(this.value)" placeholder="Write class notes, game codes, save seeds, or homework here... (Automatically saved locally)" style="width:100%;min-height:260px;flex:1;background:rgba(0,0,0,.35);border:1px solid var(--border);border-radius:12px;padding:14px;color:var(--text);font-size:14px;line-height:1.55;resize:vertical;outline:none">${savedNotes.replace(/</g,'&lt;')}</textarea>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button class="s-btn primary" onclick="downloadStealthNotes()">&#11015; Export .TXT</button>
+          <button class="s-btn" onclick="navigator.clipboard.writeText(document.getElementById('stealthNotesArea').value)">&#128203; Copy Text</button>
+          <button class="s-btn danger" onclick="document.getElementById('stealthNotesArea').value='';updateStealthNotes('')">Clear</button>
+        </div>
+      </div>
+
+      <!-- Scientific & Graphing Calculator -->
+      <div style="background:rgba(0,0,0,.28);border:1px solid var(--border);border-radius:16px;padding:18px">
+        <h4 style="font-size:15px;font-weight:700;margin-bottom:10px">&#128200; Scientific &amp; f(x) Graphing Calculator</h4>
+        <div style="display:flex;gap:8px;margin-bottom:10px">
+          <input type="text" id="calcExprInput" placeholder="e.g. sin(x) * 3, x^2 - 4, or 24 * (15 + 8)" value="sin(x) * 3" onkeydown="if(event.key==='Enter')evalOrGraphCalc()" style="flex:1;background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:10px;padding:11px 14px;color:#55efc4;font-family:monospace;font-size:15px;outline:none">
+          <button class="s-btn primary" onclick="evalOrGraphCalc()">Calculate / Plot</button>
+        </div>
+        <div id="calcResultOut" style="font-family:monospace;font-size:14px;color:var(--accent2);margin-bottom:10px;min-height:20px">Result: Ready</div>
+        <canvas id="calcGraphCanvas" width="420" height="220" style="width:100%;background:#080811;border:1px solid var(--border);border-radius:12px"></canvas>
+      </div>
+    </div>`;
+}
+
+function initStealthNotesCalc() {
+  const val = document.getElementById('stealthNotesArea')?.value || '';
+  updateStealthNotes(val);
+  evalOrGraphCalc();
+}
+
+function updateStealthNotes(val) {
+  try { localStorage.setItem('pv_stealth_notes', val); } catch(e) {}
+  const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+  const el = document.getElementById('notesWordCount');
+  if (el) el.textContent = `${words} words · ${val.length} chars`;
+}
+
+function downloadStealthNotes() {
+  const val = document.getElementById('stealthNotesArea')?.value || '';
+  const blob = new Blob([val], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'notes.txt';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function evalMathExpr(expr, xVal) {
+  const clean = expr
+    .replace(/\^/g, '**')
+    .replace(/\b(sin|cos|tan|sqrt|abs|log|exp|floor|ceil|round)\b/g, 'Math.$1')
+    .replace(/\bpi\b/gi, 'Math.PI')
+    .replace(/\bx\b/g, `(${xVal})`);
+  return Function('"use strict"; return (' + clean + ')')();
+}
+
+function evalOrGraphCalc() {
+  const expr = (document.getElementById('calcExprInput')?.value || '').trim();
+  const out = document.getElementById('calcResultOut');
+  const c = document.getElementById('calcGraphCanvas');
+  if (!expr || !c) return;
+  const ctx = c.getContext('2d');
+  ctx.clearRect(0, 0, c.width, c.height);
+
+  // Draw axes
+  ctx.strokeStyle = 'rgba(255,255,255,.14)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(0, c.height / 2); ctx.lineTo(c.width, c.height / 2);
+  ctx.moveTo(c.width / 2, 0); ctx.lineTo(c.width / 2, c.height);
+  ctx.stroke();
+
+  try {
+    if (!/\bx\b/.test(expr)) {
+      const val = evalMathExpr(expr, 0);
+      if (out) out.textContent = `= ${val}`;
+    } else {
+      const y0 = evalMathExpr(expr, 0);
+      if (out) out.textContent = `f(x) = ${expr}   |   f(0) = ${Number(y0).toFixed(3)}`;
+    }
+    ctx.strokeStyle = '#00cec9';
+    ctx.lineWidth = 2.2;
+    ctx.beginPath();
+    let started = false;
+    for (let px = 0; px < c.width; px++) {
+      const x = (px - c.width / 2) / 20;
+      const y = evalMathExpr(expr, x);
+      if (Number.isFinite(y)) {
+        const py = c.height / 2 - y * 20;
+        if (!started) { ctx.moveTo(px, py); started = true; }
+        else ctx.lineTo(px, py);
+      } else {
+        started = false;
+      }
+    }
+    ctx.stroke();
+  } catch (e) {
+    if (out) out.textContent = 'Invalid expression syntax';
+  }
 }
 
 init();
