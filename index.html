@@ -1091,10 +1091,6 @@ async function init() {
 
   renderView('home');
   setupEvents();
-
-  let setupDone = false;
-  try { setupDone = localStorage.getItem('pv_setup_done') === '1'; } catch(e) {}
-  if (!setupDone) openSetupWizard();
 }
 
 let homeClockTimer = null;
