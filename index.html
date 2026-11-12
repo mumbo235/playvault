@@ -215,7 +215,7 @@ body.modal-open .animated-bg .orb{animation-play-state:paused!important}
 @keyframes splashSpin{to{transform:rotate(360deg)}}
 
 /* Home clock */
-.home-hero{text-align:center;padding:7.5vh 0 7.5vh}
+.home-hero{text-align:center;padding:clamp(14px,4.5vh,56px) 0 clamp(14px,4vh,48px)}
 .home-time{
   font-size:clamp(64px,13vw,150px);font-weight:800;line-height:1;letter-spacing:-3px;
   font-variant-numeric:tabular-nums;
@@ -225,8 +225,20 @@ body.modal-open .animated-bg .orb{animation-play-state:paused!important}
 }
 .home-ampm{font-size:.28em;font-weight:700;letter-spacing:1px;margin-left:.25em;vertical-align:.95em;color:var(--accent2);-webkit-text-fill-color:var(--accent2)}
 .home-date{margin-top:14px;font-size:clamp(15px,2vw,20px);font-weight:500;color:var(--text2);letter-spacing:.3px}
-.game-grid.home-picks{grid-template-columns:repeat(5,minmax(0,1fr))}
+.home-picks-wrap{max-width:min(900px,100%);margin:0 auto}
+.game-grid.home-picks{grid-template-columns:repeat(5,minmax(0,1fr));margin-bottom:16px}
+@media (max-height:820px){
+  .home-hero{padding:clamp(8px,2.5vh,28px) 0 clamp(10px,2.5vh,24px)}
+  .home-picks-wrap{max-width:min(760px,100%)}
+}
+@media (max-height:700px){
+  .home-hero{padding:6px 0 12px}
+  .home-date{margin-top:8px}
+  .home-picks-wrap{max-width:min(650px,100%)}
+  .game-grid.home-picks{gap:10px;margin-bottom:8px}
+}
 @media (max-width:700px){.game-grid.home-picks{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:460px){.game-grid.home-picks{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 .explore-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .explore-tag{
@@ -1165,11 +1177,13 @@ function renderHome(area) {
       <div class="home-date" id="homeDate"></div>
       <div class="home-greeting" id="homeGreeting" style="display:none"></div>
     </div>
-    <div class="section-header">
-      <h2>${hasRecent ? '&#128338; Recently Played' : '&#127922; Try Something New'}</h2>
-      <a class="see-all" onclick="renderView('games')">All games &rarr;</a>
+    <div class="home-picks-wrap">
+      <div class="section-header">
+        <h2>${hasRecent ? '&#128338; Recently Played' : '&#127922; Try Something New'}</h2>
+        <a class="see-all" onclick="renderView('games')">All games &rarr;</a>
+      </div>
+      <div class="game-grid home-picks">${picks.map(g => gameCard(g)).join('')}</div>
     </div>
-    <div class="game-grid home-picks">${picks.map(g => gameCard(g)).join('')}</div>
   `;
   area.innerHTML = html;
   updateHomeClock();
