@@ -509,6 +509,74 @@ body.modal-open .animated-bg .orb{animation-play-state:paused!important}
 }
 .uos-exit:hover{opacity:1;background:rgba(255,80,80,.85);border-color:rgba(255,80,80,1);color:#fff;transform:scale(1.04)}
 
+/* Emulator Dropzone & Player */
+.emu-dropzone{
+  border:2px dashed rgba(124,108,240,.45);border-radius:var(--radius);
+  background:rgba(124,108,240,.06);padding:42px 24px;text-align:center;
+  transition:all .2s;cursor:pointer;margin-bottom:18px;
+}
+.emu-dropzone:hover,.emu-dropzone.dragover{background:rgba(124,108,240,.14);border-color:var(--accent);transform:scale(1.01)}
+.emu-cores{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px}
+.emu-core-pill{
+  padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;
+  background:rgba(255,255,255,.06);border:1px solid var(--glass-border);color:var(--text2);
+}
+.emu-stage{
+  width:100%;height:560px;background:#000;border-radius:var(--radius-sm);
+  border:1px solid var(--border);overflow:hidden;display:none;position:relative;margin-top:16px;
+}
+.emu-stage.active{display:block}
+.emu-stage iframe{width:100%;height:100%;border:none}
+
+/* Save Manager */
+.save-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:18px}
+.save-stat-box{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px}
+.save-stat-box .ss-val{font-size:24px;font-weight:800;color:var(--accent2)}
+.save-stat-box .ss-lbl{font-size:12px;color:var(--text3);margin-top:2px}
+.save-list{display:flex;flex-direction:column;gap:8px;max-height:420px;overflow-y:auto;margin-top:14px}
+.save-item{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 16px;background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:10px;
+}
+.save-item .si-key{font-family:monospace;font-size:13px;font-weight:700;color:var(--text);word-break:break-all}
+.save-item .si-meta{font-size:11px;color:var(--text3);margin-top:3px;max-width:520px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.save-item .si-actions{display:flex;gap:6px;flex-shrink:0}
+
+/* Soundboard */
+.sb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:12px;margin-top:16px}
+.sb-pad{
+  padding:18px 14px;border-radius:14px;border:1px solid var(--glass-border);
+  background:rgba(255,255,255,.04);color:var(--text);text-align:center;
+  transition:transform .12s,background .15s,border-color .15s,box-shadow .15s;
+  display:flex;flex-direction:column;align-items:center;gap:8px;user-select:none;
+}
+.sb-pad:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);transform:translateY(-2px)}
+.sb-pad:active,.sb-pad.playing{
+  transform:scale(.95);border-color:var(--accent);
+  background:rgba(124,108,240,.22);box-shadow:0 0 22px var(--accent-glow);
+}
+.sb-pad .sb-emoji{font-size:28px;line-height:1}
+.sb-pad .sb-name{font-size:13px;font-weight:700}
+
+/* Fake Update Overlay */
+.fake-update-overlay{
+  position:fixed;inset:0;width:100vw;height:100vh;z-index:550;display:none;
+  user-select:none;
+}
+.fake-update-overlay.active{display:flex}
+@keyframes winSpin{to{transform:rotate(360deg)}}
+
+/* Downloader list */
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;max-height:500px;overflow-y:auto;padding-right:4px;margin-top:14px}
+.dl-card{
+  display:flex;align-items:center;gap:12px;padding:10px 12px;
+  background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:12px;
+}
+.dl-card img{width:46px;height:46px;border-radius:10px;object-fit:cover;background:var(--bg3);flex-shrink:0}
+.dl-card .dl-info{flex:1;min-width:0}
+.dl-card .dl-name{font-size:13px;font-weight:700;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dl-card .dl-cat{font-size:11px;color:var(--text3)}
+
 /* Animated background */
 .animated-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
 .animated-bg .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;will-change:transform}
@@ -521,7 +589,7 @@ body.modal-open .animated-bg .orb{animation-play-state:paused!important}
 .reduced-motion .animated-bg .orb{animation:none!important}
 
 /* Pointer cursor for clickable elements */
-.game-card,.nav-btn,.s-btn,.tool-card,.explore-tag,.cloak-preset,.toggle,.flip-btn,.sw-btn,.calc-btn,.s-color,.recent-item,.fav-btn,.modal-fav,.mbtn,.theme-card,.bg-pill,.wiz-opt{cursor:pointer}
+.game-card,.nav-btn,.s-btn,.tool-card,.explore-tag,.cloak-preset,.toggle,.flip-btn,.sw-btn,.calc-btn,.s-color,.recent-item,.fav-btn,.modal-fav,.mbtn,.theme-card,.bg-pill,.wiz-opt,.sb-pad{cursor:pointer}
 
 /* Home greeting & 24h centering */
 .home-time.no-ampm{transform:none}
@@ -733,6 +801,8 @@ body.hide-card-titles .game-card:hover .card-info{opacity:1;transform:translateY
   <button class="uos-exit" onclick="closeUOS()" title="Exit uOS">&#10005; Exit uOS</button>
   <iframe id="uosFrame" allow="fullscreen; clipboard-read; clipboard-write; autoplay"></iframe>
 </div>
+
+<div class="fake-update-overlay" id="fakeUpdateOverlay" ondblclick="closeFakeUpdate()"></div>
 
 <div class="modal-overlay" id="gameModal">
   <div class="modal">
@@ -999,8 +1069,19 @@ async function init() {
   loadSettings();
   applySorting();
 
-  if (settings.aboutBlank && window.location.href.indexOf('about:blank') === -1) {
-    // about:blank mode handled on page load
+  const urlParams = new URLSearchParams(window.location.search);
+  const forceBlank = urlParams.get('blank') === '1';
+  if ((forceBlank || settings.aboutBlank) && window === window.top && window.location.href.indexOf('about:blank') === -1) {
+    if (!openInAboutBlank(true)) {
+      const autoTrigger = () => {
+        if (openInAboutBlank(true)) {
+          window.removeEventListener('click', autoTrigger, true);
+          window.removeEventListener('keydown', autoTrigger, true);
+        }
+      };
+      window.addEventListener('click', autoTrigger, true);
+      window.addEventListener('keydown', autoTrigger, true);
+    }
   }
 
   renderView('home');
@@ -1447,12 +1528,36 @@ function renderSettings(area) {
       <div class="s-row">
         <div class="s-label">
           <div class="title">About:Blank Mode</div>
-          <div class="desc">Open PlayVault inside an about:blank tab to hide the URL</div>
+          <div class="desc">Open PlayVault inside an about:blank tab and redirect this tab to your Panic URL</div>
         </div>
-        <button class="s-btn primary" onclick="openInAboutBlank()">Open in about:blank</button>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="s-btn primary" onclick="openInAboutBlank(false)">Open in about:blank</button>
+          <button class="s-btn" onclick="openInAboutBlank(true)">Open + Cloak This Tab</button>
+        </div>
+      </div>
+
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Auto-Open in about:blank on Visit</div>
+          <div class="desc">Automatically launch PlayVault into an about:blank tab whenever you visit this site</div>
+        </div>
+        <button class="toggle ${settings.aboutBlank?'on':''}" onclick="settings.aboutBlank=!settings.aboutBlank;this.classList.toggle('on');saveSettings()"></button>
+      </div>
+
+      <div class="s-row">
+        <div class="s-label">
+          <div class="title">Direct about:blank Launcher Page &amp; Link</div>
+          <div class="desc">Share or bookmark <code style="background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px">launch.html</code> to open directly into about:blank</div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+          <button class="s-btn" onclick="copyLaunchLink(this, 'launch')">&#128203; Copy launch.html Link</button>
+          <a href="launch.html" target="_blank" class="s-btn" style="text-decoration:none;display:inline-flex;align-items:center">Open launch.html &#8599;</a>
+          <button class="s-btn" onclick="downloadBlankLauncher()">&#11015; Download .HTML Launcher</button>
+          <a href="${getBookmarkletHref()}" onclick="event.preventDefault();openInAboutBlank(true)" class="s-btn primary" style="text-decoration:none;display:inline-flex;align-items:center" title="Drag me to your Bookmarks Bar!">&#128278; Drag to Bookmarks Bar</a>
+        </div>
       </div>
       <div class="about-blank-notice">
-        About:blank mode opens PlayVault inside a blank page so the address bar shows "about:blank" instead of the real URL.
+        <strong>Tip:</strong> Bookmark <code style="color:var(--accent2)">${getLaunchPageUrl()}</code> or drag the <strong>Bookmarklet</strong> button above to your bookmarks bar to launch PlayVault directly in <code style="color:var(--accent2)">about:blank</code> from anywhere in 1 click.
       </div>
     </div>
 
@@ -1563,12 +1668,97 @@ function startKeyCapture(el) {
   document.addEventListener('keydown', handler, true);
 }
 
-function openInAboutBlank() {
+function getCleanAppUrl() {
+  return window.location.href.split('?')[0].split('#')[0];
+}
+
+function getLaunchPageUrl() {
+  try {
+    return new URL('launch.html', getCleanAppUrl()).href;
+  } catch(e) {
+    return window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/launch.html');
+  }
+}
+
+function getBookmarkletHref() {
+  const cleanUrl = getCleanAppUrl();
+  const code = `(function(){var w=window.open('about:blank','_blank');if(w){w.document.write('<!DOCTYPE html><html><head><meta charset="utf-8"><title>Google Docs</title><link rel="icon" href="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"><style>*{margin:0;padding:0}html,body,iframe{width:100%;height:100%;border:none;overflow:hidden;background:#000}</style></head><body><iframe src="${cleanUrl}" allow="fullscreen;autoplay;gamepad"></iframe></body></html>');w.document.close();}})()`;
+  return 'javascript:' + encodeURIComponent(code);
+}
+
+function copyLaunchLink(btn, mode) {
+  const url = mode === 'blankparam' ? (getCleanAppUrl() + '?blank=1') : getLaunchPageUrl();
+  navigator.clipboard.writeText(url).then(() => {
+    if (!btn) return;
+    const orig = btn.innerHTML;
+    btn.textContent = '✓ Copied Link!';
+    setTimeout(() => { btn.innerHTML = orig; }, 1600);
+  });
+}
+
+function downloadBlankLauncher() {
+  const targetUrl = getCleanAppUrl();
+  const redirectUrl = settings.panicUrl || 'https://classroom.google.com';
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Google Docs</title>
+<link rel="icon" href="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#07070d;color:#eeeef5;font-family:system-ui,sans-serif;cursor:pointer;text-align:center;padding:24px}
+  .card{max-width:440px;background:#161627;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px 28px;box-shadow:0 24px 64px rgba(0,0,0,.6)}
+  h1{font-size:22px;margin-bottom:10px}
+  p{font-size:14px;color:#8888a8;line-height:1.5;margin-bottom:22px}
+  button{background:linear-gradient(135deg,#6c5ce7,#a29bfe);color:#fff;border:none;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>PlayVault about:blank Launcher</h1>
+  <p>Click anywhere or press any key to open PlayVault inside an untraceable <code>about:blank</code> tab.</p>
+  <button onclick="launch()">Launch in about:blank</button>
+</div>
+<script>
+function launch(){
+  var w = window.open('about:blank', '_blank');
+  if (!w) return false;
+  w.document.write('<!DOCTYPE html><html><head><meta charset="utf-8"><title>Google Docs</title><link rel="icon" href="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico"><style>*{margin:0;padding:0}html,body,iframe{width:100%;height:100%;border:none;overflow:hidden;background:#000}</style></head><body><iframe src="${targetUrl}" allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write"></iframe></body></html>');
+  w.document.close();
+  try { window.location.replace('${redirectUrl}'); } catch(e) {}
+  return true;
+}
+window.addEventListener('DOMContentLoaded', function(){ launch(); });
+window.addEventListener('click', function(){ launch(); });
+window.addEventListener('keydown', function(){ launch(); });
+<\/script>
+</body>
+</html>`;
+  const blob = new Blob([html], { type: 'text/html' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'PlayVault-Launcher.html';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function openInAboutBlank(redirectOriginal) {
   const win = window.open('about:blank', '_blank');
   if (win) {
-    win.document.write(`<!DOCTYPE html><html><head><title>${document.title}</title><link rel="icon" href="${document.getElementById('cloakFavicon').href}"><style>*{margin:0;padding:0}body,html{height:100%;overflow:hidden}iframe{width:100%;height:100%;border:none}</style></head><body><iframe src="${window.location.href}"></iframe></body></html>`);
+    const cleanUrl = getCleanAppUrl();
+    const title = (document.title === ORIGINAL_TITLE ? 'Google Docs' : document.title).replace(/</g, '&lt;');
+    const fav = (document.getElementById('cloakFavicon')?.href && document.title !== ORIGINAL_TITLE)
+      ? document.getElementById('cloakFavicon').href
+      : 'https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico';
+    win.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>${title}</title><link rel="icon" href="${fav}"><style>*{margin:0;padding:0}body,html{height:100%;overflow:hidden;background:#000}iframe{width:100%;height:100%;border:none}</style></head><body><iframe src="${cleanUrl}" allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write"></iframe></body></html>`);
     win.document.close();
+    if (redirectOriginal) {
+      try { window.location.replace(settings.panicUrl || 'https://classroom.google.com'); } catch(e) {}
+    }
+    return true;
   }
+  return false;
 }
 
 function exportUserData() {
@@ -2050,6 +2240,7 @@ function setupEvents() {
     }
 
     if (e.key === 'Escape') {
+      if (document.getElementById('fakeUpdateOverlay').classList.contains('active')) { closeFakeUpdate(); return; }
       if (document.fullscreenElement) { document.exitFullscreen(); return; }
       if (document.getElementById('setupOverlay').classList.contains('active')) { closeSetupWizard(); return; }
       if (document.getElementById('gameModal').classList.contains('active')) closeGame();
@@ -2162,6 +2353,48 @@ const TOOLS_LIST = [
     icon:'<svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="uoslg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#54b8ff"/><stop offset="1" stop-color="#7c5cff"/></linearGradient></defs><rect x="2" y="2" width="44" height="44" rx="13" fill="url(#uoslg)"/><path d="M15 15.5v10.5a10 10 0 0 0 20 0V15.5" fill="none" stroke="#fff" stroke-width="5.2" stroke-linecap="round"/><circle cx="35" cy="15.5" r="3.4" fill="#fff"/></svg>'
   },
   {
+    id:'emulator',
+    tag:'Retro & Flash',
+    name:'ROM & SWF Emulator',
+    desc:'Drop any GBA, NES, SNES, N64, NDS, Genesis ROM or Flash .SWF file to play right in your browser.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#a29bfe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15.5" cy="11" r="1.2" fill="#a29bfe"/><circle cx="18" cy="13.5" r="1.2" fill="#a29bfe"/></svg>'
+  },
+  {
+    id:'savemanager',
+    tag:'Backup & Edit',
+    name:'Game Save Manager',
+    desc:'Inspect, back up, edit, and restore all game save data & browser storage across computers.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#00cec9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>'
+  },
+  {
+    id:'embedlaunch',
+    tag:'Stealth Launcher',
+    name:'Embed & URL Launcher',
+    desc:'Open any website or game URL inside PlayVault fullscreen, an about:blank cloak, or a blob: tab.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#55efc4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>'
+  },
+  {
+    id:'fakeupdate',
+    tag:'Boss Key',
+    name:'Fake Update & Boss Screen',
+    desc:'Trigger a realistic fullscreen Windows 11, macOS, ChromeOS update or Google Docs essay decoy.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#74b9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>'
+  },
+  {
+    id:'soundboard',
+    tag:'Instant Audio',
+    name:'Meme & Arcade Soundboard',
+    desc:'16 synthesized meme, arcade & SFX trigger pads with pitch control + custom audio file loader.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fd79a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>'
+  },
+  {
+    id:'downloader',
+    tag:'Play Offline',
+    name:'Offline Game Downloader',
+    desc:'Download standalone .html files for any game in PlayVault to play offline anytime without Wi-Fi.',
+    icon:'<svg viewBox="0 0 24 24" fill="none" stroke="#fdcb6e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'
+  },
+  {
     id:'htmlopener',
     tag:'Code Runner',
     name:'HTML Opener',
@@ -2237,7 +2470,15 @@ function toolBack() {
 function renderToolPanel(area, id) {
   const tool = TOOLS_LIST.find(t => t.id === id);
   let content = '';
-  if (id === 'htmlopener') content = renderHtmlOpener();
+  switch (id) {
+    case 'emulator': content = renderEmulator(); break;
+    case 'savemanager': content = renderSaveManager(); break;
+    case 'embedlaunch': content = renderEmbedLauncher(); break;
+    case 'fakeupdate': content = renderFakeUpdateTool(); break;
+    case 'soundboard': content = renderSoundboard(); break;
+    case 'downloader': content = renderDownloader(); break;
+    case 'htmlopener': content = renderHtmlOpener(); break;
+  }
   area.innerHTML = `
   <div class="tools-page">
     <div class="tool-panel">
@@ -2249,9 +2490,540 @@ function renderToolPanel(area, id) {
       ${content}
     </div>
   </div>`;
+  if (id === 'downloader') filterDownloaderList();
+  if (id === 'savemanager') refreshSaveList();
 }
 
-// ---- HTML Opener ----
+// ---- 1. Retro & Flash Emulator ----
+const EMU_EXT_MAP = {
+  gba:'gba', gb:'gb', gbc:'gbc', nes:'nes', fds:'nes',
+  sfc:'snes', smc:'snes', z64:'n64', n64:'n64', v64:'n64',
+  nds:'nds', md:'segaMD', gen:'segaMD', bin:'segaMD',
+  sms:'segaMS', gg:'segaGG', swf:'swf'
+};
+
+function renderEmulator() {
+  return `
+    <p style="color:var(--text2);font-size:15px;margin-bottom:16px">
+      Drop a ROM or Flash <code style="background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px">.swf</code> file from your computer below. Runs 100% locally in your browser using WebAssembly (EmulatorJS &amp; Ruffle) with save-state and gamepad support.
+    </p>
+    <div style="display:flex;gap:12px;align-items:center;margin-bottom:14px;flex-wrap:wrap">
+      <label style="font-size:13px;color:var(--text2);font-weight:600">Console Core:</label>
+      <select id="emuCoreSelect" style="background:rgba(255,255,255,.05);border:1px solid var(--glass-border);border-radius:8px;padding:8px 12px;color:var(--text);font-size:13px">
+        <option value="auto">Auto-Detect from File Extension</option>
+        <option value="gba">Game Boy Advance (.gba)</option>
+        <option value="nds">Nintendo DS (.nds)</option>
+        <option value="n64">Nintendo 64 (.n64 / .z64)</option>
+        <option value="snes">Super Nintendo (.sfc / .smc)</option>
+        <option value="nes">NES (.nes)</option>
+        <option value="gb">Game Boy / Color (.gb / .gbc)</option>
+        <option value="segaMD">Sega Genesis / Mega Drive (.md / .gen)</option>
+        <option value="psx">PlayStation 1 (.bin / .iso / .chd)</option>
+        <option value="swf">Adobe Flash Player (.swf via Ruffle)</option>
+      </select>
+      <button class="s-btn" onclick="document.getElementById('emuStage')?.requestFullscreen?.().catch(()=>{})">&#9974; Fullscreen Player</button>
+    </div>
+    <div class="emu-dropzone" id="emuDropzone"
+      onclick="document.getElementById('emuFileInput').click()"
+      ondragover="event.preventDefault();this.classList.add('dragover')"
+      ondragleave="this.classList.remove('dragover')"
+      ondrop="event.preventDefault();this.classList.remove('dragover');if(event.dataTransfer.files[0])loadRomFile(event.dataTransfer.files[0])">
+      <div style="font-size:42px;margin-bottom:10px">&#127918;</div>
+      <div style="font-size:18px;font-weight:800;color:var(--text)">Click to Choose a ROM / SWF File or Drag &amp; Drop Here</div>
+      <div style="font-size:13px;color:var(--text3);margin-top:6px">Supports .gba, .nds, .n64, .z64, .sfc, .smc, .nes, .gb, .gbc, .md, .swf &amp; .zip</div>
+      <div class="emu-cores">
+        <span class="emu-core-pill">GBA</span>
+        <span class="emu-core-pill">NDS</span>
+        <span class="emu-core-pill">N64</span>
+        <span class="emu-core-pill">SNES</span>
+        <span class="emu-core-pill">NES</span>
+        <span class="emu-core-pill">GB/GBC</span>
+        <span class="emu-core-pill">Genesis</span>
+        <span class="emu-core-pill">Flash SWF</span>
+      </div>
+      <input type="file" id="emuFileInput" style="display:none" onchange="if(this.files[0])loadRomFile(this.files[0])">
+    </div>
+    <div class="emu-stage" id="emuStage">
+      <iframe id="emuFrame" allow="fullscreen; gamepad; autoplay"></iframe>
+    </div>`;
+}
+
+function loadRomFile(file) {
+  const ext = (file.name.split('.').pop() || '').toLowerCase();
+  const sel = document.getElementById('emuCoreSelect')?.value || 'auto';
+  const core = sel === 'auto' ? (EMU_EXT_MAP[ext] || 'gba') : sel;
+  const blobUrl = URL.createObjectURL(file);
+  const stage = document.getElementById('emuStage');
+  const frame = document.getElementById('emuFrame');
+  if (!stage || !frame) return;
+  stage.classList.add('active');
+
+  let html;
+  if (core === 'swf') {
+    html = `<!DOCTYPE html><html><head><meta charset="utf-8"><style>html,body,#player{margin:0;width:100%;height:100%;background:#000;overflow:hidden}</style></head><body><div id="player"></div><script src="https://unpkg.com/@ruffle-rs/ruffle"><\/script><script>window.addEventListener('DOMContentLoaded',()=>{const r=window.RufflePlayer.newest();const p=r.createPlayer();p.style.width='100%';p.style.height='100%';document.getElementById('player').appendChild(p);p.load('${blobUrl}');});<\/script></body></html>`;
+  } else {
+    html = `<!DOCTYPE html><html><head><meta charset="utf-8"><style>html,body,#game{margin:0;width:100%;height:100%;background:#000;overflow:hidden}</style></head><body><div id="game"></div><script>EJS_player='#game';EJS_core='${core}';EJS_gameUrl='${blobUrl}';EJS_pathtodata='https://cdn.emulatorjs.org/stable/data/';EJS_startOnLoaded=true;<\/script><script src="https://cdn.emulatorjs.org/stable/data/loader.js"><\/script></body></html>`;
+  }
+  frame.srcdoc = html;
+}
+
+// ---- 2. Game Save Manager ----
+function renderSaveManager() {
+  return `
+    <p style="color:var(--text2);font-size:15px;margin-bottom:16px">
+      View, back up, edit, or restore all browser save data across PlayVault and your games. Export a single <code style="background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px">.json</code> file to bring your game progress to any computer.
+    </p>
+    <div class="save-stats" id="saveStats"></div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+      <input type="text" id="saveSearchInput" placeholder="Filter save keys..." oninput="refreshSaveList()" style="flex:1;min-width:200px;background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:10px;padding:11px 14px;color:var(--text);font-size:14px;outline:none">
+      <button class="s-btn primary" style="padding:11px 18px" onclick="exportAllLocalStorage()">&#11015; Export All Saves (.json)</button>
+      <button class="s-btn" style="padding:11px 18px" onclick="document.getElementById('importAllSavesInput').click()">&#11014; Import Saves (.json)</button>
+      <input type="file" id="importAllSavesInput" accept=".json" style="display:none" onchange="importAllLocalStorage(event)">
+    </div>
+    <div class="save-list" id="saveList"></div>`;
+}
+
+function refreshSaveList() {
+  const listEl = document.getElementById('saveList');
+  const statsEl = document.getElementById('saveStats');
+  if (!listEl || !statsEl) return;
+  const q = (document.getElementById('saveSearchInput')?.value || '').toLowerCase();
+  const keys = [];
+  let totalBytes = 0;
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      const v = localStorage.getItem(k) || '';
+      const bytes = (k.length + v.length) * 2;
+      totalBytes += bytes;
+      keys.push({ key: k, val: v, bytes });
+    }
+  } catch(e) {}
+  keys.sort((a, b) => b.bytes - a.bytes);
+  const gameKeys = keys.filter(x => !x.key.startsWith('pv_')).length;
+
+  statsEl.innerHTML = `
+    <div class="save-stat-box"><div class="ss-val">${keys.length}</div><div class="ss-lbl">Total Storage Keys</div></div>
+    <div class="save-stat-box"><div class="ss-val">${gameKeys}</div><div class="ss-lbl">Game Save Entries</div></div>
+    <div class="save-stat-box"><div class="ss-val">${(totalBytes / 1024).toFixed(1)} KB</div><div class="ss-lbl">Total Save Size</div></div>
+  `;
+
+  const filtered = keys.filter(x => x.key.toLowerCase().includes(q));
+  if (!filtered.length) {
+    listEl.innerHTML = `<div class="inbox-empty">No save keys matching "${q}".</div>`;
+    return;
+  }
+  listEl.innerHTML = filtered.map((item, idx) => {
+    const preview = item.val.slice(0, 90).replace(/</g, '&lt;');
+    const isPV = item.key.startsWith('pv_');
+    return `
+      <div class="save-item">
+        <div style="min-width:0;flex:1">
+          <div class="si-key">${item.key.replace(/</g,'&lt;')} ${isPV ? '<span style="font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(124,108,240,.2);color:var(--accent2);margin-left:6px">PlayVault</span>' : '<span style="font-size:10px;padding:2px 7px;border-radius:10px;background:rgba(0,206,201,.18);color:#00cec9;margin-left:6px">Game Save</span>'}</div>
+          <div class="si-meta">${(item.bytes / 1024).toFixed(2)} KB &bull; ${preview}</div>
+        </div>
+        <div class="si-actions">
+          <button class="s-btn" onclick="editSaveKey(${idx})">Edit</button>
+          <button class="s-btn danger" onclick="deleteSaveKey(${idx})">Delete</button>
+        </div>
+      </div>`;
+  }).join('');
+  window._currentSaveKeys = filtered;
+}
+
+function editSaveKey(idx) {
+  const item = window._currentSaveKeys && window._currentSaveKeys[idx];
+  if (!item) return;
+  const next = prompt(`Edit value for "${item.key}":`, item.val);
+  if (next !== null) {
+    try { localStorage.setItem(item.key, next); } catch(e) {}
+    loadSettings();
+    refreshSaveList();
+  }
+}
+
+function deleteSaveKey(idx) {
+  const item = window._currentSaveKeys && window._currentSaveKeys[idx];
+  if (!item) return;
+  try { localStorage.removeItem(item.key); } catch(e) {}
+  refreshSaveList();
+}
+
+function exportAllLocalStorage() {
+  const dump = {};
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      dump[k] = localStorage.getItem(k);
+    }
+  } catch(e) {}
+  const blob = new Blob([JSON.stringify({ playvaultSaveBackup: 1, timestamp: new Date().toISOString(), data: dump }, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `playvault-all-saves-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function importAllLocalStorage(e) {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const parsed = JSON.parse(reader.result);
+      const data = parsed.data || parsed;
+      Object.entries(data).forEach(([k, v]) => {
+        if (typeof v === 'string') localStorage.setItem(k, v);
+      });
+      loadSettings();
+      try { favorites = JSON.parse(localStorage.getItem('pv_favorites') || '[]'); } catch(err) {}
+      try { recentlyPlayed = JSON.parse(localStorage.getItem('pv_recent') || '[]'); } catch(err) {}
+      refreshSaveList();
+    } catch(err) {
+      alert('Invalid save backup JSON file.');
+    }
+  };
+  reader.readAsText(file);
+}
+
+// ---- 3. Embed & Cloaked URL Launcher ----
+function renderEmbedLauncher() {
+  const launchUrl = getLaunchPageUrl();
+  return `
+    <div style="background:rgba(108,92,231,.09);border:1px solid rgba(162,155,254,.25);border-radius:16px;padding:18px 20px;margin-bottom:20px">
+      <div style="font-size:15px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px">
+        <span>&#128640; Direct PlayVault <code>about:blank</code> Link &amp; Launcher Page</span>
+      </div>
+      <p style="color:var(--text2);font-size:13.5px;line-height:1.5;margin-bottom:12px">
+        Use <code style="color:var(--accent2)">${launchUrl}</code> to open PlayVault directly inside an <code style="color:var(--accent2)">about:blank</code> tab and automatically replace the original tab with Google Classroom.
+      </p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="s-btn primary" onclick="openInAboutBlank(true)">&#128373; Open in about:blank + Cloak Tab Now</button>
+        <button class="s-btn" onclick="copyLaunchLink(this, 'launch')">&#128203; Copy Direct launch.html Link</button>
+        <a href="launch.html" target="_blank" class="s-btn" style="text-decoration:none;display:inline-flex;align-items:center">Open launch.html &#8599;</a>
+        <button class="s-btn" onclick="downloadBlankLauncher()">&#11015; Download .HTML Launcher</button>
+        <a href="${getBookmarkletHref()}" onclick="event.preventDefault();openInAboutBlank(true)" class="s-btn" style="text-decoration:none;display:inline-flex;align-items:center" title="Drag me to your Bookmarks Bar!">&#128278; Drag Bookmarklet</a>
+      </div>
+    </div>
+    <p style="color:var(--text2);font-size:15px;margin-bottom:14px">
+      Or enter any custom website, game, or embed URL below and launch it inside PlayVault's fullscreen modal player, an <code style="background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px">about:blank</code> cloak tab, or an ephemeral <code style="background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px">blob:</code> URL tab:
+    </p>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <input type="text" id="embedUrlInput" placeholder="https://example.com" value="https://en.wikipedia.org" style="width:100%;background:rgba(0,0,0,.35);border:1px solid var(--border);border-radius:12px;padding:14px 16px;color:var(--text);font-size:15px;outline:none">
+      <input type="text" id="embedTitleInput" placeholder="Custom Tab Title (optional, e.g. Google Docs)" style="width:100%;background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:12px;padding:12px 16px;color:var(--text);font-size:14px;outline:none">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px">
+        <button class="s-btn primary" style="padding:13px 22px;font-size:14px" onclick="launchEmbedMode('modal')">&#9654; Open Inside PlayVault Player</button>
+        <button class="s-btn" style="padding:13px 22px;font-size:14px" onclick="launchEmbedMode('blank')">&#128373; Open in about:blank Cloak</button>
+        <button class="s-btn" style="padding:13px 22px;font-size:14px" onclick="launchEmbedMode('blob')">&#9889; Open in Blob: URL Tab</button>
+      </div>
+    </div>`;
+}
+
+function normalizeLaunchUrl(raw) {
+  let u = (raw || '').trim();
+  if (!u) return '';
+  if (!/^[a-zA-Z]+:\/\//.test(u)) u = 'https://' + u;
+  return u;
+}
+
+function launchEmbedMode(mode) {
+  const url = normalizeLaunchUrl(document.getElementById('embedUrlInput')?.value);
+  if (!url) return;
+  const customTitle = (document.getElementById('embedTitleInput')?.value || '').trim() || document.title;
+  const fav = document.getElementById('cloakFavicon')?.href || '';
+  const pageHTML = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>${customTitle.replace(/</g,'&lt;')}</title><link rel="icon" href="${fav}"><style>*{margin:0;padding:0}html,body,iframe{width:100%;height:100%;border:none;overflow:hidden;background:#000}</style></head><body><iframe src="${url.replace(/"/g,'&quot;')}" allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write"></iframe></body></html>`;
+
+  if (mode === 'modal') {
+    document.getElementById('modalIcon').src = ORIGINAL_FAVICON;
+    document.getElementById('modalTitle').textContent = customTitle;
+    document.getElementById('gameSplash').classList.add('hidden');
+    const frame = document.getElementById('gameFrame');
+    frame.style.opacity = '1';
+    frame.src = url;
+    document.getElementById('gameModal').classList.add('active');
+    document.body.classList.add('modal-open');
+    document.body.style.overflow = 'hidden';
+  } else if (mode === 'blank') {
+    const win = window.open('about:blank', '_blank');
+    if (win) { win.document.write(pageHTML); win.document.close(); }
+  } else if (mode === 'blob') {
+    const blob = new Blob([pageHTML], { type: 'text/html' });
+    window.open(URL.createObjectURL(blob), '_blank');
+  }
+}
+
+// ---- 4. Fake Update / Boss Screen ----
+let fakeUpdateTimer = null;
+let fakeUpdatePct = 23;
+
+function renderFakeUpdateTool() {
+  return `
+    <p style="color:var(--text2);font-size:15px;margin-bottom:18px">
+      Click any decoy screen below to immediately enter native Fullscreen. Press <kbd style="background:rgba(255,255,255,.1);padding:2px 7px;border-radius:5px">Esc</kbd> or <strong>double-click anywhere</strong> to exit back to PlayVault.
+    </p>
+    <div class="wiz-grid" style="gap:14px">
+      <div class="wiz-opt" style="padding:20px" onclick="startFakeUpdate('win11')">
+        <div style="font-size:32px">&#128187;</div>
+        <div>
+          <div class="wo-title" style="font-size:16px">Windows 11 Update</div>
+          <div class="wo-desc" style="font-size:12px">Blue screen with spinning ring &amp; live percentage</div>
+        </div>
+      </div>
+      <div class="wiz-opt" style="padding:20px" onclick="startFakeUpdate('macos')">
+        <div style="font-size:32px">&#127822;</div>
+        <div>
+          <div class="wo-title" style="font-size:16px">macOS System Update</div>
+          <div class="wo-desc" style="font-size:12px">Pitch-black Apple logo firmware progress bar</div>
+        </div>
+      </div>
+      <div class="wiz-opt" style="padding:20px" onclick="startFakeUpdate('chromeos')">
+        <div style="font-size:32px">&#127760;</div>
+        <div>
+          <div class="wo-title" style="font-size:16px">ChromeOS System Update</div>
+          <div class="wo-desc" style="font-size:12px">Chromebook system update screen</div>
+        </div>
+      </div>
+      <div class="wiz-opt" style="padding:20px" onclick="startFakeUpdate('gdocs')">
+        <div style="font-size:32px">&#128196;</div>
+        <div>
+          <div class="wo-title" style="font-size:16px">Google Docs Essay (Editable)</div>
+          <div class="wo-desc" style="font-size:12px">Interactive history essay you can actually type in</div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function startFakeUpdate(type) {
+  const ov = document.getElementById('fakeUpdateOverlay');
+  if (!ov) return;
+  if (fakeUpdateTimer) clearInterval(fakeUpdateTimer);
+  fakeUpdatePct = 23;
+
+  if (type === 'win11') {
+    ov.style.cssText = 'background:#0067c0;color:#fff;flex-direction:column;align-items:center;justify-content:center;font-family:"Segoe UI",sans-serif;cursor:none';
+    ov.innerHTML = `
+      <div style="width:52px;height:52px;border:5px solid rgba(255,255,255,.25);border-top-color:#fff;border-radius:50%;animation:winSpin 1.1s linear infinite;margin-bottom:28px"></div>
+      <div style="font-size:24px;font-weight:400;line-height:1.5;text-align:center">
+        Working on updates <span id="fuPct">23</span>%<br>
+        Don't turn off your PC. This will take a while.
+      </div>
+      <div style="position:fixed;bottom:36px;font-size:14px;opacity:.75">Your PC will restart several times</div>`;
+    fakeUpdateTimer = setInterval(() => {
+      if (fakeUpdatePct < 99) fakeUpdatePct++;
+      const el = document.getElementById('fuPct');
+      if (el) el.textContent = fakeUpdatePct;
+    }, 3500);
+  } else if (type === 'macos') {
+    ov.style.cssText = 'background:#000;color:#fff;flex-direction:column;align-items:center;justify-content:center;font-family:-apple-system,BlinkMacSystemFont,sans-serif;cursor:none';
+    ov.innerHTML = `
+      <svg viewBox="0 0 170 170" fill="#fff" style="width:78px;height:78px;margin-bottom:54px"><path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.13-1.9-14.34-6.08-3.69-3.03-7.61-7.83-11.77-14.37-5.93-9.29-10.72-20.03-14.38-32.27-3.66-12.24-5.49-23.36-5.49-33.37 0-12.71 3.19-23.22 9.56-31.52 6.38-8.3 14.34-12.61 23.89-12.95 4.69 0 9.81 1.38 15.36 4.12 5.54 2.74 9.12 4.17 10.74 4.28 1.23 0 5.19-1.64 11.88-4.91 6.69-3.28 12.37-4.68 17.03-4.22 12.64 1.01 22.15 6.01 28.53 15-11.3 6.84-16.84 16.41-16.61 28.7 0 9.61 3.55 17.61 10.65 24 4.81 4.36 10.45 7.11 16.92 8.25-1.36 4.25-2.99 8.46-4.88 12.62zM119.22 31.01c0 7.54-2.76 14.56-8.28 21.05-6.64 7.77-14.68 12.25-23.38 11.55-.11-.9-.17-1.85-.17-2.85 0-7.24 3.03-14.99 8.42-21.28 2.69-3.13 6.11-5.73 10.27-7.8 4.16-2.06 8.1-3.21 11.82-3.44.22 1.01.32 1.93.32 2.77z"/></svg>
+      <div style="width:240px;height:6px;background:#333;border-radius:4px;overflow:hidden"><div id="fuBar" style="width:28%;height:100%;background:#fff;transition:width 1s"></div></div>
+      <div style="margin-top:18px;font-size:13px;color:#888">Installing system update... About 14 minutes remaining.</div>`;
+    fakeUpdateTimer = setInterval(() => {
+      if (fakeUpdatePct < 96) fakeUpdatePct += 2;
+      const b = document.getElementById('fuBar');
+      if (b) b.style.width = fakeUpdatePct + '%';
+    }, 3000);
+  } else if (type === 'chromeos') {
+    ov.style.cssText = 'background:#202124;color:#e8eaed;flex-direction:column;align-items:center;justify-content:center;font-family:Roboto,sans-serif;cursor:none';
+    ov.innerHTML = `
+      <div style="width:44px;height:44px;border:4px solid rgba(138,180,248,.25);border-top-color:#8ab4f8;border-radius:50%;animation:winSpin 1s linear infinite;margin-bottom:26px"></div>
+      <div style="font-size:22px;font-weight:500">Updating your Chromebook (<span id="fuPct">23</span>%)</div>
+      <div style="font-size:14px;color:#9aa0a6;margin-top:10px">Please do not turn off your device. Your Chromebook will restart automatically.</div>`;
+    fakeUpdateTimer = setInterval(() => {
+      if (fakeUpdatePct < 99) fakeUpdatePct++;
+      const el = document.getElementById('fuPct');
+      if (el) el.textContent = fakeUpdatePct;
+    }, 3000);
+  } else {
+    ov.style.cssText = 'background:#f8f9fa;color:#202124;flex-direction:column;font-family:Arial,sans-serif;cursor:auto';
+    ov.innerHTML = `
+      <div style="background:#fff;border-bottom:1px solid #dadce0;padding:8px 16px;display:flex;align-items:center;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:12px">
+          <div style="width:32px;height:32px;background:#4285f4;border-radius:4px;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700">Docs</div>
+          <div>
+            <div style="font-size:16px;color:#202124">AP World History — Industrial Revolution DBQ Essay</div>
+            <div style="font-size:12px;color:#5f6368">File &nbsp; Edit &nbsp; View &nbsp; Insert &nbsp; Format &nbsp; Tools &nbsp; Extensions &nbsp; Help &nbsp; &bull; Saved to Drive</div>
+          </div>
+        </div>
+        <button onclick="closeFakeUpdate()" style="padding:6px 14px;background:#e8f0fe;color:#1967d2;border:none;border-radius:4px;font-weight:600;cursor:pointer">Return to PlayVault</button>
+      </div>
+      <div style="flex:1;overflow-y:auto;padding:32px 16px;display:flex;justify-content:center">
+        <div contenteditable="true" style="width:816px;min-height:1056px;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.18);padding:72px 84px;font-family:'Times New Roman',serif;font-size:12pt;line-height:2;color:#000;outline:none">
+          <p style="text-align:center;font-weight:bold;margin-bottom:16px">The Socioeconomic Impacts of the First and Second Industrial Revolutions (1760–1914)</p>
+          <p style="text-indent:36px">Between 1760 and 1914, the transition from agrarian handicraft economies to mechanized factory production fundamentally reshaped global trade, urbanization, and labor structures. Originating in Great Britain due to abundant coal deposits, navigable waterways, and institutional property protections, steam-powered mechanization rapidly transformed textile manufacturing and metallurgy.</p>
+          <p style="text-indent:36px">As railway networks expanded across Continental Europe and North America during the nineteenth century, transportation costs plummeted while urban populations surged. Industrial centers such as Manchester, Essen, and Pittsburgh experienced unprecedented demographic growth, prompting major municipal reforms in sanitation, public education, and labor legislation.</p>
+          <p style="text-indent:36px">Furthermore, the Second Industrial Revolution introduced bessemer steel production, electrical power grids, and chemical synthesis, accelerating global economic integration and laying the technological foundations of the modern era...</p>
+        </div>
+      </div>`;
+  }
+
+  ov.classList.add('active');
+  if (ov.requestFullscreen) ov.requestFullscreen().catch(() => {});
+}
+
+function closeFakeUpdate() {
+  if (fakeUpdateTimer) { clearInterval(fakeUpdateTimer); fakeUpdateTimer = null; }
+  const ov = document.getElementById('fakeUpdateOverlay');
+  if (ov) { ov.classList.remove('active'); ov.innerHTML = ''; }
+  if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+}
+
+// ---- 5. Meme & Arcade Soundboard (Real MP3 Audio) ----
+const SOUNDBOARD_PADS = [
+  {id:'vine-boom', file:'sounds/vine-boom.mp3', emoji:'&#128165;', name:'Vine Boom'},
+  {id:'airhorn', file:'sounds/airhorn.mp3', emoji:'&#128227;', name:'MLG Airhorn'},
+  {id:'bruh', file:'sounds/bruh.mp3', emoji:'&#128528;', name:'Bruh'},
+  {id:'metal-pipe', file:'sounds/metal-pipe.mp3', emoji:'&#129689;', name:'Metal Pipe'},
+  {id:'fahhh', file:'sounds/fahhh.mp3', emoji:'&#128561;', name:'FAHHH'},
+  {id:'emotional-damage', file:'sounds/emotional-damage.mp3', emoji:'&#128148;', name:'Emotional Damage'},
+  {id:'get-out', file:'sounds/get-out.mp3', emoji:'&#128682;', name:'GET OUT!'},
+  {id:'rizz', file:'sounds/rizz.mp3', emoji:'&#128526;', name:'Rizz Sound'},
+  {id:'prowler', file:'sounds/prowler.mp3', emoji:'&#128065;&#65039;', name:'Prowler Theme'},
+  {id:'among-us', file:'sounds/among-us.mp3', emoji:'&#128640;', name:'Among Us Reveal'},
+  {id:'taco-bell', file:'sounds/taco-bell.mp3', emoji:'&#128276;', name:'Taco Bell Bong'},
+  {id:'fbi-open-up', file:'sounds/fbi-open-up.mp3', emoji:'&#128680;', name:'FBI Open Up'},
+  {id:'sponge-fail', file:'sounds/sponge-fail.mp3', emoji:'&#129533;', name:'SpongeBob Fail'},
+  {id:'sad-violin', file:'sounds/sad-violin.mp3', emoji:'&#127931;', name:'Sad Violin'},
+  {id:'windows-xp-error', file:'sounds/windows-xp-error.mp3', emoji:'&#9888;&#65039;', name:'Windows XP Error'},
+  {id:'win-startup', file:'sounds/win-startup.mp3', emoji:'&#128187;', name:'Windows XP Startup'},
+  {id:'discord-notification', file:'sounds/discord-notification.mp3', emoji:'&#128172;', name:'Discord Ping'},
+  {id:'oof', file:'sounds/oof.mp3', emoji:'&#128128;', name:'Roblox Oof'},
+  {id:'bonk', file:'sounds/bonk.mp3', emoji:'&#128296;', name:'Doge Bonk'},
+  {id:'anime-wow', file:'sounds/anime-wow.mp3', emoji:'&#10024;', name:'Anime Wow'},
+  {id:'cricket', file:'sounds/cricket.mp3', emoji:'&#129431;', name:'Awkward Crickets'},
+  {id:'fart', file:'sounds/fart.mp3', emoji:'&#128168;', name:'Reverb Fart'},
+  {id:'mario-jump', file:'sounds/mario-jump.mp3', emoji:'&#127812;', name:'Mario Jump'}
+];
+
+let sbPitch = 1;
+let sbVolume = 1;
+let activeSbAudios = [];
+let customSounds = [];
+
+function renderSoundboard() {
+  return `
+    <div style="display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:8px">
+          <label style="font-size:13px;color:var(--text2);font-weight:600">Speed / Pitch:</label>
+          <input type="range" min="0.5" max="2" step="0.05" value="${sbPitch}" oninput="sbPitch=+this.value;document.getElementById('sbPitchVal').textContent=this.value+'x'">
+          <span id="sbPitchVal" style="font-size:13px;font-weight:700;color:var(--accent2);min-width:36px">${sbPitch}x</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <label style="font-size:13px;color:var(--text2);font-weight:600">Volume:</label>
+          <input type="range" min="0.1" max="1" step="0.05" value="${sbVolume}" oninput="sbVolume=+this.value;document.getElementById('sbVolVal').textContent=Math.round(this.value*100)+'%'">
+          <span id="sbVolVal" style="font-size:13px;font-weight:700;color:var(--accent2);min-width:38px">${Math.round(sbVolume*100)}%</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button class="s-btn" onclick="document.getElementById('sbCustomInput').click()">+ Upload MP3 / WAV</button>
+        <input type="file" id="sbCustomInput" accept="audio/*" style="display:none" onchange="addCustomSoundPad(event)">
+        <button class="s-btn danger" onclick="stopAllSounds()">&#9209; Stop All</button>
+      </div>
+    </div>
+    <div class="sb-grid" id="sbGrid">
+      ${SOUNDBOARD_PADS.map(p => `
+        <button class="sb-pad" onclick="triggerSoundPad('${p.file}', this)">
+          <span class="sb-emoji">${p.emoji}</span>
+          <span class="sb-name">${p.name}</span>
+        </button>
+      `).join('')}
+      ${customSounds.map((c, i) => `
+        <button class="sb-pad" onclick="triggerSoundPad('${c.url}', this)">
+          <span class="sb-emoji">&#127925;</span>
+          <span class="sb-name">${c.name.replace(/</g,'&lt;')}</span>
+        </button>
+      `).join('')}
+    </div>`;
+}
+
+function stopAllSounds() {
+  activeSbAudios.forEach(a => {
+    try { a.pause(); a.currentTime = 0; } catch(e) {}
+  });
+  activeSbAudios = [];
+  document.querySelectorAll('.sb-pad.playing').forEach(b => b.classList.remove('playing'));
+}
+
+function addCustomSoundPad(e) {
+  const file = e.target.files && e.target.files[0];
+  if (!file) return;
+  customSounds.push({ name: file.name.replace(/\.[^.]+$/, '').slice(0, 18), url: URL.createObjectURL(file) });
+  if (currentView === 'tools' && currentTool === 'soundboard') renderTools(document.getElementById('contentArea'));
+}
+
+function triggerSoundPad(src, btn) {
+  const audio = new Audio(src);
+  audio.volume = sbVolume;
+  audio.playbackRate = sbPitch;
+  audio.preservesPitch = false;
+  activeSbAudios.push(audio);
+  if (btn) btn.classList.add('playing');
+  const cleanup = () => {
+    activeSbAudios = activeSbAudios.filter(x => x !== audio);
+    if (btn) btn.classList.remove('playing');
+  };
+  audio.onended = cleanup;
+  audio.onerror = cleanup;
+  audio.play().catch(cleanup);
+}
+
+// ---- 6. Offline Game Downloader ----
+function renderDownloader() {
+  return `
+    <p style="color:var(--text2);font-size:15px;margin-bottom:16px">
+      Download any game from PlayVault as a standalone <code style="background:rgba(255,255,255,.06);padding:2px 6px;border-radius:4px">.html</code> file so you can open it directly from your Downloads folder anytime.
+    </p>
+    <input type="text" id="dlSearchInput" placeholder="Search ${GAMES.length} games to download..." oninput="filterDownloaderList()" style="width:100%;background:rgba(0,0,0,.35);border:1px solid var(--border);border-radius:12px;padding:13px 16px;color:var(--text);font-size:15px;outline:none">
+    <div class="dl-grid" id="dlGrid"></div>`;
+}
+
+function filterDownloaderList() {
+  const grid = document.getElementById('dlGrid');
+  if (!grid) return;
+  const q = (document.getElementById('dlSearchInput')?.value || '').toLowerCase();
+  const list = GAMES.filter(g => g.name.toLowerCase().includes(q)).slice(0, 80);
+  grid.innerHTML = list.map(g => {
+    const esc = g.name.replace(/'/g, "\\'");
+    return `
+      <div class="dl-card">
+        <img src="${g.icon || ''}" alt="" loading="lazy" onerror="this.style.background='var(--bg3)'">
+        <div class="dl-info">
+          <div class="dl-name" title="${g.name}">${g.name}</div>
+          <div class="dl-cat">${g.category || 'Game'}</div>
+        </div>
+        <button class="s-btn primary" onclick="downloadOfflineGame('${esc}', this)">&#11015; .HTML</button>
+      </div>`;
+  }).join('');
+}
+
+async function downloadOfflineGame(name, btn) {
+  const game = GAMES.find(g => g.name === name);
+  if (!game) return;
+  const origText = btn ? btn.innerHTML : '';
+  if (btn) btn.textContent = '...';
+  try {
+    const resp = await fetch(game.file);
+    let html = await resp.text();
+    const baseHref = new URL(game.file, window.location.href).href.replace(/[^/]+$/, '');
+    if (!/<base\s/i.test(html)) {
+      html = html.replace(/<head([^>]*)>/i, `<head$1><base href="${baseHref}">`);
+    }
+    const blob = new Blob([html], { type: 'text/html' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = game.name.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.html';
+    a.click();
+    URL.revokeObjectURL(a.href);
+    if (btn) { btn.textContent = 'Saved!'; setTimeout(() => { btn.innerHTML = origText; }, 1200); }
+  } catch(e) {
+    if (btn) btn.innerHTML = origText;
+  }
+}
+
+// ---- 7. HTML Opener ----
 function renderHtmlOpener() {
   return `
     <p style="color:var(--text2);font-size:15px;margin-bottom:16px">Paste HTML code below and run it in a new <code style="background:rgba(255,255,255,.06);padding:2px 7px;border-radius:5px">about:blank</code> tab. Great for running saved games or custom pages.</p>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untitled document - Google Docs</title>
+<link rel="icon" href="https://www.google.com/s2/favicons?domain=docs.google.com&sz=64">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{
+    height:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#08090d;color:#eeeef2;display:flex;align-items:center;justify-content:center;
+    user-select:none;cursor:pointer;overflow:hidden;
+  }
+  .card{
+    max-width:440px;width:92%;padding:36px 32px;border-radius:20px;
+    background:#12141c;border:1px solid rgba(255,255,255,.08);
+    text-align:center;box-shadow:0 24px 64px rgba(0,0,0,.6);
+  }
+  .icon{
+    width:64px;height:64px;border-radius:18px;margin:0 auto 18px;
+    background:rgba(124,108,240,.15);border:1px solid rgba(124,108,240,.35);
+    display:flex;align-items:center;justify-content:center;
+  }
+  h1{font-size:22px;font-weight:800;letter-spacing:-.3px;margin-bottom:8px}
+  p{font-size:14px;color:#8b8fa7;line-height:1.5;margin-bottom:24px}
+  .btn{
+    display:inline-block;width:100%;padding:14px 24px;border-radius:12px;
+    background:#7c6cf0;color:#fff;font-size:15px;font-weight:700;border:none;
+    cursor:pointer;box-shadow:0 6px 24px rgba(124,108,240,.4);transition:transform .15s,opacity .15s;
+  }
+  .btn:hover{opacity:.92;transform:translateY(-1px)}
+  .hint{font-size:12px;color:#565a72;margin-top:14px}
+</style>
+</head>
+<body>
+<div class="card" id="launchCard">
+  <div class="icon">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7c6cf0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+      <polyline points="15 3 21 3 21 9"/>
+      <line x1="10" y1="14" x2="21" y2="3"/>
+    </svg>
+  </div>
+  <h1>Launch in about:blank</h1>
+  <p>Click anywhere or press any key to open PlayVault inside a cloaked <code>about:blank</code> tab.</p>
+  <button class="btn" id="launchBtn">Open Cloaked Tab &rarr;</button>
+  <div class="hint">This tab will automatically redirect to Google Classroom.</div>
+</div>
+
+<script>
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const targetUrl = params.get('url') || new URL('index.html', window.location.href).href;
+  const redirectUrl = params.get('redirect') || 'https://classroom.google.com';
+  const tabTitle = params.get('title') || 'Untitled document - Google Docs';
+  const tabIcon = params.get('icon') || 'https://www.google.com/s2/favicons?domain=docs.google.com&sz=64';
+
+  function openCloaked() {
+    const win = window.open('about:blank', '_blank');
+    if (!win || win.closed || typeof win.closed === 'undefined') return false;
+    win.document.write(
+      '<!DOCTYPE html><html><head><meta charset="utf-8">' +
+      '<title>' + tabTitle.replace(/</g, '&lt;') + '</title>' +
+      '<link rel="icon" href="' + tabIcon.replace(/"/g, '&quot;') + '">' +
+      '<style>*{margin:0;padding:0}html,body,iframe{width:100%;height:100%;border:none;overflow:hidden;background:#08090d}</style>' +
+      '</head><body>' +
+      '<iframe src="' + targetUrl.replace(/"/g, '&quot;') + '" allow="fullscreen; autoplay; gamepad; clipboard-read; clipboard-write"></iframe>' +
+      '</body></html>'
+    );
+    win.document.close();
+    try { window.location.replace(redirectUrl); } catch(e) {}
+    return true;
+  }
+
+  // Try automatic launch immediately on page load
+  if (!openCloaked()) {
+    // Browser blocked auto-popup; launch on first click or keypress anywhere
+    window.addEventListener('click', openCloaked);
+    window.addEventListener('keydown', openCloaked);
+  }
+})();
+</script>
+</body>
+</html>
